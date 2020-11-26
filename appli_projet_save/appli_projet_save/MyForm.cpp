@@ -8,6 +8,6 @@ void Main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	//WinformCDemo is your project name
-	appliprojetsave::MyForm form;
+	appliprojet::MyForm form;
 	Application::Run(% form);
 }

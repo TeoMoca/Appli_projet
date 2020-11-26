@@ -1,6 +1,6 @@
 #pragma once
 
-namespace connectionmysql {
+namespace appliprojet {
 
 	using namespace System;
 	using namespace System::ComponentModel;
