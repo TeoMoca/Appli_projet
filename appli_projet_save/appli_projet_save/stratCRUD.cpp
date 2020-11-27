@@ -8,3 +8,4 @@ stratCRUD::stratCRUD()
     command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
     myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
 }
+
