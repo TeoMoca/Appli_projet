@@ -122,11 +122,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="stratClient.cpp" />
+    <ClCompile Include="stratCommande.cpp" />
+    <ClCompile Include="stratCRUD.cpp" />
+    <ClCompile Include="stratPersonnel.cpp" />
+    <ClCompile Include="stratStock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="stratClient.h" />
+    <ClInclude Include="stratCommande.h" />
+    <ClInclude Include="stratCRUD.h" />
+    <ClInclude Include="stratPersonnel.h" />
+    <ClInclude Include="stratStock.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
