@@ -121,6 +121,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLadresse.cpp" />
+    <ClCompile Include="CLcatalog.cpp" />
+    <ClCompile Include="CLclient.cpp" />
+    <ClCompile Include="CLcommande.cpp" />
+    <ClCompile Include="CLpaiement.cpp" />
+    <ClCompile Include="CLpersonnel.cpp" />
+    <ClCompile Include="CLquantite.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="stratClient.cpp" />
     <ClCompile Include="stratCommande.cpp" />
@@ -129,6 +136,13 @@
     <ClCompile Include="stratStock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLadresse.h" />
+    <ClInclude Include="CLcatalog.h" />
+    <ClInclude Include="CLclient.h" />
+    <ClInclude Include="CLcommande.h" />
+    <ClInclude Include="CLpaiement.h" />
+    <ClInclude Include="CLpersonnel.h" />
+    <ClInclude Include="CLquantite.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
