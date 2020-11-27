@@ -48,6 +48,7 @@ namespace appliprojet {
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::Label^ label4;
+
 	protected:
 
 	private:
@@ -87,6 +88,8 @@ namespace appliprojet {
 			this->button1->Text = L"Exporter";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->button1->MouseEnter += gcnew System::EventHandler(this, &MyForm::OnMouseEnter_button1);
+			this->button1->MouseLeave += gcnew System::EventHandler(this, &MyForm::OnMouseLeave_button1);
 			// 
 			// textBox1
 			// 
@@ -211,6 +214,17 @@ namespace appliprojet {
 		MySqlDataAdapter^ myReader = gcnew MySqlDataAdapter(command);
 		DataTable^ DS = gcnew DataTable();
 		myReader->Fill(DS);
+	}
+	private: System::Void OnMouseEnter_button1(System::Object^ sender, EventArgs^ e)
+	{
+		button1->BackColor = System::Drawing::Color::DodgerBlue; // or Color.Red or whatever you want
+		button1->ForeColor = System::Drawing::Color::White;
+	}
+
+	private: System::Void OnMouseLeave_button1(System::Object^ sender, EventArgs^ e)
+	{
+		button1->BackColor = System::Drawing::Color::White; // or Color.Red or whatever you want
+		button1->ForeColor = System::Drawing::Color::Black;
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
