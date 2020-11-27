@@ -15,7 +15,6 @@ void stratClient::create() {
 	obj.setadresseLivr(adresse_liv);
 	obj.setbirthdate(birthdate);
 	cmdclient = "insert into CLIENT(NOM,PRENOM,BIRTHDATE) values ("+nom+","+prenom+","+birthdate+"); insert into ADRESSES(ADRESSE) values (";
-	
 	MySql::Data::MySqlClient::MySqlCommand^ client = gcnew 
 	
 

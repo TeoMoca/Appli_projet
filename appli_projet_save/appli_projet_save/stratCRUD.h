@@ -5,8 +5,7 @@ using namespace MySql::Data::MySqlClient;
 ref class stratCRUD
 {
 public:
-	stratCRUD();
-	virtual void create() =0;
+	virtual void create() = 0;
 	virtual void read() = 0;
 	virtual void update() = 0;
 	virtual void suppr() = 0;
