@@ -12,9 +12,14 @@ ref class CLpaiement
 public: 
 
 	CLpaiement(String^, float^, String^);
+
 	String^ getdatePay();
 	float^ getmontant();
 	String^ gettypePay();
+
+	void setdatePay(String^);
+	void setmontant(float^);
+	void settyePay(String^);
 
 };
 
