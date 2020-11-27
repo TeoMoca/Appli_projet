@@ -147,6 +147,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="pch.h" />
     <ClInclude Include="stratClient.h" />
     <ClInclude Include="stratCommande.h" />
     <ClInclude Include="stratCRUD.h" />

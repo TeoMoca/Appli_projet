@@ -3,5 +3,9 @@
 
 ref class stratCommande
 {
+	void create();
+	void read();
+	void update();
+	void suppr();
 };
 
