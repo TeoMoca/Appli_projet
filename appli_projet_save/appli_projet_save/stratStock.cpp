@@ -1,4 +1,4 @@
-#include "stratStock.h"
+#include "pch.h"
 
 void stratStock::create() {
 

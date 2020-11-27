@@ -1,7 +1,7 @@
 #pragma once
-#include "stratCRUD.h"
+#include "pch.h"
 
-ref class stratClient
+ref class stratClient :public stratCRUD
 {
 	void create();
 	void read();

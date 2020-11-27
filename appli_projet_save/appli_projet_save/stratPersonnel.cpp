@@ -1,4 +1,4 @@
-#include "stratPersonnel.h"
+#include "pch.h"
 
 void stratPersonnel::create() {
 

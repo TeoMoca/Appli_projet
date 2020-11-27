@@ -1,4 +1,4 @@
-#include "stratCommande.h"
+#include "pch.h"
 
 void stratCommande::create() {
 

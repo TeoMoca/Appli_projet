@@ -24,6 +24,7 @@ namespace appliprojet {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
+		
 
 	protected:
 		/// <summary>
