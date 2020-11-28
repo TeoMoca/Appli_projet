@@ -22,6 +22,17 @@ public:
 	float^ getTVA();
 	float^ getprixTTC();
 
+	void setref(String^);
+	void setnumClient(int^);
+	void setdateLivr(String^);
+	void setdateEmis(String^);
+	void setpaiements(array<CLpaiement^>^);
+	void setproduits(array<CLcatalog^>^);
+	void setprixHT(float^);
+	void setTVA(float^);
+	void setprixTTC(float^);
+
+
 	
 
 
