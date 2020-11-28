@@ -1,6 +1,7 @@
 #ifndef PCH_H
 #define PCH_H
 #include <iostream>
+#include "stratCRUD.h"
 #include "CLadresse.h"
 #include "CLcatalog.h"
 #include "CLclient.h"
@@ -10,7 +11,6 @@
 #include "CLquantite.h"
 #include "stratClient.h"
 #include "stratCommande.h"
-#include "stratCRUD.h"
 #include "stratPersonnel.h"
 #include "stratStock.h"
 #include "MyForm.h"
