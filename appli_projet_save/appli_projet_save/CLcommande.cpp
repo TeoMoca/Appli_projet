@@ -71,12 +71,12 @@ void CLcommande::setnumClient(int^ num)
 
 void CLcommande::setdateLivr(String^ liv)
 {
-    dateLivr = liv
+    dateLivr = liv;
 }
 
 void CLcommande::setdateEmis(String^ emi)
 {
-    dateEmis = emi
+    dateEmis = emi;
 }
 
 void CLcommande::setpaiements(array<CLpaiement^>^ paie)
@@ -96,7 +96,7 @@ void CLcommande::setprixHT(float^ ht)
 
 void CLcommande::setTVA(float^ tva)
 {
-    TVA = tva
+    TVA = tva;
 }
 
 void CLcommande::setprixTTC(float^ ttc)
