@@ -1,6 +1,7 @@
 #pragma once
 using namespace System;
 using namespace MySql::Data::MySqlClient;
+using namespace System::Data;
 
 ref class stratCRUD
 {
@@ -12,10 +13,12 @@ public:
 protected:
 	String^ constring;
 	String^ cmdclient;
+	String^ cmdidclient;
 	MySqlConnection^ conDataBase ;
 	MySqlCommand^ command;
+	MySqlCommand^ commandid;
 	MySqlDataAdapter^ myReader;
-	DataTable^ DS = gcnew DataTable();
+	DataTable^ DS;
 };
 
 

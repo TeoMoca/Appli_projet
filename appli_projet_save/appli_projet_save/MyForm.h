@@ -210,7 +210,12 @@ namespace appliprojet {
 		String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 		conDataBase->Open();
-		String^ queryString = "INSERT INTO projetdb.articles(id,name,prix) VALUES ( " + Convert::ToInt32(textBox1->Text) + ", '" + textBox2->Text + "', " + Convert::ToInt32(textBox3->Text) + ");";
+
+		String^ nom, ^ prenom, ^ birthdate;
+		nom = textBox1->Text;
+		prenom = textBox2->Text;
+		birthdate = textBox3->Text;
+		String^ queryString = "insert into CLIENT(NOM,PRENOM,BIRTHDATE) values ('" + nom + "," + prenom + "," + birthdate + "); insert into ADRESSES(ADRESSE) values ("; //"INSERT INTO projetdb.articles(id,name,prix) VALUES ( " + Convert::ToInt32(textBox1->Text) + ", '" + textBox2->Text + "', " + Convert::ToInt32(textBox3->Text) + ");";
 		MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
 		MySqlDataAdapter^ myReader = gcnew MySqlDataAdapter(command);
 		DataTable^ DS = gcnew DataTable();

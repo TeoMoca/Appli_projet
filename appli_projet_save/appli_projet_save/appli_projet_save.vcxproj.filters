@@ -86,9 +86,6 @@
     <ClInclude Include="CLquantite.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLadresse.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="CLpersonnel.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
