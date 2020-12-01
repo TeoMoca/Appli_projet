@@ -3,12 +3,12 @@
 #include <iostream>
 #include <vector>
 #include "CLadresse.h"
-#include "CLpersonnel.h"
+#include "CLclient.h"
 #include "CLcatalog.h"
+#include "CLpersonnel.h"
 #include "CLquantite.h"
 #include "CLpaiement.h"
 #include "CLcommande.h"
-#include "CLclient.h"
 #include "stratCRUD.h"
 #include "stratClient.h"
 #include "stratCommande.h"

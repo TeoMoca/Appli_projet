@@ -7,37 +7,37 @@ CLpersonnel::CLpersonnel():nom(""), prenom(""), dateEmbauche(""), IDsup(0)
     adresse = nullptr;
 }
 
-String^ CLpersonnel::getnom()
+std::string CLpersonnel::getnom()
 {
     //throw gcnew System::NotImplementedException();
     return nom;
 }
 
-void CLpersonnel::setnom(String^ str)
+void CLpersonnel::setnom(std::string str)
 {
     //throw gcnew System::NotImplementedException();
     nom = str;
 }
 
-String^ CLpersonnel::getprenom()
+std::string CLpersonnel::getprenom()
 {
     //throw gcnew System::NotImplementedException();
     return prenom;
 }
 
-void CLpersonnel::setprenom(String^ str)
+void CLpersonnel::setprenom(std::string str)
 {
     //throw gcnew System::NotImplementedException();
     prenom = str;
 }
 
-String^ CLpersonnel::getdateEmbauche()
+std::string CLpersonnel::getdateEmbauche()
 {
     //throw gcnew System::NotImplementedException();
     return dateEmbauche;
 }
 
-void CLpersonnel::setdateEmbauche(String^ str)
+void CLpersonnel::setdateEmbauche(std::string str)
 {
     //throw gcnew System::NotImplementedException();
     dateEmbauche = str;
@@ -56,13 +56,13 @@ void CLpersonnel::setadresse(std::string num, std::string city, std::string cp)
     
 }
 
-int^ CLpersonnel::getIDsup()
+int CLpersonnel::getIDsup()
 {
     //throw gcnew System::NotImplementedException();
     return IDsup;
 }
 
-void CLpersonnel::setIDsup(int^ nb)
+void CLpersonnel::setIDsup(int nb)
 {
     //throw gcnew System::NotImplementedException();
     IDsup = nb;
