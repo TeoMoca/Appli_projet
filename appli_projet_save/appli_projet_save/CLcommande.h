@@ -1,10 +1,11 @@
 #pragma once
+#include <vector>
 ref class CLcommande
 {
 
 	String^ ref, ^dateLivr, ^dateEmis;
 	int^ numClient;
-	array<CLpaiement^>^ paiements;
+	std::vector<CLpaiement*> paiements;
 	array<CLcatalog^>^ produits;
 	float^ prixHT, ^ TVA, ^ prixTTC;
 

@@ -2,24 +2,24 @@
 
 using namespace System;
 
-ref class CLpaiement
+class CLpaiement
 {
 
-	String^ datePay;
-	float^ montant;
-	String^ typePay;
+	std::string datePay;
+	float montant;
+	std::string typePay;
 
 public: 
 
-	CLpaiement(String^, float^, String^);
+	CLpaiement(std::string, float, std::string);
 
-	String^ getdatePay();
-	float^ getmontant();
-	String^ gettypePay();
+	std::string getdatePay();
+	float getmontant();
+	std::string gettypePay();
 
-	void setdatePay(String^);
-	void setmontant(float^);
-	void settyePay(String^);
+	void setdatePay(std::string);
+	void setmontant(float);
+	void settypePay(std::string);
 
 };
 

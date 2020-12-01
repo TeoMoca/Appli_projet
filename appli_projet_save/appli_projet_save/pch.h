@@ -1,6 +1,7 @@
 #ifndef PCH_H
 #define PCH_H
 #include <iostream>
+#include <vector>
 #include "CLadresse.h"
 #include "CLpersonnel.h"
 #include "CLcatalog.h"
@@ -14,5 +15,4 @@
 #include "stratPersonnel.h"
 #include "stratStock.h"
 #include "MyForm.h"
-#include <iostream>
 #endif //PCH_H
