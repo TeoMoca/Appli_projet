@@ -23,7 +23,7 @@ String^ CLcatalog::getdesignation()
 
 int^ CLcatalog::getquantDispo()
 {
-	return quantDispo
+	return quantDispo;
 }
 
 int^ CLcatalog::getseuilAppro()

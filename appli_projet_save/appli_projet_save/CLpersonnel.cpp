@@ -43,7 +43,8 @@ void CLpersonnel::setdateEmbauche(String^ str)
     dateEmbauche = str;
 }
 
-CLadresse^ CLpersonnel::getadresse()
+CLadresse^
+CLpersonnel::getadresse()
 {
     //throw gcnew System::NotImplementedException();
     return adresse;

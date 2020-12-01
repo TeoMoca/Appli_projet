@@ -14,8 +14,10 @@ protected:
 	String^ constring;
 	String^ cmdclient;
 	String^ cmdid;
+	String^ cmdpersonnel;
 	MySqlConnection^ conDataBase ;
 	MySqlCommand^ command;
+	MySqlCommand^ commandpersonnel;
 	MySqlCommand^ commandid;
 	MySqlDataAdapter^ myReader;
 	DataTable^ DS;

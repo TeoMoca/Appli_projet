@@ -1,11 +1,11 @@
 #pragma once
 #include "stratCRUD.h"
 
-ref class stratStock
+ref class stratStock: public stratCRUD
 {
-	void create();
-	void read();
-	void update();
-	void suppr();
+	void create()override;
+	void read() override;
+	void update() override;
+	void suppr() override;
 };
 
