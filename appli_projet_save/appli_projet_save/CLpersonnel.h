@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "CLadresse.h"
 
+class CLadresse;
 
 class CLpersonnel
 {
