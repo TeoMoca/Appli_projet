@@ -37,18 +37,30 @@ namespace appliprojet {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ clientsB;
+	protected:
 
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::DataGridView^ dataGridView2;
-	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Button^ personnelB;
+	private: System::Windows::Forms::Button^ commandesB;
+	private: System::Windows::Forms::Button^ stockB;
+	private: System::Windows::Forms::Button^ statsB;
+
+
+
+
+	protected:
+
+
+
+
+
+
+
+
+
+
+
+
 
 	protected:
 
@@ -65,148 +77,86 @@ namespace appliprojet {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			this->clientsB = (gcnew System::Windows::Forms::Button());
+			this->personnelB = (gcnew System::Windows::Forms::Button());
+			this->commandesB = (gcnew System::Windows::Forms::Button());
+			this->stockB = (gcnew System::Windows::Forms::Button());
+			this->statsB = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// button1
+			// clientsB
 			// 
-			this->button1->Location = System::Drawing::Point(139, 169);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 33);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Exporter";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			this->button1->MouseEnter += gcnew System::EventHandler(this, &MyForm::OnMouseEnter_button1);
-			this->button1->MouseLeave += gcnew System::EventHandler(this, &MyForm::OnMouseLeave_button1);
+			this->clientsB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->clientsB->Location = System::Drawing::Point(12, 12);
+			this->clientsB->Name = L"clientsB";
+			this->clientsB->Size = System::Drawing::Size(558, 148);
+			this->clientsB->TabIndex = 0;
+			this->clientsB->Text = L"CLIENTS";
+			this->clientsB->UseVisualStyleBackColor = true;
+			this->clientsB->Click += gcnew System::EventHandler(this, &MyForm::clientsB_Click);
 			// 
-			// textBox1
+			// personnelB
 			// 
-			this->textBox1->Location = System::Drawing::Point(139, 21);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 22);
-			this->textBox1->TabIndex = 1;
+			this->personnelB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->personnelB->Location = System::Drawing::Point(625, 12);
+			this->personnelB->Name = L"personnelB";
+			this->personnelB->Size = System::Drawing::Size(558, 148);
+			this->personnelB->TabIndex = 1;
+			this->personnelB->Text = L"PERSONNEL";
+			this->personnelB->UseVisualStyleBackColor = true;
 			// 
-			// textBox2
+			// commandesB
 			// 
-			this->textBox2->Location = System::Drawing::Point(139, 73);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 22);
-			this->textBox2->TabIndex = 2;
+			this->commandesB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->commandesB->Location = System::Drawing::Point(12, 190);
+			this->commandesB->Name = L"commandesB";
+			this->commandesB->Size = System::Drawing::Size(558, 148);
+			this->commandesB->TabIndex = 2;
+			this->commandesB->Text = L"COMMANDES";
+			this->commandesB->UseVisualStyleBackColor = true;
 			// 
-			// textBox3
+			// stockB
 			// 
-			this->textBox3->Location = System::Drawing::Point(139, 120);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 22);
-			this->textBox3->TabIndex = 3;
+			this->stockB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->stockB->Location = System::Drawing::Point(625, 190);
+			this->stockB->Name = L"stockB";
+			this->stockB->Size = System::Drawing::Size(558, 148);
+			this->stockB->TabIndex = 3;
+			this->stockB->Text = L"STOCK";
+			this->stockB->UseVisualStyleBackColor = true;
 			// 
-			// label1
+			// statsB
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(76, 24);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(21, 17);
-			this->label1->TabIndex = 4;
-			this->label1->Text = L"ID";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(76, 76);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(47, 17);
-			this->label2->TabIndex = 5;
-			this->label2->Text = L"Article";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(76, 123);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(31, 17);
-			this->label3->TabIndex = 6;
-			this->label3->Text = L"Prix";
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(277, 24);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->ReadOnly = true;
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(292, 168);
-			this->dataGridView1->TabIndex = 7;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(22, 169);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(85, 33);
-			this->button2->TabIndex = 8;
-			this->button2->Text = L"visualiser";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			// 
-			// dataGridView2
-			// 
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(591, 24);
-			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->RowHeadersWidth = 51;
-			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(297, 168);
-			this->dataGridView2->TabIndex = 9;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(12, 21);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(46, 17);
-			this->label4->TabIndex = 10;
-			this->label4->Text = L"label4";
+			this->statsB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->statsB->Location = System::Drawing::Point(358, 378);
+			this->statsB->Name = L"statsB";
+			this->statsB->Size = System::Drawing::Size(485, 109);
+			this->statsB->TabIndex = 4;
+			this->statsB->Text = L"STATISTIQUES";
+			this->statsB->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(949, 225);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->dataGridView2);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(1195, 499);
+			this->Controls->Add(this->statsB);
+			this->Controls->Add(this->stockB);
+			this->Controls->Add(this->commandesB);
+			this->Controls->Add(this->personnelB);
+			this->Controls->Add(this->clientsB);
 			this->Name = L"MyForm";
 			this->Text = L"Rangetesclients.net";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	/*private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 		conDataBase->Open();
@@ -262,7 +212,13 @@ namespace appliprojet {
 		source1->DataSource = DD;
 		dataGridView2->DataSource = source1;
 		myAdapter->Update(DD);
-	}
-	};
+	}*/
+private: System::Void clientsB_Click(System::Object^ sender, System::EventArgs^ e) {
+	stockB->Hide();
+	commandesB->Hide();
+	statsB->Hide();
+	clientsB->Hide();
+	personnelB->Hide();
 }
-
+};
+}

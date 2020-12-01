@@ -13,7 +13,7 @@ public:
 protected:
 	String^ constring;
 	String^ cmdclient;
-	String^ cmdidclient;
+	String^ cmdid;
 	MySqlConnection^ conDataBase ;
 	MySqlCommand^ command;
 	MySqlCommand^ commandid;
