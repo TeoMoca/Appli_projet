@@ -4,11 +4,41 @@ using namespace appliprojet;
 
 void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<String^>^>^ adresse_liv,String^ nom, String^ prenom, String^ birthdate) {
 	CLclient obj;
+	//transformation des adresses en tableau d'adresses du bon format
+	// adresse de facturation
+	int nAF = 0;
+	int iAF = 0;
+	for each ( array<String^> ^ nouvelleadresse in adresse_fact) {
+		nAF++;
+	}
+	array<CLadresse^>^ nouvellesAdressesFact = gcnew array<CLadresse^>(nAF);
+	for each (array<String^> ^ nouvelleadresse in adresse_fact) {
+		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[0]);
+		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[1]);
+		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[2]);
+		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[3]);
+		iAF++;
+	}
+	//adresse de livraison
+	int nAL = 0;
+	int iAL = 0;
+	for each (array<String^> ^ nouvelleadresse in adresse_fact) {
+		nAL++;
+	}
+	array<CLadresse^>^ nouvellesAdressesLivr = gcnew array<CLadresse^>(nAL);
+	for each (array<String^> ^ nouvelleadresse in adresse_fact) {
+		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[0]);
+		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[1]);
+		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[2]);
+		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[3]);
+		iAL++;
+	}
+	//
 	conDataBase->Open();
 	obj.setnom(nom);
 	obj.setprenom(prenom);
-	obj.setadresseFact(adresse_fact);
-	obj.setadresseLivr(adresse_liv);
+	obj.setadresseFact(nouvellesAdressesFact);
+	obj.setadresseLivr(nouvellesAdressesLivr);
 	obj.setbirthdate(birthdate);
 	cmdclient = "insert into projetpoo.CLIENT(NOM,PRENOM,BIRTHDATE) values ("+nom+","+prenom+","+birthdate+");";
 	myReader->Fill(DS);

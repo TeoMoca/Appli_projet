@@ -2,23 +2,23 @@
 #include "pch.h"
 using namespace System;
 
-class CLadresse
+ref class CLadresse
 {
 public:
 	CLadresse();
-	CLadresse(std::string, std::string, std::string);
-	std::string getnumeroRue();
-	void setnumeroRue(std::string);
-	std::string getcodePostal();
-	void setcodePostal(std::string);
-	std::string getville();
-	void setville(std::string);
-	std::string getappartNum();
-	void setappartNum(std::string);
+	CLadresse(String^, String^, String^);
+	String^ getnumeroRue();
+	void setnumeroRue(String^);
+	String^ getcodePostal();
+	void setcodePostal(String^);
+	String^ getville();
+	void setville(String^);
+	String^ getappartNum();
+	void setappartNum(String^);
 private:
-	std::string numeroRue;
-	std::string codePostal;
-	std::string ville;
-	std::string appartNum;
+	String^ numeroRue;
+	String^ codePostal;
+	String^ ville;
+	String^ appartNum;
 };
 

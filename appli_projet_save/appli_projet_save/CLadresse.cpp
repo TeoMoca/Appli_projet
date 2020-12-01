@@ -5,54 +5,54 @@ CLadresse::CLadresse(): numeroRue(""), codePostal(""), ville(""), appartNum("")
     //throw gcnew System::NotImplementedException();
 }
 
-CLadresse::CLadresse(std::string a, std::string b, std::string c): numeroRue(a), codePostal(b), ville(c)
+CLadresse::CLadresse(String^ a, String^ b, String^ c): numeroRue(a), codePostal(b), ville(c)
 {
 }
 
-std::string CLadresse::getnumeroRue()
+String^ CLadresse::getnumeroRue()
 {
     //throw gcnew System::NotImplementedException();
     return numeroRue;
 }
 
-void CLadresse::setnumeroRue(std::string str)
+void CLadresse::setnumeroRue(String^ str)
 {
     //throw gcnew System::NotImplementedException();
     numeroRue = str;
 }
 
-std::string CLadresse::getcodePostal()
+String^ CLadresse::getcodePostal()
 {
     //throw gcnew System::NotImplementedException();
     return codePostal;
 }
 
-void CLadresse::setcodePostal(std::string str)
+void CLadresse::setcodePostal(String^ str)
 {
     //throw gcnew System::NotImplementedException();
     codePostal = str;
 }
 
-std::string CLadresse::getville()
+String^ CLadresse::getville()
 {
     //throw gcnew System::NotImplementedException();
     return ville;
 }
 
-void CLadresse::setville(std::string str)
+void CLadresse::setville(String^ str)
 {
     //throw gcnew System::NotImplementedException();
     ville = str;
 
 }
 
-std::string CLadresse::getappartNum()
+String^ CLadresse::getappartNum()
 {
     //throw gcnew System::NotImplementedException();
     return appartNum;
 }
 
-void CLadresse::setappartNum(std::string str)
+void CLadresse::setappartNum(String^ str)
 {
     //throw gcnew System::NotImplementedException();
     appartNum = str;

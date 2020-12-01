@@ -7,52 +7,52 @@ CLpersonnel::CLpersonnel():nom(""), prenom(""), dateEmbauche(""), IDsup(0)
     adresse = nullptr;
 }
 
-std::string CLpersonnel::getnom()
+String^ CLpersonnel::getnom()
 {
     //throw gcnew System::NotImplementedException();
     return nom;
 }
 
-void CLpersonnel::setnom(std::string str)
+void CLpersonnel::setnom(String^ str)
 {
     //throw gcnew System::NotImplementedException();
     nom = str;
 }
 
-std::string CLpersonnel::getprenom()
+String^ CLpersonnel::getprenom()
 {
     //throw gcnew System::NotImplementedException();
     return prenom;
 }
 
-void CLpersonnel::setprenom(std::string str)
+void CLpersonnel::setprenom(String^ str)
 {
     //throw gcnew System::NotImplementedException();
     prenom = str;
 }
 
-std::string CLpersonnel::getdateEmbauche()
+String^ CLpersonnel::getdateEmbauche()
 {
     //throw gcnew System::NotImplementedException();
     return dateEmbauche;
 }
 
-void CLpersonnel::setdateEmbauche(std::string str)
+void CLpersonnel::setdateEmbauche(String^ str)
 {
     //throw gcnew System::NotImplementedException();
     dateEmbauche = str;
 }
 
-CLadresse* CLpersonnel::getadresse()
+CLadresse^ CLpersonnel::getadresse()
 {
     //throw gcnew System::NotImplementedException();
     return adresse;
 }
 
-void CLpersonnel::setadresse(std::string num, std::string city, std::string cp)
+void CLpersonnel::setadresse(CLadresse^ nouvelleAdresse)
 {
     //throw gcnew System::NotImplementedException();
-    adresse = new CLadresse(num, city, cp);
+    adresse = nouvelleAdresse;
     
 }
 

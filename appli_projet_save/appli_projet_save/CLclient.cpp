@@ -6,13 +6,13 @@ CLclient::CLclient() : numClient(0), nom(""), prenom(""), birthdate(""), firstCo
 	adresseLivr = nullptr;
 }
 
-void CLclient::setnumClient(int^ a)
+void CLclient::setnumClient(int a)
 {
 	//throw gcnew System::NotImplementedException();
 	numClient = a;
 }
 
-int^ CLclient::getnumClient()
+int CLclient::getnumClient()
 {
 	//throw gcnew System::NotImplementedException();
 	return numClient;
@@ -42,29 +42,30 @@ String^ CLclient::getprenom()
 	return prenom;
 }
 
-void CLclient::setadresseFact(std::string rue, std::string city, std::string cp)
+void CLclient::setadresseFact(array<CLadresse^>^ handle)
 {
 	//throw gcnew System::NotImplementedException();
 	
-		adresseFact = new std::vector<CLadresse*>;
-		adresseFact->push_back(new CLadresse(rue, city, cp));
+	adresseFact = handle;
+		
 }
 
-std::vector<CLadresse*>* CLclient::getadresseFact()
+array<CLadresse^>^ CLclient::getadresseFact()
 {
 	//throw gcnew System::NotImplementedException();
 	return adresseFact;
 }
 
-void CLclient::setadresseLivr(std::string rue, std::string city, std::string cp)
+
+void CLclient::setadresseLivr(array<CLadresse^>^ handle)
 {
 	//throw gcnew System::NotImplementedException();
-	adresseLivr = new std::vector<CLadresse*>;
-	adresseLivr->push_back(new CLadresse(rue, city, cp));
+	adresseLivr = handle;
+	
 		
 }
 
-std::vector<CLadresse*>* CLclient::getadresseLivr()
+array<CLadresse^>^ CLclient::getadresseLivr()
 {
 	//throw gcnew System::NotImplementedException();
 	return adresseLivr;

@@ -2,28 +2,28 @@
 #include "pch.h"
 #include "CLadresse.h"
 
-class CLadresse;
+ref class CLadresse;
 
-class CLpersonnel
+ ref class CLpersonnel
 {
 public:
 	CLpersonnel();
-	std::string getnom();
-	void setnom(std::string);
-	std::string getprenom();
-	void setprenom(std::string);
-	std::string getdateEmbauche();
-	void setdateEmbauche(std::string);
-	CLadresse* getadresse();
-	void setadresse(std::string, std::string, std::string);
+	String^ getnom();
+	void setnom(String^);
+	String^ getprenom();
+	void setprenom(String^);
+	String^ getdateEmbauche();
+	void setdateEmbauche(String^);
+	CLadresse^ getadresse();
+	void setadresse(CLadresse^);
 	int getIDsup();
 	void setIDsup(int);
 
 private:
-	std::string nom;
-	std::string prenom;
-	std::string dateEmbauche;
-	CLadresse* adresse;
+	String^ nom;
+	String^ prenom;
+	String^ dateEmbauche;
+	CLadresse^ adresse;
 	int IDsup;
 };
 
