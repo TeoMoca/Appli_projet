@@ -1,5 +1,6 @@
 #pragma once
 #include "pch.h"
+#include "CLadresse.h"
 #include<Vector>
 using namespace System;
 
