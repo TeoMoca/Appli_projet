@@ -38,6 +38,7 @@ void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<Strin
 void stratClient::read(String^ nom, String^ prenom, String^ birthdate) {
 	conDataBase->Open();
 	cmdclient = "select * from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
+	myReader->Fill(DS);
 };
 void stratClient::update() {
 	cmdclient = "";

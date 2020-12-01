@@ -11,15 +11,21 @@ public:
 	virtual void update() = 0;
 	virtual void suppr() = 0;
 protected:
-	String^ constring;
+	String^ constring= L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	String^ cmdclient;
 	String^ cmdid;
-	MySqlConnection^ conDataBase ;
-	MySqlCommand^ command;
-	MySqlCommand^ commandid;
-	MySqlDataAdapter^ myReader;
+	String^ cmdpersonnel;
+	String^ cmdstock;
+	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
+	MySqlCommand^ command= gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	MySqlCommand^ commandstock= gcnew MySql::Data::MySqlClient::MySqlCommand(cmdstock, conDataBase);
+	MySqlCommand^ commandpersonnel = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdpersonnel, conDataBase);
+	MySqlCommand^ commandid = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdid, conDataBase);
+	MySqlDataAdapter^ myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
 	DataTable^ DS;
 };
+
+
 
 
 
