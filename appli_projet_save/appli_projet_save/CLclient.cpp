@@ -47,7 +47,7 @@ void CLclient::setadresseFact(std::string rue, std::string city, std::string cp)
 	//throw gcnew System::NotImplementedException();
 	
 		adresseFact = new std::vector<CLadresse*>;
-		adresseLivr->push_back(new CLadresse(rue, city, cp));
+		adresseFact->push_back(new CLadresse(rue, city, cp));
 }
 
 std::vector<CLadresse*>* CLclient::getadresseFact()

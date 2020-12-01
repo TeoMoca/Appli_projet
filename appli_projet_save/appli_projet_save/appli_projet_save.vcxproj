@@ -137,6 +137,7 @@
     <ClCompile Include="stratStock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLadresse.h" />
     <ClInclude Include="CLcatalog.h" />
     <ClInclude Include="CLclient.h" />
     <ClInclude Include="CLcommande.h" />

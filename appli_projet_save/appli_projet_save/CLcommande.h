@@ -1,6 +1,10 @@
 #pragma once
 #include "pch.h"
 #include <vector>
+
+class CLcatalog;
+class CLpaiement;
+
 ref class CLcommande
 {
 

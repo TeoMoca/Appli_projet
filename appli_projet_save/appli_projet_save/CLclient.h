@@ -4,6 +4,8 @@
 #include<Vector>
 using namespace System;
 
+class CLadresse;
+
 ref class CLclient
 {
 public:
