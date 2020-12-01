@@ -1,6 +1,7 @@
 #ifndef PCH_H
 #define PCH_H
 #include <iostream>
+#include <vector>
 #include "CLadresse.h"
 #include "CLpersonnel.h"
 #include "CLcatalog.h"

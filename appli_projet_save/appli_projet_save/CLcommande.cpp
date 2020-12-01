@@ -1,14 +1,14 @@
 #include "CLcommande.h"
 #include "pch.h"
 
-CLcommande::CLcommande(String^ refe, int^ num, String^ liv, String^ emi, array<CLpaiement^>^ paie, array<CLcatalog^>^ prod, float^ ht, float^ tva, float^ ttc)
+CLcommande::CLcommande(String^ refe, int^ num, String^ liv, String^ emi, std::vector<CLpaiement*> paie, std::vector<CLcatalog*> prod, float^ ht, float^ tva, float^ ttc)
 {
     ref = refe;
     numClient = num;
     dateLivr = liv;
     dateEmis = emi;
-    paiements = paie;
-    produits = prod;
+    *paiements = paie;
+    *produits = prod;
     prixHT = ht;
     TVA = tva;
     prixTTC = ttc;
@@ -34,14 +34,14 @@ String^ CLcommande::getdateEmis()
     return dateEmis;
 }
 
-array<CLpaiement^>^ CLcommande::getpaiements()
+std::vector<CLpaiement*> CLcommande::getpaiements()
 {
-    return paiements;
+    return *paiements;
 }
 
-array<CLcatalog^>^ CLcommande::getproduits()
+std::vector<CLcatalog*> CLcommande::getproduits()
 {
-    return produits;
+    return *produits;
 }
 
 float^ CLcommande::getprixHT()
@@ -79,14 +79,14 @@ void CLcommande::setdateEmis(String^ emi)
     dateEmis = emi;
 }
 
-void CLcommande::setpaiements(array<CLpaiement^>^ paie)
+void CLcommande::setpaiements(std::vector<CLpaiement*> paie)
 {
-    paiements = paie;
+    *paiements = paie;
 }
 
-void CLcommande::setproduits(array<CLcatalog^>^ prod)
+void CLcommande::setproduits(std::vector<CLcatalog*> prod)
 {
-    produits = prod;
+    *produits = prod;
 }
 
 void CLcommande::setprixHT(float^ ht)

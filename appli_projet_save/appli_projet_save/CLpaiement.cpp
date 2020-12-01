@@ -1,39 +1,39 @@
 #include "CLpaiement.h"
 #include "pch.h"
 
-CLpaiement::CLpaiement(String^ date, float^ mont, String^ type)
+CLpaiement::CLpaiement(std::string date, float mont, std::string type)
 {
     datePay = date;
     montant = mont;
     typePay = type;
 }
 
-String^ CLpaiement::getdatePay()
+std::string CLpaiement::getdatePay()
 {
     return datePay;
 }
 
-float^ CLpaiement::getmontant()
+float CLpaiement::getmontant()
 {
     return montant;
 }
 
-String^ CLpaiement::gettypePay()
+std::string CLpaiement::gettypePay()
 {
     return typePay;
 }
 
-void CLpaiement::setdatePay(String^ date)
+void CLpaiement::setdatePay(std::string date)
 {
     datePay = date;
 }
 
-void CLpaiement::setmontant(float^ mont)
+void CLpaiement::setmontant(float mont)
 {
     montant = mont;
 }
 
-void CLpaiement::settyePay(String^ type)
+void CLpaiement::settypePay(std::string type)
 {
     typePay = type;
 }

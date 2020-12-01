@@ -1,7 +1,7 @@
 #include "CLcatalog.h"
 #include "pch.h"
 
-CLcatalog::CLcatalog(int^ refe, String^ desi, int^ quant, int^ seuil, float^ prix, float^ tva)
+CLcatalog::CLcatalog(int refe, std::string desi, int quant, int seuil, float prix, float tva)
 {
 	ref = refe;
 	designation = desi;
@@ -11,62 +11,62 @@ CLcatalog::CLcatalog(int^ refe, String^ desi, int^ quant, int^ seuil, float^ pri
 	TVA = tva;
 }
 
-int^ CLcatalog::getref()
+int CLcatalog::getref()
 {
 	return ref;
 }
 
-String^ CLcatalog::getdesignation()
+std::string CLcatalog::getdesignation()
 {
 	return designation;
 }
 
-int^ CLcatalog::getquantDispo()
+int CLcatalog::getquantDispo()
 {
 	return quantDispo;
 }
 
-int^ CLcatalog::getseuilAppro()
+int CLcatalog::getseuilAppro()
 {
 	return seuilAppro;
 }
 
-float^ CLcatalog::getprixHT()
+float CLcatalog::getprixHT()
 {
 	return prixHT;
 }
 
-float^ CLcatalog::getTVA()
+float CLcatalog::getTVA()
 {
 	return TVA;
 }
 
-void CLcatalog::setref(int^ refe)
+void CLcatalog::setref(int refe)
 {
 	ref = refe;
 }
 
-void CLcatalog::setdesignation(String^ desi)
+void CLcatalog::setdesignation(std::string desi)
 {
 	designation = desi;
 }
 
-void CLcatalog::setquantDispo(int^ quant)
+void CLcatalog::setquantDispo(int quant)
 {
 	quantDispo = quant;
 }
 
-void CLcatalog::setseuilAppro(int^ seuil)
+void CLcatalog::setseuilAppro(int seuil)
 {
 	seuilAppro = seuil;
 }
 
-void CLcatalog::setprixHT(float^ prix)
+void CLcatalog::setprixHT(float prix)
 {
 	prixHT = prix;
 }
 
-void CLcatalog::setTVA(float^ tva)
+void CLcatalog::setTVA(float tva)
 {
 	TVA = tva;
 }
