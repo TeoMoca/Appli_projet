@@ -3,9 +3,9 @@
 #include <iostream>
 #include <vector>
 #include "CLadresse.h"
-#include "CLclient.h"
 #include "CLcatalog.h"
 #include "CLpersonnel.h"
+#include "CLclient.h"
 #include "CLquantite.h"
 #include "CLpaiement.h"
 #include "CLcommande.h"

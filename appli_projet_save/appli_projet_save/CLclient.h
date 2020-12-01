@@ -1,6 +1,5 @@
 #pragma once
 #include "pch.h"
-#include<Vector>
 using namespace System;
 
 ref class CLclient
@@ -21,7 +20,6 @@ public:
 	String^ getbirthdate();
 	void setfirstCommande(String^);
 	String^ getfirstCommande();
-
 private:
 	int^ numClient;
 	String^ nom;
