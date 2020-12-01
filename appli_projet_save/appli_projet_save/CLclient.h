@@ -13,10 +13,10 @@ public:
 	String^ getnom();
 	void setprenom(String^);
 	String^ getprenom();
-	void setadresseFact(array<array<String^>^>^);
-	array<CLadresse^>^ getadresseFact();
-	void setadresseLivr(array<array<String^>^>^);
-	array<CLadresse^>^ getadresseLivr();
+	void setadresseFact(std::string, std::string, std::string);
+	std::vector<CLadresse*>* getadresseFact();
+	void setadresseLivr(std::string, std::string, std::string);
+	std::vector<CLadresse*>* getadresseLivr();
 	void setbirthdate(String^);
 	String^ getbirthdate();
 	void setfirstCommande(String^);
@@ -26,8 +26,8 @@ private:
 	int^ numClient;
 	String^ nom;
 	String^ prenom;
-	array<CLadresse^>^ adresseFact;
-	array<CLadresse^>^ adresseLivr;
+	std::vector<CLadresse*>* adresseFact;
+	std::vector<CLadresse*>* adresseLivr;
 	String^ birthdate;
 	String^ firstCommande;
 };

@@ -42,51 +42,29 @@ String^ CLclient::getprenom()
 	return prenom;
 }
 
-void CLclient::setadresseFact(array<array<String^>^>^ nouvellesAdressesFact)
+void CLclient::setadresseFact(std::string rue, std::string city, std::string cp)
 {
 	//throw gcnew System::NotImplementedException();
-	int n = 0;
-		for each (array<String^> ^ nouvelleAdresseFact in nouvellesAdressesFact) {
-			n++;
-		}
-		adresseFact = gcnew array<CLadresse^>(n);
-	int i = 0;
-	for each (array<String^> ^ nouvelleAdresseFact in nouvellesAdressesFact) {
-		adresseFact[i] = gcnew CLadresse;
-		adresseFact[i]->setnumeroRue(nouvelleAdresseFact[0]);
-		adresseFact[i]->setville(nouvelleAdresseFact[1]);
-		adresseFact[i]->setcodePostal(nouvelleAdresseFact[2]);
-		adresseFact[i]->setappartNum(nouvelleAdresseFact[3]);
-		i++;
-	}
+	
+		adresseFact = new std::vector<CLadresse*>;
+		adresseLivr->push_back(new CLadresse(rue, city, cp));
 }
 
-array<CLadresse^>^ CLclient::getadresseFact()
+std::vector<CLadresse*>* CLclient::getadresseFact()
 {
 	//throw gcnew System::NotImplementedException();
 	return adresseFact;
 }
 
-void CLclient::setadresseLivr(array<array<String^>^>^ nouvellesAdressesLivr)
+void CLclient::setadresseLivr(std::string rue, std::string city, std::string cp)
 {
 	//throw gcnew System::NotImplementedException();
-	int n = 0;
-	for each (array<String^> ^ nouvelleAdresseLivr in nouvellesAdressesLivr) {
-		n++;
-	}
-	adresseLivr = gcnew array<CLadresse^>(n);
-	int i = 0;
-	for each (array<String^> ^ nouvelleAdresseLivr in nouvellesAdressesLivr) {
-		adresseLivr[i] = gcnew CLadresse;
-		adresseLivr[i]->setnumeroRue(nouvelleAdresseLivr[0]);
-		adresseLivr[i]->setville(nouvelleAdresseLivr[1]);
-		adresseLivr[i]->setcodePostal(nouvelleAdresseLivr[2]);
-		adresseLivr[i]->setappartNum(nouvelleAdresseLivr[3]);
-		i++;
-	}
+	adresseLivr = new std::vector<CLadresse*>;
+	adresseLivr->push_back(new CLadresse(rue, city, cp));
+		
 }
 
-array<CLadresse^>^ CLclient::getadresseLivr()
+std::vector<CLadresse*>* CLclient::getadresseLivr()
 {
 	//throw gcnew System::NotImplementedException();
 	return adresseLivr;

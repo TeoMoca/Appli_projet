@@ -12,8 +12,8 @@ public:
 	void setprenom(String^);
 	String^ getdateEmbauche();
 	void setdateEmbauche(String^);
-	CLadresse^ getadresse();
-	void setadresse(array<String^>^);
+	CLadresse* getadresse();
+	void setadresse(std::string, std::string, std::string);
 	int^ getIDsup();
 	void setIDsup(int^);
 
@@ -21,7 +21,7 @@ private:
 	String^ nom;
 	String^ prenom;
 	String^ dateEmbauche;
-	CLadresse^ adresse;
+	CLadresse* adresse;
 	int^ IDsup;
 };
 

@@ -43,20 +43,17 @@ void CLpersonnel::setdateEmbauche(String^ str)
     dateEmbauche = str;
 }
 
-CLadresse^ CLpersonnel::getadresse()
+CLadresse* CLpersonnel::getadresse()
 {
     //throw gcnew System::NotImplementedException();
     return adresse;
 }
 
-void CLpersonnel::setadresse(array<String^>^ nouvelleAdresse)
+void CLpersonnel::setadresse(std::string num, std::string city, std::string cp)
 {
     //throw gcnew System::NotImplementedException();
-    adresse = gcnew CLadresse;
-    adresse->setnumeroRue(nouvelleAdresse[0]);
-    adresse->setville(nouvelleAdresse[1]);
-    adresse->setcodePostal(nouvelleAdresse[2]);
-    adresse->setappartNum(nouvelleAdresse[3]);
+    adresse = new CLadresse(num, city, cp);
+    
 }
 
 int^ CLpersonnel::getIDsup()
