@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 namespace appliprojet {
 
@@ -12,7 +12,7 @@ namespace appliprojet {
 
 
 	/// <summary>
-	/// Description résumée de MyForm
+	/// Description rï¿½sumï¿½e de MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -28,7 +28,7 @@ namespace appliprojet {
 
 	protected:
 		/// <summary>
-		/// Nettoyage des ressources utilisées.
+		/// Nettoyage des ressources utilisï¿½es.
 		/// </summary>
 		~MyForm()
 		{
@@ -48,21 +48,21 @@ namespace appliprojet {
 	private: System::Windows::Forms::ToolStripMenuItem^ clientsToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ createToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ actualiserUnClientToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ lireLesDonnéesClientToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ lireLesDonnï¿½esClientToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ personnelToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnPersonnelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ lireLesDonnéesDunPersonnelToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ lireLesDonnï¿½esDunPersonnelToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnPersonnelToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ commandesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ passerUneCommandeToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ mettreÀJourUneCommandeToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ mettreï¿½JourUneCommandeToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ visualiserUneCommandeToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUneCommandeToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ stockToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnArticleToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ mettreÀJourUnArticleToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ visualiserLesDonnéesDunArticleToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ mettreï¿½JourUnArticleToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ visualiserLesDonnï¿½esDunArticleToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnArticleToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ statistiquesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ accueilToolStripMenuItem;
@@ -89,37 +89,38 @@ namespace appliprojet {
 
 	private:
 		/// <summary>
-		/// Variable nécessaire au concepteur.
+		/// Variable nï¿½cessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
+		/// Mï¿½thode requise pour la prise en charge du concepteur - ne modifiez pas
+		/// le contenu de cette mï¿½thode avec l'ï¿½diteur de code.
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->accueilToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clientsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->createToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->actualiserUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->lireLesDonnéesClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->lireLesDonnï¿½esClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->personnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ajouterUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->lireLesDonnéesDunPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->lireLesDonnï¿½esDunPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->supprimerUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->commandesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->passerUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->mettreÀJourUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mettreï¿½JourUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->visualiserUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->supprimerUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->stockToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ajouterUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->mettreÀJourUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->visualiserLesDonnéesDunArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mettreï¿½JourUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->visualiserLesDonnï¿½esDunArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->supprimerUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statistiquesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -144,9 +145,9 @@ namespace appliprojet {
 			// accueilToolStripMenuItem
 			// 
 			this->accueilToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->accueilToolStripMenuItem->Name = L"accueilToolStripMenuItem";
-			this->accueilToolStripMenuItem->Size = System::Drawing::Size(88, 29);
+			this->accueilToolStripMenuItem->Size = System::Drawing::Size(108, 29);
 			this->accueilToolStripMenuItem->Text = L"Accueil";
 			this->accueilToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::accueilToolStripMenuItem_Click_1);
 			// 
@@ -154,7 +155,7 @@ namespace appliprojet {
 			// 
 			this->clientsToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->createToolStripMenuItem,
-					this->actualiserUnClientToolStripMenuItem, this->lireLesDonnéesClientToolStripMenuItem
+					this->actualiserUnClientToolStripMenuItem, this->lireLesDonnï¿½esClientToolStripMenuItem
 			});
 			this->clientsToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -174,19 +175,19 @@ namespace appliprojet {
 			// 
 			this->actualiserUnClientToolStripMenuItem->Name = L"actualiserUnClientToolStripMenuItem";
 			this->actualiserUnClientToolStripMenuItem->Size = System::Drawing::Size(368, 30);
-			this->actualiserUnClientToolStripMenuItem->Text = L"Mettre à jour les donneés client";
+			this->actualiserUnClientToolStripMenuItem->Text = L"Mettre ï¿½ jour les donneï¿½s client";
 			// 
-			// lireLesDonnéesClientToolStripMenuItem
+			// lireLesDonnï¿½esClientToolStripMenuItem
 			// 
-			this->lireLesDonnéesClientToolStripMenuItem->Name = L"lireLesDonnéesClientToolStripMenuItem";
-			this->lireLesDonnéesClientToolStripMenuItem->Size = System::Drawing::Size(368, 30);
-			this->lireLesDonnéesClientToolStripMenuItem->Text = L"Lire les données client";
+			this->lireLesDonnï¿½esClientToolStripMenuItem->Name = L"lireLesDonnï¿½esClientToolStripMenuItem";
+			this->lireLesDonnï¿½esClientToolStripMenuItem->Size = System::Drawing::Size(368, 30);
+			this->lireLesDonnï¿½esClientToolStripMenuItem->Text = L"Lire les donnï¿½es client";
 			// 
 			// personnelToolStripMenuItem
 			// 
 			this->personnelToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->ajouterUnPersonnelToolStripMenuItem,
-					this->mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem, this->lireLesDonnéesDunPersonnelToolStripMenuItem, this->supprimerUnPersonnelToolStripMenuItem
+					this->mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem, this->lireLesDonnï¿½esDunPersonnelToolStripMenuItem, this->supprimerUnPersonnelToolStripMenuItem
 			});
 			this->personnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -200,17 +201,17 @@ namespace appliprojet {
 			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
 			this->ajouterUnPersonnelToolStripMenuItem->Text = L"Ajouter un personnel";
 			// 
-			// mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem
+			// mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem
 			// 
-			this->mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem->Name = L"mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem";
-			this->mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
-			this->mettreÀJourLesDonnéesDunPersonnelToolStripMenuItem->Text = L"Mettre à jour les données d\'un personnel";
+			this->mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem->Name = L"mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem";
+			this->mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
+			this->mettreï¿½JourLesDonnï¿½esDunPersonnelToolStripMenuItem->Text = L"Mettre ï¿½ jour les donnï¿½es d\'un personnel";
 			// 
-			// lireLesDonnéesDunPersonnelToolStripMenuItem
+			// lireLesDonnï¿½esDunPersonnelToolStripMenuItem
 			// 
-			this->lireLesDonnéesDunPersonnelToolStripMenuItem->Name = L"lireLesDonnéesDunPersonnelToolStripMenuItem";
-			this->lireLesDonnéesDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
-			this->lireLesDonnéesDunPersonnelToolStripMenuItem->Text = L"Lire les données d\'un personnel";
+			this->lireLesDonnï¿½esDunPersonnelToolStripMenuItem->Name = L"lireLesDonnï¿½esDunPersonnelToolStripMenuItem";
+			this->lireLesDonnï¿½esDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
+			this->lireLesDonnï¿½esDunPersonnelToolStripMenuItem->Text = L"Lire les donnï¿½es d\'un personnel";
 			// 
 			// supprimerUnPersonnelToolStripMenuItem
 			// 
@@ -222,7 +223,7 @@ namespace appliprojet {
 			// 
 			this->commandesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->passerUneCommandeToolStripMenuItem,
-					this->mettreÀJourUneCommandeToolStripMenuItem, this->visualiserUneCommandeToolStripMenuItem, this->supprimerUneCommandeToolStripMenuItem
+					this->mettreï¿½JourUneCommandeToolStripMenuItem, this->visualiserUneCommandeToolStripMenuItem, this->supprimerUneCommandeToolStripMenuItem
 			});
 			this->commandesToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -236,11 +237,11 @@ namespace appliprojet {
 			this->passerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(349, 30);
 			this->passerUneCommandeToolStripMenuItem->Text = L"Passer une commande";
 			// 
-			// mettreÀJourUneCommandeToolStripMenuItem
+			// mettreï¿½JourUneCommandeToolStripMenuItem
 			// 
-			this->mettreÀJourUneCommandeToolStripMenuItem->Name = L"mettreÀJourUneCommandeToolStripMenuItem";
-			this->mettreÀJourUneCommandeToolStripMenuItem->Size = System::Drawing::Size(349, 30);
-			this->mettreÀJourUneCommandeToolStripMenuItem->Text = L"Mettre à jour une commande";
+			this->mettreï¿½JourUneCommandeToolStripMenuItem->Name = L"mettreï¿½JourUneCommandeToolStripMenuItem";
+			this->mettreï¿½JourUneCommandeToolStripMenuItem->Size = System::Drawing::Size(349, 30);
+			this->mettreï¿½JourUneCommandeToolStripMenuItem->Text = L"Mettre ï¿½ jour une commande";
 			// 
 			// visualiserUneCommandeToolStripMenuItem
 			// 
@@ -258,7 +259,7 @@ namespace appliprojet {
 			// 
 			this->stockToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->ajouterUnArticleToolStripMenuItem,
-					this->mettreÀJourUnArticleToolStripMenuItem, this->visualiserLesDonnéesDunArticleToolStripMenuItem, this->supprimerUnArticleToolStripMenuItem
+					this->mettreï¿½JourUnArticleToolStripMenuItem, this->visualiserLesDonnï¿½esDunArticleToolStripMenuItem, this->supprimerUnArticleToolStripMenuItem
 			});
 			this->stockToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -272,17 +273,17 @@ namespace appliprojet {
 			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
 			this->ajouterUnArticleToolStripMenuItem->Text = L"Ajouter un article";
 			// 
-			// mettreÀJourUnArticleToolStripMenuItem
+			// mettreï¿½JourUnArticleToolStripMenuItem
 			// 
-			this->mettreÀJourUnArticleToolStripMenuItem->Name = L"mettreÀJourUnArticleToolStripMenuItem";
-			this->mettreÀJourUnArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
-			this->mettreÀJourUnArticleToolStripMenuItem->Text = L"Mettre à jour un article";
+			this->mettreï¿½JourUnArticleToolStripMenuItem->Name = L"mettreï¿½JourUnArticleToolStripMenuItem";
+			this->mettreï¿½JourUnArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
+			this->mettreï¿½JourUnArticleToolStripMenuItem->Text = L"Mettre ï¿½ jour un article";
 			// 
-			// visualiserLesDonnéesDunArticleToolStripMenuItem
+			// visualiserLesDonnï¿½esDunArticleToolStripMenuItem
 			// 
-			this->visualiserLesDonnéesDunArticleToolStripMenuItem->Name = L"visualiserLesDonnéesDunArticleToolStripMenuItem";
-			this->visualiserLesDonnéesDunArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
-			this->visualiserLesDonnéesDunArticleToolStripMenuItem->Text = L"Visualiser les données d\'un article";
+			this->visualiserLesDonnï¿½esDunArticleToolStripMenuItem->Name = L"visualiserLesDonnï¿½esDunArticleToolStripMenuItem";
+			this->visualiserLesDonnï¿½esDunArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
+			this->visualiserLesDonnï¿½esDunArticleToolStripMenuItem->Text = L"Visualiser les donnï¿½es d\'un article";
 			// 
 			// supprimerUnArticleToolStripMenuItem
 			// 
