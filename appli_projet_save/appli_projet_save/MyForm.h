@@ -66,7 +66,27 @@ namespace appliprojet {
 	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnArticleToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ statistiquesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ accueilToolStripMenuItem;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::GroupBox^ boxCRclient;
+	private: System::Windows::Forms::Label^ createclientadrlivL;
+
+	private: System::Windows::Forms::Label^ createclientadrfacL;
+
+	private: System::Windows::Forms::Label^ createclientbirthL;
+
+	private: System::Windows::Forms::Label^ createclientnomL;
+	private: System::Windows::Forms::Label^ createclientprenomL;
+
+
+	private: System::Windows::Forms::RichTextBox^ richTextBox2;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ informationadresse;
+	private: System::Windows::Forms::Button^ savecreateclientB;
+	private: System::Windows::Forms::DataGridView^ dataview;
+
+
 
 
 
@@ -122,8 +142,23 @@ namespace appliprojet {
 			this->visualiserLesDonneesDunArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->supprimerUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statistiquesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->boxCRclient = (gcnew System::Windows::Forms::GroupBox());
+			this->savecreateclientB = (gcnew System::Windows::Forms::Button());
+			this->informationadresse = (gcnew System::Windows::Forms::Label());
+			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->createclientadrlivL = (gcnew System::Windows::Forms::Label());
+			this->createclientadrfacL = (gcnew System::Windows::Forms::Label());
+			this->createclientbirthL = (gcnew System::Windows::Forms::Label());
+			this->createclientnomL = (gcnew System::Windows::Forms::Label());
+			this->createclientprenomL = (gcnew System::Windows::Forms::Label());
+			this->dataview = (gcnew System::Windows::Forms::DataGridView());
 			this->menuStrip1->SuspendLayout();
+			this->boxCRclient->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataview))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -137,7 +172,8 @@ namespace appliprojet {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1195, 33);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(896, 28);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -146,7 +182,7 @@ namespace appliprojet {
 			this->accueilToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->accueilToolStripMenuItem->Name = L"accueilToolStripMenuItem";
-			this->accueilToolStripMenuItem->Size = System::Drawing::Size(88, 29);
+			this->accueilToolStripMenuItem->Size = System::Drawing::Size(70, 24);
 			this->accueilToolStripMenuItem->Text = L"Accueil";
 			this->accueilToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::accueilToolStripMenuItem_Click_1);
 			// 
@@ -160,26 +196,27 @@ namespace appliprojet {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->clientsToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->clientsToolStripMenuItem->Name = L"clientsToolStripMenuItem";
-			this->clientsToolStripMenuItem->Size = System::Drawing::Size(84, 29);
+			this->clientsToolStripMenuItem->Size = System::Drawing::Size(66, 24);
 			this->clientsToolStripMenuItem->Text = L"Clients";
 			// 
 			// createToolStripMenuItem
 			// 
 			this->createToolStripMenuItem->BackColor = System::Drawing::SystemColors::Control;
 			this->createToolStripMenuItem->Name = L"createToolStripMenuItem";
-			this->createToolStripMenuItem->Size = System::Drawing::Size(368, 30);
+			this->createToolStripMenuItem->Size = System::Drawing::Size(293, 24);
 			this->createToolStripMenuItem->Text = L"Ajouter un client";
+			this->createToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::createToolStripMenuItem_Click);
 			// 
 			// actualiserUnClientToolStripMenuItem
 			// 
 			this->actualiserUnClientToolStripMenuItem->Name = L"actualiserUnClientToolStripMenuItem";
-			this->actualiserUnClientToolStripMenuItem->Size = System::Drawing::Size(368, 30);
+			this->actualiserUnClientToolStripMenuItem->Size = System::Drawing::Size(293, 24);
 			this->actualiserUnClientToolStripMenuItem->Text = L"Mettre a jour les donnees client";
 			// 
 			// lireLesDonneesClientToolStripMenuItem
 			// 
 			this->lireLesDonneesClientToolStripMenuItem->Name = L"lireLesDonneesClientToolStripMenuItem";
-			this->lireLesDonneesClientToolStripMenuItem->Size = System::Drawing::Size(368, 30);
+			this->lireLesDonneesClientToolStripMenuItem->Size = System::Drawing::Size(293, 24);
 			this->lireLesDonneesClientToolStripMenuItem->Text = L"Lire les donnees client";
 			// 
 			// personnelToolStripMenuItem
@@ -191,31 +228,31 @@ namespace appliprojet {
 			this->personnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->personnelToolStripMenuItem->Name = L"personnelToolStripMenuItem";
-			this->personnelToolStripMenuItem->Size = System::Drawing::Size(109, 29);
+			this->personnelToolStripMenuItem->Size = System::Drawing::Size(88, 24);
 			this->personnelToolStripMenuItem->Text = L"Personnel";
 			// 
 			// ajouterUnPersonnelToolStripMenuItem
 			// 
 			this->ajouterUnPersonnelToolStripMenuItem->Name = L"ajouterUnPersonnelToolStripMenuItem";
-			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
+			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(359, 24);
 			this->ajouterUnPersonnelToolStripMenuItem->Text = L"Ajouter un personnel";
 			// 
 			// mettreaJourLesDonneesDunPersonnelToolStripMenuItem
 			// 
 			this->mettreaJourLesDonneesDunPersonnelToolStripMenuItem->Name = L"mettreaJourLesDonneesDunPersonnelToolStripMenuItem";
-			this->mettreaJourLesDonneesDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
+			this->mettreaJourLesDonneesDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(359, 24);
 			this->mettreaJourLesDonneesDunPersonnelToolStripMenuItem->Text = L"Mettre a jour les donnees d\'un personnel";
 			// 
 			// lireLesDonneesDunPersonnelToolStripMenuItem
 			// 
 			this->lireLesDonneesDunPersonnelToolStripMenuItem->Name = L"lireLesDonneesDunPersonnelToolStripMenuItem";
-			this->lireLesDonneesDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
+			this->lireLesDonneesDunPersonnelToolStripMenuItem->Size = System::Drawing::Size(359, 24);
 			this->lireLesDonneesDunPersonnelToolStripMenuItem->Text = L"Lire les donnees d\'un personnel";
 			// 
 			// supprimerUnPersonnelToolStripMenuItem
 			// 
 			this->supprimerUnPersonnelToolStripMenuItem->Name = L"supprimerUnPersonnelToolStripMenuItem";
-			this->supprimerUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(448, 30);
+			this->supprimerUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(359, 24);
 			this->supprimerUnPersonnelToolStripMenuItem->Text = L"Supprimer un personnel";
 			// 
 			// commandesToolStripMenuItem
@@ -227,31 +264,31 @@ namespace appliprojet {
 			this->commandesToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->commandesToolStripMenuItem->Name = L"commandesToolStripMenuItem";
-			this->commandesToolStripMenuItem->Size = System::Drawing::Size(133, 29);
+			this->commandesToolStripMenuItem->Size = System::Drawing::Size(105, 24);
 			this->commandesToolStripMenuItem->Text = L"Commandes";
 			// 
 			// passerUneCommandeToolStripMenuItem
 			// 
 			this->passerUneCommandeToolStripMenuItem->Name = L"passerUneCommandeToolStripMenuItem";
-			this->passerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(349, 30);
+			this->passerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(278, 24);
 			this->passerUneCommandeToolStripMenuItem->Text = L"Passer une commande";
 			// 
 			// mettreaJourUneCommandeToolStripMenuItem
 			// 
 			this->mettreaJourUneCommandeToolStripMenuItem->Name = L"mettreaJourUneCommandeToolStripMenuItem";
-			this->mettreaJourUneCommandeToolStripMenuItem->Size = System::Drawing::Size(349, 30);
+			this->mettreaJourUneCommandeToolStripMenuItem->Size = System::Drawing::Size(278, 24);
 			this->mettreaJourUneCommandeToolStripMenuItem->Text = L"Mettre a jour une commande";
 			// 
 			// visualiserUneCommandeToolStripMenuItem
 			// 
 			this->visualiserUneCommandeToolStripMenuItem->Name = L"visualiserUneCommandeToolStripMenuItem";
-			this->visualiserUneCommandeToolStripMenuItem->Size = System::Drawing::Size(349, 30);
+			this->visualiserUneCommandeToolStripMenuItem->Size = System::Drawing::Size(278, 24);
 			this->visualiserUneCommandeToolStripMenuItem->Text = L"Visualiser une commande";
 			// 
 			// supprimerUneCommandeToolStripMenuItem
 			// 
 			this->supprimerUneCommandeToolStripMenuItem->Name = L"supprimerUneCommandeToolStripMenuItem";
-			this->supprimerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(349, 30);
+			this->supprimerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(278, 24);
 			this->supprimerUneCommandeToolStripMenuItem->Text = L"Supprimer une commande";
 			// 
 			// stockToolStripMenuItem
@@ -263,31 +300,31 @@ namespace appliprojet {
 			this->stockToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->stockToolStripMenuItem->Name = L"stockToolStripMenuItem";
-			this->stockToolStripMenuItem->Size = System::Drawing::Size(72, 29);
+			this->stockToolStripMenuItem->Size = System::Drawing::Size(58, 24);
 			this->stockToolStripMenuItem->Text = L"Stock";
 			// 
 			// ajouterUnArticleToolStripMenuItem
 			// 
 			this->ajouterUnArticleToolStripMenuItem->Name = L"ajouterUnArticleToolStripMenuItem";
-			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
+			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(308, 24);
 			this->ajouterUnArticleToolStripMenuItem->Text = L"Ajouter un article";
 			// 
 			// mettreaJourUnArticleToolStripMenuItem
 			// 
 			this->mettreaJourUnArticleToolStripMenuItem->Name = L"mettreaJourUnArticleToolStripMenuItem";
-			this->mettreaJourUnArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
+			this->mettreaJourUnArticleToolStripMenuItem->Size = System::Drawing::Size(308, 24);
 			this->mettreaJourUnArticleToolStripMenuItem->Text = L"Mettre a jour un article";
 			// 
 			// visualiserLesDonneesDunArticleToolStripMenuItem
 			// 
 			this->visualiserLesDonneesDunArticleToolStripMenuItem->Name = L"visualiserLesDonneesDunArticleToolStripMenuItem";
-			this->visualiserLesDonneesDunArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
+			this->visualiserLesDonneesDunArticleToolStripMenuItem->Size = System::Drawing::Size(308, 24);
 			this->visualiserLesDonneesDunArticleToolStripMenuItem->Text = L"Visualiser les donnees d\'un article";
 			// 
 			// supprimerUnArticleToolStripMenuItem
 			// 
 			this->supprimerUnArticleToolStripMenuItem->Name = L"supprimerUnArticleToolStripMenuItem";
-			this->supprimerUnArticleToolStripMenuItem->Size = System::Drawing::Size(386, 30);
+			this->supprimerUnArticleToolStripMenuItem->Size = System::Drawing::Size(308, 24);
 			this->supprimerUnArticleToolStripMenuItem->Text = L"Supprimer un article";
 			// 
 			// statistiquesToolStripMenuItem
@@ -295,30 +332,160 @@ namespace appliprojet {
 			this->statistiquesToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->statistiquesToolStripMenuItem->Name = L"statistiquesToolStripMenuItem";
-			this->statistiquesToolStripMenuItem->Size = System::Drawing::Size(124, 29);
+			this->statistiquesToolStripMenuItem->Size = System::Drawing::Size(98, 24);
 			this->statistiquesToolStripMenuItem->Text = L"Statistiques";
 			// 
-			// label1
+			// boxCRclient
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(626, 228);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(46, 17);
-			this->label1->TabIndex = 6;
-			this->label1->Text = L"label1";
+			this->boxCRclient->Controls->Add(this->savecreateclientB);
+			this->boxCRclient->Controls->Add(this->informationadresse);
+			this->boxCRclient->Controls->Add(this->richTextBox2);
+			this->boxCRclient->Controls->Add(this->richTextBox1);
+			this->boxCRclient->Controls->Add(this->textBox4);
+			this->boxCRclient->Controls->Add(this->textBox2);
+			this->boxCRclient->Controls->Add(this->textBox1);
+			this->boxCRclient->Controls->Add(this->createclientadrlivL);
+			this->boxCRclient->Controls->Add(this->createclientadrfacL);
+			this->boxCRclient->Controls->Add(this->createclientbirthL);
+			this->boxCRclient->Controls->Add(this->createclientnomL);
+			this->boxCRclient->Controls->Add(this->createclientprenomL);
+			this->boxCRclient->Location = System::Drawing::Point(0, 29);
+			this->boxCRclient->Margin = System::Windows::Forms::Padding(2);
+			this->boxCRclient->Name = L"boxCRclient";
+			this->boxCRclient->Padding = System::Windows::Forms::Padding(2);
+			this->boxCRclient->Size = System::Drawing::Size(437, 401);
+			this->boxCRclient->TabIndex = 6;
+			this->boxCRclient->TabStop = false;
+			// 
+			// savecreateclientB
+			// 
+			this->savecreateclientB->Location = System::Drawing::Point(145, 373);
+			this->savecreateclientB->Name = L"savecreateclientB";
+			this->savecreateclientB->Size = System::Drawing::Size(75, 23);
+			this->savecreateclientB->TabIndex = 12;
+			this->savecreateclientB->Text = L"Enregistrer";
+			this->savecreateclientB->UseVisualStyleBackColor = true;
+			// 
+			// informationadresse
+			// 
+			this->informationadresse->AutoSize = true;
+			this->informationadresse->ForeColor = System::Drawing::Color::DimGray;
+			this->informationadresse->Location = System::Drawing::Point(11, 143);
+			this->informationadresse->Name = L"informationadresse";
+			this->informationadresse->Size = System::Drawing::Size(344, 13);
+			this->informationadresse->TabIndex = 11;
+			this->informationadresse->Text = L"Indiquer une adresse par ligne sous le format (Adresse,Ville,code postal)";
+			// 
+			// richTextBox2
+			// 
+			this->richTextBox2->Location = System::Drawing::Point(187, 268);
+			this->richTextBox2->Name = L"richTextBox2";
+			this->richTextBox2->Size = System::Drawing::Size(224, 91);
+			this->richTextBox2->TabIndex = 10;
+			this->richTextBox2->Text = L"";
+			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(187, 171);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(224, 91);
+			this->richTextBox1->TabIndex = 9;
+			this->richTextBox1->Text = L"";
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(187, 62);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(224, 20);
+			this->textBox4->TabIndex = 8;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(187, 102);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(224, 20);
+			this->textBox2->TabIndex = 6;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(187, 22);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(224, 20);
+			this->textBox1->TabIndex = 5;
+			// 
+			// createclientadrlivL
+			// 
+			this->createclientadrlivL->AutoSize = true;
+			this->createclientadrlivL->Location = System::Drawing::Point(11, 284);
+			this->createclientadrlivL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->createclientadrlivL->Name = L"createclientadrlivL";
+			this->createclientadrlivL->Size = System::Drawing::Size(106, 13);
+			this->createclientadrlivL->TabIndex = 4;
+			this->createclientadrlivL->Text = L"Adresses de livraison";
+			// 
+			// createclientadrfacL
+			// 
+			this->createclientadrfacL->AutoSize = true;
+			this->createclientadrfacL->Location = System::Drawing::Point(11, 174);
+			this->createclientadrfacL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->createclientadrfacL->Name = L"createclientadrfacL";
+			this->createclientadrfacL->Size = System::Drawing::Size(118, 13);
+			this->createclientadrfacL->TabIndex = 3;
+			this->createclientadrfacL->Text = L"Adresses de facturation";
+			// 
+			// createclientbirthL
+			// 
+			this->createclientbirthL->AutoSize = true;
+			this->createclientbirthL->Location = System::Drawing::Point(11, 105);
+			this->createclientbirthL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->createclientbirthL->Name = L"createclientbirthL";
+			this->createclientbirthL->Size = System::Drawing::Size(171, 13);
+			this->createclientbirthL->TabIndex = 2;
+			this->createclientbirthL->Text = L"Date de naissance (AAAA/MM/JJ)";
+			// 
+			// createclientnomL
+			// 
+			this->createclientnomL->AutoSize = true;
+			this->createclientnomL->Location = System::Drawing::Point(11, 65);
+			this->createclientnomL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->createclientnomL->Name = L"createclientnomL";
+			this->createclientnomL->Size = System::Drawing::Size(72, 13);
+			this->createclientnomL->TabIndex = 1;
+			this->createclientnomL->Text = L"Nom du client";
+			// 
+			// createclientprenomL
+			// 
+			this->createclientprenomL->AutoSize = true;
+			this->createclientprenomL->Location = System::Drawing::Point(11, 25);
+			this->createclientprenomL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->createclientprenomL->Name = L"createclientprenomL";
+			this->createclientprenomL->Size = System::Drawing::Size(86, 13);
+			this->createclientprenomL->TabIndex = 0;
+			this->createclientprenomL->Text = L"Prenom du client";
+			// 
+			// dataview
+			// 
+			this->dataview->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataview->Location = System::Drawing::Point(482, 48);
+			this->dataview->Name = L"dataview";
+			this->dataview->Size = System::Drawing::Size(398, 369);
+			this->dataview->TabIndex = 6;
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1195, 499);
-			this->Controls->Add(this->label1);
+			this->ClientSize = System::Drawing::Size(896, 431);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm";
 			this->Text = L"Rangetesclients.net";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			this->boxCRclient->ResumeLayout(false);
+			this->boxCRclient->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataview))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -383,6 +550,14 @@ namespace appliprojet {
 		}*/
 
 private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->Controls->Clear();
+	this->Controls->Add(this->menuStrip1);
+}
+private: System::Void createToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Controls->Clear();
+	this->Controls->Add(this->menuStrip1);
+	this->Controls->Add(this->boxCRclient);
+	this->Controls->Add(this->dataview);
 
 }
 };
