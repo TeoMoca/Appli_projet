@@ -2,24 +2,24 @@
 #include "pch.h"
 using namespace System;
 
-class CLpaiement
+ref class CLpaiement
 {
 
-	std::string datePay;
+	String^ datePay;
 	float montant;
-	std::string typePay;
+	String^ typePay;
 
 public: 
 
-	CLpaiement(std::string, float, std::string);
+	CLpaiement(String^, float, String^);
 
-	std::string getdatePay();
+	String^ getdatePay();
 	float getmontant();
-	std::string gettypePay();
+	String^ gettypePay();
 
-	void setdatePay(std::string);
+	void setdatePay(String^);
 	void setmontant(float);
-	void settypePay(std::string);
+	void settypePay(String^);
 
 };
 
