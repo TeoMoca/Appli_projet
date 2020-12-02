@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include "pch.h"
+ref class stratClient;
 
 namespace appliprojet {
 
@@ -24,7 +26,7 @@ namespace appliprojet {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-
+		
 
 	protected:
 		/// <summary>
@@ -212,6 +214,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 	protected:
 
 	private:
+		stratClient^ obj = gcnew stratClient;
 		/// <summary>
 		/// Variable n�cessaire au concepteur.
 		/// </summary>
@@ -580,6 +583,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->savecreateclientB->TabIndex = 12;
 			this->savecreateclientB->Text = L"Enregistrer";
 			this->savecreateclientB->UseVisualStyleBackColor = true;
+			this->savecreateclientB->Click += gcnew System::EventHandler(this, &MyForm::savecreateclientB_Click);
 			// 
 			// informationadresse
 			// 
@@ -711,6 +715,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Enregistrer";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// label4
 			// 
@@ -819,28 +824,28 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// label22
 			// 
 			this->label22->AutoSize = true;
-			this->label22->Location = System::Drawing::Point(41, 115);
+			this->label22->Location = System::Drawing::Point(41, 112);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(41, 13);
+			this->label22->Size = System::Drawing::Size(93, 13);
 			this->label22->TabIndex = 2;
-			this->label22->Text = L"label22";
+			this->label22->Text = L"Nom du personnel";
 			// 
 			// label21
 			// 
 			this->label21->AutoSize = true;
 			this->label21->Location = System::Drawing::Point(41, 63);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(41, 13);
+			this->label21->Size = System::Drawing::Size(107, 13);
 			this->label21->TabIndex = 1;
-			this->label21->Text = L"label21";
+			this->label21->Text = L"Prenom du personnel";
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(147, 239);
+			this->button7->Location = System::Drawing::Point(176, 230);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(75, 23);
 			this->button7->TabIndex = 0;
-			this->button7->Text = L"button7";
+			this->button7->Text = L"Rechercher";
 			this->button7->UseVisualStyleBackColor = true;
 			// 
 			// BoxDEcommande
@@ -1040,7 +1045,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 4;
-			this->button3->Text = L"button3";
+			this->button3->Text = L"Rechercher";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// label9
@@ -1048,18 +1053,18 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->label9->AutoSize = true;
 			this->label9->Location = System::Drawing::Point(35, 117);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(35, 13);
+			this->label9->Size = System::Drawing::Size(93, 13);
 			this->label9->TabIndex = 3;
-			this->label9->Text = L"label9";
+			this->label9->Text = L"Nom du personnel";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
 			this->label8->Location = System::Drawing::Point(35, 66);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(35, 13);
+			this->label8->Size = System::Drawing::Size(107, 13);
 			this->label8->TabIndex = 2;
-			this->label8->Text = L"label8";
+			this->label8->Text = L"Prenom du personnel";
 			// 
 			// textBox12
 			// 
@@ -1088,7 +1093,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// 
 			// textBox15
 			// 
-			this->textBox15->Location = System::Drawing::Point(194, 107);
+			this->textBox15->Location = System::Drawing::Point(193, 107);
 			this->textBox15->Name = L"textBox15";
 			this->textBox15->Size = System::Drawing::Size(100, 20);
 			this->textBox15->TabIndex = 2;
@@ -1096,19 +1101,19 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(110, 112);
+			this->label12->Location = System::Drawing::Point(53, 110);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(41, 13);
+			this->label12->Size = System::Drawing::Size(107, 13);
 			this->label12->TabIndex = 1;
-			this->label12->Text = L"label12";
+			this->label12->Text = L"Reference de l\'article";
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(194, 218);
+			this->button5->Location = System::Drawing::Point(193, 210);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 23);
 			this->button5->TabIndex = 0;
-			this->button5->Text = L"button5";
+			this->button5->Text = L"Rechercher";
 			this->button5->UseVisualStyleBackColor = true;
 			// 
 			// BoxREclient
@@ -1128,11 +1133,11 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(140, 257);
+			this->button2->Location = System::Drawing::Point(182, 239);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 6;
-			this->button2->Text = L"button2";
+			this->button2->Text = L"Rechercher";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// label7
@@ -1140,31 +1145,31 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->label7->AutoSize = true;
 			this->label7->Location = System::Drawing::Point(47, 142);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(35, 13);
+			this->label7->Size = System::Drawing::Size(96, 13);
 			this->label7->TabIndex = 5;
-			this->label7->Text = L"label7";
+			this->label7->Text = L"Date de naissance";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
 			this->label6->Location = System::Drawing::Point(47, 97);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(35, 13);
+			this->label6->Size = System::Drawing::Size(72, 13);
 			this->label6->TabIndex = 4;
-			this->label6->Text = L"label6";
+			this->label6->Text = L"Nom du client";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(47, 57);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(35, 13);
+			this->label5->Size = System::Drawing::Size(86, 13);
 			this->label5->TabIndex = 3;
-			this->label5->Text = L"label5";
+			this->label5->Text = L"Prenom du client";
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(182, 135);
+			this->textBox10->Location = System::Drawing::Point(182, 139);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(100, 20);
 			this->textBox10->TabIndex = 2;
@@ -1216,9 +1221,9 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->label11->AutoSize = true;
 			this->label11->Location = System::Drawing::Point(41, 120);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(41, 13);
+			this->label11->Size = System::Drawing::Size(72, 13);
 			this->label11->TabIndex = 3;
-			this->label11->Text = L"label11";
+			this->label11->Text = L"Nom du client";
 			// 
 			// button4
 			// 
@@ -1226,7 +1231,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 2;
-			this->button4->Text = L"button4";
+			this->button4->Text = L"Rechercher";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// textBox13
@@ -1241,9 +1246,9 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->label10->AutoSize = true;
 			this->label10->Location = System::Drawing::Point(41, 70);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(41, 13);
+			this->label10->Size = System::Drawing::Size(86, 13);
 			this->label10->TabIndex = 0;
-			this->label10->Text = L"label10";
+			this->label10->Text = L"Prenom du client";
 			// 
 			// BoxUPcommande
 			// 
@@ -1436,7 +1441,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->ClientSize = System::Drawing::Size(896, 431);
 			this->Controls->Add(this->selectedonglet);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->BoxCRstock);
+			//this->Controls->Add(this->boxCRpersonnel);
 			this->Location = System::Drawing::Point(12, 42);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -1531,20 +1536,66 @@ private: System::Windows::Forms::TextBox^ textBox31;
 
 private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource= nullptr;
 	this->selectedonglet->Text = "Accueil";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 }
 private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	this->Controls->Add(this->boxCRclient);
 	this->Controls->Add(this->dataview);
 }
+private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
+	array<String^>^ contenufact = this->richTextBox1->Lines;
+	int nFact = 0;
+	int iFACT = 0;
+	for each (String ^ LIGNE in contenufact) {
+		nFact++;
+	}
+	array<array<String^>^>^ tableauFact = gcnew array<array<String^>^>(nFact);
+	for each (String ^ LIGNE in contenufact) {
+		String^ separator = ",";
+		array<String^>^ TableauAdresse = LIGNE->Split(separator->ToCharArray());
+		tableauFact[iFACT] = TableauAdresse;
+		iFACT++;
+
+	};
+	array<String^>^ contenulivr = this->richTextBox2->Lines;
+	int nlivr = 0;
+	int ilivr = 0;
+	for each (String ^ LIGNE in contenulivr) {
+		nlivr++;
+	}
+	array<array<String^>^>^ tableaulivr = gcnew array<array<String^>^>(nlivr);
+	for each (String ^ LIGNE in contenulivr) {
+		String^ separator = ",";
+		array<String^>^ TableauAdresse = LIGNE->Split(separator->ToCharArray());
+		tableaulivr[ilivr] = TableauAdresse;
+		ilivr++;
+
+	};
+	obj->create(tableauFact, tableaulivr, textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "select * from projetdb.articles;";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+	BindingSource^ source1 = gcnew BindingSource();
+	source1->DataSource = DT;
+	dataview->DataSource = source1;
+	myAdapter->Update(DT);
+}
 private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->dataviewUPclient);
@@ -1555,6 +1606,7 @@ private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ 
 private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1563,14 +1615,19 @@ private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object
 }
 private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	this->Controls->Add(this->boxCRpersonnel);
 	this->Controls->Add(this->dataview);
 }
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	//stratpersonnel::Create()
+}
 private: System::Void mettreaJourLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1579,6 +1636,7 @@ private: System::Void mettreaJourLesDonneesDunPersonnelToolStripMenuItem_Click(S
 }
 private: System::Void lireLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1587,6 +1645,7 @@ private: System::Void lireLesDonneesDunPersonnelToolStripMenuItem_Click(System::
 }
 private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1595,6 +1654,7 @@ private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object
 }
 private: System::Void passerUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Passer une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1603,6 +1663,7 @@ private: System::Void passerUneCommandeToolStripMenuItem_Click(System::Object^ s
 }
 private: System::Void mettreaJourUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1611,6 +1672,7 @@ private: System::Void mettreaJourUneCommandeToolStripMenuItem_Click(System::Obje
 }
 private: System::Void visualiserUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1619,6 +1681,7 @@ private: System::Void visualiserUneCommandeToolStripMenuItem_Click(System::Objec
 }
 private: System::Void supprimerUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1627,6 +1690,7 @@ private: System::Void supprimerUneCommandeToolStripMenuItem_Click(System::Object
 }
 private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1635,6 +1699,7 @@ private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ se
 }
 private: System::Void mettreaJourUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1643,6 +1708,7 @@ private: System::Void mettreaJourUnArticleToolStripMenuItem_Click(System::Object
 }
 private: System::Void visualiserLesDonneesDunArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1651,6 +1717,7 @@ private: System::Void visualiserLesDonneesDunArticleToolStripMenuItem_Click(Syst
 }
 private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1659,6 +1726,7 @@ private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ 
 }
 private: System::Void statistiquesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->dataview->DataSource = nullptr;
 	this->selectedonglet->Text = "Visualisation des statistiques";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);

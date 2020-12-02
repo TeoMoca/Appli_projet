@@ -1,9 +1,12 @@
+#pragma once
 #include "pch.h"
 
 using namespace appliprojet;
 
+
+
 void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<String^>^>^ adresse_liv,String^ nom, String^ prenom, String^ birthdate) {
-	CLclient obj;
+	CLclient^ obj= gcnew CLclient;
 	//transformation des adresses en tableau d'adresses du bon format
 	// adresse de facturation
 	int nAF = 0;
@@ -33,34 +36,36 @@ void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<Strin
 	}
 	//
 	conDataBase->Open();
-	obj.setnom(nom);
-	obj.setprenom(prenom);
-	obj.setadresseFact(nouvellesAdressesFact);
-	obj.setadresseLivr(nouvellesAdressesLivr);
-	obj.setbirthdate(birthdate);
+	obj->setnom(nom);
+	obj->setprenom(prenom);
+	obj->setadresseFact(nouvellesAdressesFact);
+	obj->setadresseLivr(nouvellesAdressesLivr);
+	obj->setbirthdate(birthdate);
 	cmdclient = "insert into projetpoo.CLIENT(NOM,PRENOM,BIRTHDATE) values ("+nom+","+prenom+","+birthdate+");";
 	myReader->Fill(DS);
 	cmdid = "select id from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
 	MySqlDataReader^ myreader = command->ExecuteReader();
 	myreader->Read();
 	int^ idclient = myreader->GetInt32(0);
-
-	for each (array<String^> ^ adresse_f in adresse_fact) {
-		cmdclient = "insert into ADRESSES(ADRESSE) values('"+adresse_f[0]+"','" + adresse_f[1] + "','" + adresse_f[2] + "','" + adresse_f[3] + "');";
-		cmdid = "select id from projetpoo.ADRESSES where ADRESSE='" + adresse_f[0] + "','" + adresse_f[1] + "','" + adresse_f[2] + "','" + adresse_f[3] + "');";
+	int i = 0;
+	for each (CLadresse^ adresse_f in obj->getadresseFact()) {
+		cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('"+ obj->getadresseFact()[i]->getnumeroRue()+"','" + obj->getadresseFact()[i]->getville() + "','" + obj->getadresseFact()[i]->getcodePostal() + "');";
+		cmdid = "select id from projetpoo.ADRESSES where NUM_ET_RUE= '" + obj->getadresseFact()[i]->getnumeroRue() + "' and VILLE = '" + obj->getadresseFact()[i]->getville() + "' and CP='" + obj->getadresseFact()[i]->getcodePostal() + "';";
 		MySqlDataReader^ myreader = command->ExecuteReader();
 		myreader->Read();
 		int^ idadresse = myreader->GetInt32(0);
 		cmdclient = "insert into A_PAYE_A(numClient,idadr) values (" + idclient + "," + idadresse + ");";
-
+		i++;
 	}
-	for each (array<String^> ^ adresse_l in adresse_liv) {
-		cmdclient = "insert into ADRESSES(ADRESSE) values('" + adresse_l[0] + "','" + adresse_l[1] + "','" + adresse_l[2] + "','" + adresse_l[3] + "',);";
-		cmdid = "select id from projetpoo.ADRESSES where ADRESSE='" + adresse_l[0] + "','" + adresse_l[1] + "','" + adresse_l[2] + "','" + adresse_l[3] + "');";
+	i = 0;
+	for each (CLadresse^ adresse_l in obj->getadresseLivr()) {
+		cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('" + obj->getadresseLivr()[i]->getnumeroRue() + "','" + obj->getadresseLivr()[i]->getville() + "','" + obj->getadresseLivr()[i]->getcodePostal() + "');";
+		cmdid = "select id from projetpoo.ADRESSES where NUM_ET_RUE= '" + obj->getadresseLivr()[i]->getnumeroRue() + "' and VILLE = '" + obj->getadresseLivr()[i]->getville() + "' and CP='" + obj->getadresseLivr()[i]->getcodePostal() + "';";
 		MySqlDataReader^ myreader = command->ExecuteReader();
 		myreader->Read();
 		int^ idadresse = myreader->GetInt32(0);
-		cmdclient = "insert into ESL_LIVRE_A(numClient,idadr) values (" + idclient + "," + idadresse + ");";
+		cmdclient = "insert into EST_LIVRE_A(numClient,idadr) values (" + idclient + "," + idadresse + ");";
+		i++;
 	}
 };
 void stratClient::read(String^ nom, String^ prenom, String^ birthdate) {
@@ -71,7 +76,7 @@ void stratClient::read(String^ nom, String^ prenom, String^ birthdate) {
 void stratClient::update() {
 	cmdclient = "";
 };
-/*void stratClient::suppr(String^ nom, String^ prenom, String^ birthdate) {
+void stratClient::suppr(String^ nom, String^ prenom, String^ birthdate) {
 	CLclient suppr;
 	cmdid = "select id from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
 	MySqlDataReader^ myreader = command->ExecuteReader();
@@ -80,4 +85,4 @@ void stratClient::update() {
 	array<int^>^ adrs;
 	cmdclient = "delete from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
 
-};*/
+};

@@ -1,6 +1,6 @@
 #include "pch.h"
 
-void stratStock::create(int^ refe, String^ desi, int^ quant, int^ seuil, float^ prix, float^ tva) {
+void stratStock::create( String^ desi, int^ quant, int^ seuil, float^ prix, float^ tva) {
 	conDataBase->Open();
 	cmdstock = "insert into projetpoo.ARTICLE()";
 };
