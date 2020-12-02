@@ -148,6 +148,7 @@ namespace appliprojet {
 			this->accueilToolStripMenuItem->Name = L"accueilToolStripMenuItem";
 			this->accueilToolStripMenuItem->Size = System::Drawing::Size(88, 29);
 			this->accueilToolStripMenuItem->Text = L"Accueil";
+			this->accueilToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::accueilToolStripMenuItem_Click_1);
 			// 
 			// clientsToolStripMenuItem
 			// 
@@ -381,9 +382,8 @@ namespace appliprojet {
 			myAdapter->Update(DD);
 		}*/
 
-	/*private: System::Void accueilToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ test = "coucou";
-		label1->Text = test;
-	}*/
+private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
+
+}
 };
 }
