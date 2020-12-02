@@ -14,9 +14,8 @@ void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<Strin
 	array<CLadresse^>^ nouvellesAdressesFact = gcnew array<CLadresse^>(nAF);
 	for each (array<String^> ^ nouvelleadresse in adresse_fact) {
 		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[0]);
-		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[1]);
-		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[2]);
-		nouvellesAdressesFact[iAF]->setnumeroRue(nouvelleadresse[3]);
+		nouvellesAdressesFact[iAF]->setville(nouvelleadresse[1]);
+		nouvellesAdressesFact[iAF]->setcodePostal(nouvelleadresse[2]);
 		iAF++;
 	}
 	//adresse de livraison
@@ -28,9 +27,8 @@ void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<Strin
 	array<CLadresse^>^ nouvellesAdressesLivr = gcnew array<CLadresse^>(nAL);
 	for each (array<String^> ^ nouvelleadresse in adresse_fact) {
 		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[0]);
-		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[1]);
-		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[2]);
-		nouvellesAdressesLivr[iAL]->setnumeroRue(nouvelleadresse[3]);
+		nouvellesAdressesLivr[iAL]->setville(nouvelleadresse[1]);
+		nouvellesAdressesLivr[iAL]->setcodePostal(nouvelleadresse[2]);
 		iAL++;
 	}
 	//

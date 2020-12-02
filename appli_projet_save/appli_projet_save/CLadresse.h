@@ -13,12 +13,9 @@ public:
 	void setcodePostal(String^);
 	String^ getville();
 	void setville(String^);
-	String^ getappartNum();
-	void setappartNum(String^);
 private:
 	String^ numeroRue;
 	String^ codePostal;
 	String^ ville;
-	String^ appartNum;
 };
 
