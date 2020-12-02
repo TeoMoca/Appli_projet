@@ -6,9 +6,9 @@ ref class stratClient
 public:
 	void create() override {};
 	void create(String^ , String^ ,String^, String^, String^, String^, String^, String^, String^) override;
-	void read(String^ nom, String^ prenom, String^ birthdate) override ;
-	void update() override;
-	void suppr(String^ nom, String^ prenom, String^ birthdate) override;
+	void read(String^, String^, String^) override ;
+	void update(String^, String^, String^, int id) override;
+	void suppr(String^, String^, String^) override;
 protected:
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	String^ cmdclient;

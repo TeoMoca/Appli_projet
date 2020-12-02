@@ -64,8 +64,14 @@ void stratClient::read(String^ nom, String^ prenom, String^ birthdate) {
 	cmdclient = "select * from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
 	myReader->Fill(DS);
 };
-void stratClient::update() {
-	cmdclient = "";
+void stratClient::update(String^ nom, String^ prenom, String^ birthdate, int id) {
+	CLclient obj;
+	conDataBase->Open();
+	cmdclient = "UPDATE projetpoo.CLIENT SET NOM = '"+nom+"', PRENOM ='"+prenom+"', BIRTHDATE = '"+birthdate+"' WHERE NUMCLIENT = '"+id+"';";
+	command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
+	myReader->Fill(DS);
+	conDataBase->Close();
 };
 void stratClient::suppr(String^ nom, String^ prenom, String^ birthdate) {
 	CLclient suppr;
