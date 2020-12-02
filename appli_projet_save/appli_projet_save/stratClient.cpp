@@ -5,8 +5,29 @@ using namespace appliprojet;
 
 
 
-void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<String^>^>^ adresse_liv,String^ nom, String^ prenom, String^ birthdate) {
-	CLclient^ obj= gcnew CLclient;
+void stratClient::create(String^ nom, String^ prenom, String^ birthdate) {
+	//conDataBase->Open();
+	//cmdclient = "insert into projetpoo.CLIENT(NOM,PRENOM,BIRTHDATE) values (" + nom + "," + prenom + "," + birthdate + ");";
+	//myReader->Fill(DS);
+	//cmdid = "select id from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
+	//MySqlDataReader^ myreader = command->ExecuteReader();
+	//myreader->Read();
+	//int^ idclient = myreader->GetInt32(0);
+	//switch (i)
+	//{
+	//case 2:
+	//	cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('" + textBox1->Text->ToString() + "','" + textBox1->Text->ToString() + "','" + textBox1->Text->ToString() + "');";
+	//	cmdid = "select id from projetpoo.ADRESSES where NUM_ET_RUE= '" + textBox1->Text->ToString() + "' and VILLE = '" + textBox1->Text->ToString() + "' and CP='" + textBox1->Text->ToString() + "';";
+	//	MySqlDataReader^ myreader = command->ExecuteReader();
+	//	myreader->Read();
+	//	int^ idadresse = myreader->GetInt32(0);
+	//	cmdclient = "insert into A_PAYE_A(numClient,idadr) values (" + idclient + "," + idadresse + ");";
+	//case 3:
+	//
+	//case 4:
+	//
+	//}
+	/*CLclient^ obj= gcnew CLclient;
 	//transformation des adresses en tableau d'adresses du bon format
 	// adresse de facturation
 	int nAF = 0;
@@ -66,7 +87,7 @@ void stratClient::create(array<array<String^>^>^ adresse_fact, array<array<Strin
 		int^ idadresse = myreader->GetInt32(0);
 		cmdclient = "insert into EST_LIVRE_A(numClient,idadr) values (" + idclient + "," + idadresse + ");";
 		i++;
-	}
+	}*/
 };
 void stratClient::read(String^ nom, String^ prenom, String^ birthdate) {
 	conDataBase->Open();

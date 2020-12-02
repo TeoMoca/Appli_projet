@@ -2,6 +2,7 @@
 #include "pch.h"
 ref class stratClient;
 
+
 namespace appliprojet {
 
 	using namespace System;
@@ -27,7 +28,7 @@ namespace appliprojet {
 			//
 		}
 		
-
+		
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilis�es.
@@ -41,7 +42,7 @@ namespace appliprojet {
 		}
 
 	protected:
-
+		
 
 
 
@@ -80,8 +81,8 @@ namespace appliprojet {
 	private: System::Windows::Forms::Label^ createclientprenomL;
 
 
-	private: System::Windows::Forms::RichTextBox^ richTextBox2;
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+
+
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
@@ -194,6 +195,34 @@ private: System::Windows::Forms::TextBox^ textBox31;
 
 
 
+private: System::Windows::Forms::TextBox^ textBox35;
+private: System::Windows::Forms::TextBox^ textBox34;
+private: System::Windows::Forms::TextBox^ textBox33;
+
+
+
+private: System::Windows::Forms::TextBox^ textBox42;
+private: System::Windows::Forms::TextBox^ textBox43;
+private: System::Windows::Forms::TextBox^ textBox44;
+private: System::Windows::Forms::Button^ button11;
+private: System::Windows::Forms::Button^ button10;
+private: System::Windows::Forms::TextBox^ textBox41;
+private: System::Windows::Forms::TextBox^ textBox40;
+private: System::Windows::Forms::TextBox^ textBox39;
+private: System::Windows::Forms::TextBox^ textBox38;
+private: System::Windows::Forms::TextBox^ textBox37;
+private: System::Windows::Forms::TextBox^ textBox36;
+private: System::Windows::Forms::Label^ label29;
+private: System::Windows::Forms::Label^ label28;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -251,10 +280,14 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->supprimerUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statistiquesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->boxCRclient = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox42 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox43 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox44 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox35 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox34 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox33 = (gcnew System::Windows::Forms::TextBox());
 			this->savecreateclientB = (gcnew System::Windows::Forms::Button());
 			this->informationadresse = (gcnew System::Windows::Forms::Label());
-			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -334,14 +367,24 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox28 = (gcnew System::Windows::Forms::TextBox());
 			this->Rechercheclient = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox28 = (gcnew System::Windows::Forms::TextBox());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->textBox41 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox40 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox38 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox37 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox36 = (gcnew System::Windows::Forms::TextBox());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
 			this->BoxDEclient = (gcnew System::Windows::Forms::GroupBox());
@@ -555,10 +598,14 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// 
 			// boxCRclient
 			// 
+			this->boxCRclient->Controls->Add(this->textBox42);
+			this->boxCRclient->Controls->Add(this->textBox43);
+			this->boxCRclient->Controls->Add(this->textBox44);
+			this->boxCRclient->Controls->Add(this->textBox35);
+			this->boxCRclient->Controls->Add(this->textBox34);
+			this->boxCRclient->Controls->Add(this->textBox33);
 			this->boxCRclient->Controls->Add(this->savecreateclientB);
 			this->boxCRclient->Controls->Add(this->informationadresse);
-			this->boxCRclient->Controls->Add(this->richTextBox2);
-			this->boxCRclient->Controls->Add(this->richTextBox1);
 			this->boxCRclient->Controls->Add(this->textBox4);
 			this->boxCRclient->Controls->Add(this->textBox2);
 			this->boxCRclient->Controls->Add(this->textBox1);
@@ -574,6 +621,48 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->boxCRclient->Size = System::Drawing::Size(437, 401);
 			this->boxCRclient->TabIndex = 6;
 			this->boxCRclient->TabStop = false;
+			// 
+			// textBox42
+			// 
+			this->textBox42->Location = System::Drawing::Point(349, 211);
+			this->textBox42->Name = L"textBox42";
+			this->textBox42->Size = System::Drawing::Size(62, 20);
+			this->textBox42->TabIndex = 23;
+			// 
+			// textBox43
+			// 
+			this->textBox43->Location = System::Drawing::Point(272, 211);
+			this->textBox43->Name = L"textBox43";
+			this->textBox43->Size = System::Drawing::Size(71, 20);
+			this->textBox43->TabIndex = 22;
+			// 
+			// textBox44
+			// 
+			this->textBox44->Location = System::Drawing::Point(187, 211);
+			this->textBox44->Name = L"textBox44";
+			this->textBox44->Size = System::Drawing::Size(79, 20);
+			this->textBox44->TabIndex = 21;
+			// 
+			// textBox35
+			// 
+			this->textBox35->Location = System::Drawing::Point(349, 171);
+			this->textBox35->Name = L"textBox35";
+			this->textBox35->Size = System::Drawing::Size(62, 20);
+			this->textBox35->TabIndex = 15;
+			// 
+			// textBox34
+			// 
+			this->textBox34->Location = System::Drawing::Point(272, 171);
+			this->textBox34->Name = L"textBox34";
+			this->textBox34->Size = System::Drawing::Size(71, 20);
+			this->textBox34->TabIndex = 14;
+			// 
+			// textBox33
+			// 
+			this->textBox33->Location = System::Drawing::Point(187, 171);
+			this->textBox33->Name = L"textBox33";
+			this->textBox33->Size = System::Drawing::Size(79, 20);
+			this->textBox33->TabIndex = 13;
 			// 
 			// savecreateclientB
 			// 
@@ -594,22 +683,6 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->informationadresse->Size = System::Drawing::Size(344, 13);
 			this->informationadresse->TabIndex = 11;
 			this->informationadresse->Text = L"Indiquer une adresse par ligne sous le format (Adresse,Ville,code postal)";
-			// 
-			// richTextBox2
-			// 
-			this->richTextBox2->Location = System::Drawing::Point(187, 268);
-			this->richTextBox2->Name = L"richTextBox2";
-			this->richTextBox2->Size = System::Drawing::Size(224, 91);
-			this->richTextBox2->TabIndex = 10;
-			this->richTextBox2->Text = L"";
-			// 
-			// richTextBox1
-			// 
-			this->richTextBox1->Location = System::Drawing::Point(187, 171);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(224, 91);
-			this->richTextBox1->TabIndex = 9;
-			this->richTextBox1->Text = L"";
 			// 
 			// textBox4
 			// 
@@ -635,7 +708,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// createclientadrlivL
 			// 
 			this->createclientadrlivL->AutoSize = true;
-			this->createclientadrlivL->Location = System::Drawing::Point(11, 284);
+			this->createclientadrlivL->Location = System::Drawing::Point(11, 214);
 			this->createclientadrlivL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->createclientadrlivL->Name = L"createclientadrlivL";
 			this->createclientadrlivL->Size = System::Drawing::Size(106, 13);
@@ -1273,14 +1346,14 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// 
 			// textBox32
 			// 
-			this->textBox32->Location = System::Drawing::Point(159, 134);
+			this->textBox32->Location = System::Drawing::Point(159, 63);
 			this->textBox32->Name = L"textBox32";
 			this->textBox32->Size = System::Drawing::Size(100, 20);
 			this->textBox32->TabIndex = 7;
 			// 
 			// textBox31
 			// 
-			this->textBox31->Location = System::Drawing::Point(159, 75);
+			this->textBox31->Location = System::Drawing::Point(159, 20);
 			this->textBox31->Name = L"textBox31";
 			this->textBox31->Size = System::Drawing::Size(100, 20);
 			this->textBox31->TabIndex = 6;
@@ -1288,7 +1361,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// label26
 			// 
 			this->label26->AutoSize = true;
-			this->label26->Location = System::Drawing::Point(27, 142);
+			this->label26->Location = System::Drawing::Point(27, 71);
 			this->label26->Name = L"label26";
 			this->label26->Size = System::Drawing::Size(41, 13);
 			this->label26->TabIndex = 5;
@@ -1297,7 +1370,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// label25
 			// 
 			this->label25->AutoSize = true;
-			this->label25->Location = System::Drawing::Point(27, 78);
+			this->label25->Location = System::Drawing::Point(27, 23);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(41, 13);
 			this->label25->TabIndex = 1;
@@ -1305,26 +1378,13 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// 
 			// button9
 			// 
-			this->button9->Location = System::Drawing::Point(159, 309);
+			this->button9->Location = System::Drawing::Point(159, 119);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(75, 23);
 			this->button9->TabIndex = 0;
 			this->button9->Text = L"button9";
 			this->button9->UseVisualStyleBackColor = true;
-			// 
-			// textBox29
-			// 
-			this->textBox29->Location = System::Drawing::Point(147, 120);
-			this->textBox29->Name = L"textBox29";
-			this->textBox29->Size = System::Drawing::Size(100, 20);
-			this->textBox29->TabIndex = 3;
-			// 
-			// textBox28
-			// 
-			this->textBox28->Location = System::Drawing::Point(159, 75);
-			this->textBox28->Name = L"textBox28";
-			this->textBox28->Size = System::Drawing::Size(100, 20);
-			this->textBox28->TabIndex = 2;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
 			// 
 			// Rechercheclient
 			// 
@@ -1335,15 +1395,25 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->Rechercheclient->Controls->Add(this->textBox28);
 			this->Rechercheclient->Controls->Add(this->label23);
 			this->Rechercheclient->Controls->Add(this->button8);
-			this->Rechercheclient->Location = System::Drawing::Point(12, 19);
+			this->Rechercheclient->Controls->Add(this->button11);
+			this->Rechercheclient->Controls->Add(this->button10);
+			this->Rechercheclient->Controls->Add(this->textBox41);
+			this->Rechercheclient->Controls->Add(this->textBox40);
+			this->Rechercheclient->Controls->Add(this->textBox39);
+			this->Rechercheclient->Controls->Add(this->textBox38);
+			this->Rechercheclient->Controls->Add(this->textBox37);
+			this->Rechercheclient->Controls->Add(this->textBox36);
+			this->Rechercheclient->Controls->Add(this->label29);
+			this->Rechercheclient->Controls->Add(this->label28);
+			this->Rechercheclient->Location = System::Drawing::Point(18, 12);
 			this->Rechercheclient->Name = L"Rechercheclient";
-			this->Rechercheclient->Size = System::Drawing::Size(400, 300);
+			this->Rechercheclient->Size = System::Drawing::Size(419, 354);
 			this->Rechercheclient->TabIndex = 0;
 			this->Rechercheclient->TabStop = false;
 			// 
 			// textBox30
 			// 
-			this->textBox30->Location = System::Drawing::Point(147, 167);
+			this->textBox30->Location = System::Drawing::Point(147, 134);
 			this->textBox30->Name = L"textBox30";
 			this->textBox30->Size = System::Drawing::Size(100, 20);
 			this->textBox30->TabIndex = 7;
@@ -1351,7 +1421,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// label27
 			// 
 			this->label27->AutoSize = true;
-			this->label27->Location = System::Drawing::Point(15, 170);
+			this->label27->Location = System::Drawing::Point(29, 137);
 			this->label27->Name = L"label27";
 			this->label27->Size = System::Drawing::Size(41, 13);
 			this->label27->TabIndex = 6;
@@ -1366,10 +1436,24 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->label24->TabIndex = 4;
 			this->label24->Text = L"label24";
 			// 
+			// textBox29
+			// 
+			this->textBox29->Location = System::Drawing::Point(147, 96);
+			this->textBox29->Name = L"textBox29";
+			this->textBox29->Size = System::Drawing::Size(100, 20);
+			this->textBox29->TabIndex = 3;
+			// 
+			// textBox28
+			// 
+			this->textBox28->Location = System::Drawing::Point(147, 52);
+			this->textBox28->Name = L"textBox28";
+			this->textBox28->Size = System::Drawing::Size(100, 20);
+			this->textBox28->TabIndex = 2;
+			// 
 			// label23
 			// 
 			this->label23->AutoSize = true;
-			this->label23->Location = System::Drawing::Point(29, 101);
+			this->label23->Location = System::Drawing::Point(29, 99);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(41, 13);
 			this->label23->TabIndex = 1;
@@ -1377,12 +1461,90 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(147, 217);
+			this->button8->Location = System::Drawing::Point(159, 158);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(75, 23);
 			this->button8->TabIndex = 0;
 			this->button8->Text = L"button8";
 			this->button8->UseVisualStyleBackColor = true;
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(159, 298);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(75, 23);
+			this->button11->TabIndex = 17;
+			this->button11->Text = L"button11";
+			this->button11->UseVisualStyleBackColor = true;
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(159, 217);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(75, 23);
+			this->button10->TabIndex = 16;
+			this->button10->Text = L"button10";
+			this->button10->UseVisualStyleBackColor = true;
+			// 
+			// textBox41
+			// 
+			this->textBox41->Location = System::Drawing::Point(340, 272);
+			this->textBox41->Name = L"textBox41";
+			this->textBox41->Size = System::Drawing::Size(66, 20);
+			this->textBox41->TabIndex = 15;
+			// 
+			// textBox40
+			// 
+			this->textBox40->Location = System::Drawing::Point(340, 191);
+			this->textBox40->Name = L"textBox40";
+			this->textBox40->Size = System::Drawing::Size(66, 20);
+			this->textBox40->TabIndex = 14;
+			// 
+			// textBox39
+			// 
+			this->textBox39->Location = System::Drawing::Point(218, 272);
+			this->textBox39->Name = L"textBox39";
+			this->textBox39->Size = System::Drawing::Size(116, 20);
+			this->textBox39->TabIndex = 13;
+			// 
+			// textBox38
+			// 
+			this->textBox38->Location = System::Drawing::Point(218, 191);
+			this->textBox38->Name = L"textBox38";
+			this->textBox38->Size = System::Drawing::Size(116, 20);
+			this->textBox38->TabIndex = 12;
+			// 
+			// textBox37
+			// 
+			this->textBox37->Location = System::Drawing::Point(112, 272);
+			this->textBox37->Name = L"textBox37";
+			this->textBox37->Size = System::Drawing::Size(100, 20);
+			this->textBox37->TabIndex = 11;
+			// 
+			// textBox36
+			// 
+			this->textBox36->Location = System::Drawing::Point(112, 191);
+			this->textBox36->Name = L"textBox36";
+			this->textBox36->Size = System::Drawing::Size(100, 20);
+			this->textBox36->TabIndex = 10;
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(27, 275);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(41, 13);
+			this->label29->TabIndex = 9;
+			this->label29->Text = L"label29";
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(27, 194);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(41, 13);
+			this->label28->TabIndex = 8;
+			this->label28->Text = L"label28";
 			// 
 			// textBox27
 			// 
@@ -1433,6 +1595,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->dataviewUPclient->Name = L"dataviewUPclient";
 			this->dataviewUPclient->Size = System::Drawing::Size(426, 369);
 			this->dataviewUPclient->TabIndex = 9;
+			this->dataviewUPclient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataviewUPclient_CellContentClick);
 			// 
 			// MyForm
 			// 
@@ -1441,7 +1604,7 @@ private: System::Windows::Forms::TextBox^ textBox31;
 			this->ClientSize = System::Drawing::Size(896, 431);
 			this->Controls->Add(this->selectedonglet);
 			this->Controls->Add(this->menuStrip1);
-			//this->Controls->Add(this->boxCRpersonnel);
+			this->Controls->Add(this->dataviewUPclient);
 			this->Location = System::Drawing::Point(12, 42);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -1548,10 +1711,18 @@ private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sen
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	this->Controls->Add(this->boxCRclient);
+	this->textBox36->Hide();
+	this->textBox37->Hide();
+	this->textBox38->Hide();
+	this->textBox39->Hide();
+	this->textBox40->Hide();
+	this->textBox41->Hide();
 	this->Controls->Add(this->dataview);
 }
 private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
-	array<String^>^ contenufact = this->richTextBox1->Lines;
+	obj->create(textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());
+	
+	/*array<String^>^ contenufact = this->richTextBox1->Lines;
 	int nFact = 0;
 	int iFACT = 0;
 	for each (String ^ LIGNE in contenufact) {
@@ -1579,7 +1750,7 @@ private: System::Void savecreateclientB_Click(System::Object^ sender, System::Ev
 		ilivr++;
 
 	};
-	obj->create(tableauFact, tableaulivr, textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());
+	obj->create(tableauFact, tableaulivr, textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());*/
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
@@ -1593,6 +1764,7 @@ private: System::Void savecreateclientB_Click(System::Object^ sender, System::Ev
 	dataview->DataSource = source1;
 	myAdapter->Update(DT);
 }
+
 private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
@@ -1603,6 +1775,36 @@ private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ 
 	this->Controls->Add(this->BoxUPclient);
 	this->Controls->Add(this->dataview);
 }
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+   String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+   MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+   conDataBase->Open();
+   String^ queryString = "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + textBox31->Text + "%' AND PRENOM LIKE '%" + textBox32->Text + "%' ;";
+   MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+   MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+   DataTable^ DT = gcnew DataTable();
+   myAdapter->Fill(DT);
+   BindingSource^ source1 = gcnew BindingSource();
+   source1->DataSource = DT;
+   dataviewUPclient->DataSource = source1;
+   myAdapter->Update(DT);
+}
+private: System::Void dataviewUPclient_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	this->textBox32->Hide();
+	this->textBox31->Hide();
+	this->label26->Hide();
+	this->label25->Hide();
+	this->button9->Hide();
+	this->Controls->Add(this->Rechercheclient);
+	this->Controls->Add(this->BoxUPclient);
+	String^ nom = dataviewUPclient->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
+	String^ prenom = dataviewUPclient->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
+	String^ anniv = dataviewUPclient->Rows[e->RowIndex]->Cells["BIRTHDATE"]->Value->ToString();
+	textBox28->Text = nom;
+	textBox29->Text = prenom;
+	textBox30->Text = anniv;
+}
+
 private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->Controls->Clear();
@@ -1733,5 +1935,6 @@ private: System::Void statistiquesToolStripMenuItem_Click(System::Object^ sender
 	//this->Controls->Add(this->);
 	this->Controls->Add(this->dataview);
 }
+
 };
 }
