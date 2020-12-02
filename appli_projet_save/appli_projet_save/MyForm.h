@@ -100,6 +100,7 @@ namespace appliprojet {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->accueilToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clientsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -144,10 +145,11 @@ namespace appliprojet {
 			// accueilToolStripMenuItem
 			// 
 			this->accueilToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->accueilToolStripMenuItem->Name = L"accueilToolStripMenuItem";
-			this->accueilToolStripMenuItem->Size = System::Drawing::Size(88, 29);
+			this->accueilToolStripMenuItem->Size = System::Drawing::Size(108, 29);
 			this->accueilToolStripMenuItem->Text = L"Accueil";
+			//this->accueilToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::accueilToolStripMenuItem_Click);
 			// 
 			// clientsToolStripMenuItem
 			// 
@@ -385,5 +387,6 @@ namespace appliprojet {
 		String^ test = "coucou";
 		label1->Text = test;
 	}*/
+
 };
 }
