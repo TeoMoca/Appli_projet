@@ -1,6 +1,6 @@
 #include "CLadresse.h"
 
-CLadresse::CLadresse(): numeroRue(""), codePostal(""), ville(""), appartNum("")
+CLadresse::CLadresse(): numeroRue(""), codePostal(""), ville("")
 {
     //throw gcnew System::NotImplementedException();
 }

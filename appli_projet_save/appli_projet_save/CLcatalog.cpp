@@ -1,7 +1,7 @@
 #include "CLcatalog.h"
 #include "pch.h"
 
-CLcatalog::CLcatalog(int refe, std::string desi, int quant, int seuil, float prix, float tva)
+CLcatalog::CLcatalog(int refe, String^ desi, int quant, int seuil, float prix, float tva)
 {
 	ref = refe;
 	designation = desi;
@@ -16,7 +16,7 @@ int CLcatalog::getref()
 	return ref;
 }
 
-std::string CLcatalog::getdesignation()
+String^ CLcatalog::getdesignation()
 {
 	return designation;
 }
@@ -46,7 +46,7 @@ void CLcatalog::setref(int refe)
 	ref = refe;
 }
 
-void CLcatalog::setdesignation(std::string desi)
+void CLcatalog::setdesignation(String^ desi)
 {
 	designation = desi;
 }
