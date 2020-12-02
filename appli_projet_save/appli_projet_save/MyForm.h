@@ -1604,7 +1604,7 @@ private: System::Windows::Forms::Label^ label28;
 			this->ClientSize = System::Drawing::Size(896, 431);
 			this->Controls->Add(this->selectedonglet);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->dataviewUPclient);
+			this->Controls->Add(this->boxCRclient);
 			this->Location = System::Drawing::Point(12, 42);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -1720,49 +1720,7 @@ private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sen
 	this->Controls->Add(this->dataview);
 }
 private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
-	obj->create(textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());
-	
-	/*array<String^>^ contenufact = this->richTextBox1->Lines;
-	int nFact = 0;
-	int iFACT = 0;
-	for each (String ^ LIGNE in contenufact) {
-		nFact++;
-	}
-	array<array<String^>^>^ tableauFact = gcnew array<array<String^>^>(nFact);
-	for each (String ^ LIGNE in contenufact) {
-		String^ separator = ",";
-		array<String^>^ TableauAdresse = LIGNE->Split(separator->ToCharArray());
-		tableauFact[iFACT] = TableauAdresse;
-		iFACT++;
-
-	};
-	array<String^>^ contenulivr = this->richTextBox2->Lines;
-	int nlivr = 0;
-	int ilivr = 0;
-	for each (String ^ LIGNE in contenulivr) {
-		nlivr++;
-	}
-	array<array<String^>^>^ tableaulivr = gcnew array<array<String^>^>(nlivr);
-	for each (String ^ LIGNE in contenulivr) {
-		String^ separator = ",";
-		array<String^>^ TableauAdresse = LIGNE->Split(separator->ToCharArray());
-		tableaulivr[ilivr] = TableauAdresse;
-		ilivr++;
-
-	};
-	obj->create(tableauFact, tableaulivr, textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());*/
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
-	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-	conDataBase->Open();
-	String^ queryString = "select * from projetdb.articles;";
-	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
-	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
-	DataTable^ DT = gcnew DataTable();
-	myAdapter->Fill(DT);
-	BindingSource^ source1 = gcnew BindingSource();
-	source1->DataSource = DT;
-	dataview->DataSource = source1;
-	myAdapter->Update(DT);
+	obj->create(textBox4->Text, textBox1->Text, textBox2->Text, textBox33->Text, textBox34->Text, textBox35->Text, textBox44->Text, textBox43->Text, textBox42->Text);
 }
 
 private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {

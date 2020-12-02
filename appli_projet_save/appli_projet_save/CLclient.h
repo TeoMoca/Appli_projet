@@ -16,10 +16,10 @@ public:
 	String^ getnom();
 	void setprenom(String^);
 	String^ getprenom();
-	void setadresseFact(array<CLadresse^>^);
-	array<CLadresse^>^ getadresseFact();
-	void setadresseLivr(array<CLadresse^>^);
-	array<CLadresse^>^ getadresseLivr();
+	void setadresseFact(String^);
+	String^ getadresseFact();
+	void setadresseLivr(String^);
+	String^ getadresseLivr();
 	void setbirthdate(String^);
 	String^ getbirthdate();
 	void setfirstCommande(String^);
@@ -28,8 +28,8 @@ private:
 	int numClient;
 	String^ nom;
 	String^ prenom;
-	array<CLadresse^>^ adresseFact;
-	array<CLadresse^>^ adresseLivr;
+	String^ adresseFact;
+	String^ adresseLivr;
 	String^ birthdate;
 	String^ firstCommande;
 };

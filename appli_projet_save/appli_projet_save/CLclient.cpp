@@ -42,7 +42,7 @@ String^ CLclient::getprenom()
 	return prenom;
 }
 
-void CLclient::setadresseFact(array<CLadresse^>^ handle)
+void CLclient::setadresseFact(String^ handle)
 {
 	//throw gcnew System::NotImplementedException();
 	
@@ -50,14 +50,14 @@ void CLclient::setadresseFact(array<CLadresse^>^ handle)
 		
 }
 
-array<CLadresse^>^ CLclient::getadresseFact()
+String^ CLclient::getadresseFact()
 {
 	//throw gcnew System::NotImplementedException();
 	return adresseFact;
 }
 
 
-void CLclient::setadresseLivr(array<CLadresse^>^ handle)
+void CLclient::setadresseLivr(String^ handle)
 {
 	//throw gcnew System::NotImplementedException();
 	adresseLivr = handle;
@@ -65,7 +65,7 @@ void CLclient::setadresseLivr(array<CLadresse^>^ handle)
 		
 }
 
-array<CLadresse^>^ CLclient::getadresseLivr()
+String^ CLclient::getadresseLivr()
 {
 	//throw gcnew System::NotImplementedException();
 	return adresseLivr;
