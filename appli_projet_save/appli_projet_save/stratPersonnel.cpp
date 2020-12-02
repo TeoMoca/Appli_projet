@@ -6,9 +6,8 @@ void stratPersonnel::create(array<String^>^ newadresse, String^ nom, String^ pre
 	CLadresse^ nouvelleAdressePerso = gcnew CLadresse;
 
 	nouvelleAdressePerso->setnumeroRue(newadresse[0]);
-	nouvelleAdressePerso->setnumeroRue(newadresse[1]);
-	nouvelleAdressePerso->setnumeroRue(newadresse[2]);
-	nouvelleAdressePerso->setnumeroRue(newadresse[3]);
+	nouvelleAdressePerso->setville(newadresse[1]);
+	nouvelleAdressePerso->setcodePostal(newadresse[2]);
 
 	conDataBase->Open();
 	obj.setnom(nom);

@@ -45,15 +45,3 @@ void CLadresse::setville(String^ str)
     ville = str;
 
 }
-
-String^ CLadresse::getappartNum()
-{
-    //throw gcnew System::NotImplementedException();
-    return appartNum;
-}
-
-void CLadresse::setappartNum(String^ str)
-{
-    //throw gcnew System::NotImplementedException();
-    appartNum = str;
-}
