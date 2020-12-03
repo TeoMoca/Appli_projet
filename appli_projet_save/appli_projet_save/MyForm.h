@@ -125,10 +125,10 @@ namespace appliprojet {
 private: System::Windows::Forms::GroupBox^ BoxDEclient;
 private: System::Windows::Forms::GroupBox^ BoxUPpersonnel;
 private: System::Windows::Forms::Button^ button2;
-private: System::Windows::Forms::Label^ label7;
+
 private: System::Windows::Forms::Label^ label6;
 private: System::Windows::Forms::Label^ label5;
-private: System::Windows::Forms::TextBox^ textBox10;
+
 private: System::Windows::Forms::TextBox^ textBox9;
 private: System::Windows::Forms::TextBox^ textBox8;
 private: System::Windows::Forms::Button^ button3;
@@ -248,6 +248,41 @@ private: System::Windows::Forms::TextBox^ textBox45;
 		stratClient^ obj = gcnew stratClient;
 		stratPersonnel^ objp = gcnew stratPersonnel;
 		int id;
+		String^ nom;
+		String^ prenom;
+		int idadresse;
+		String^ NUMRUE;
+		String^ ville;
+		String^ CP;
+		String^ idsup;
+		String^ nature;
+		String^ couleur;
+		int idcouleur;
+		int idnature;
+
+private: System::Windows::Forms::DataGridView^ dataviewREclient;
+private: System::Windows::Forms::TextBox^ textBox10;
+private: System::Windows::Forms::DataGridView^ dataviewnature;
+private: System::Windows::Forms::DataGridView^ dataviewcouleur;
+private: System::Windows::Forms::Button^ button14;
+private: System::Windows::Forms::DataGridView^ dataviewdepersonnel;
+private: System::Windows::Forms::TextBox^ textBox52;
+private: System::Windows::Forms::Label^ label33;
+private: System::Windows::Forms::Label^ label7;
+private: System::Windows::Forms::GroupBox^ Bupdatepersonnel;
+private: System::Windows::Forms::TextBox^ textBox51;
+private: System::Windows::Forms::TextBox^ textBox50;
+private: System::Windows::Forms::TextBox^ textBox49;
+private: System::Windows::Forms::TextBox^ textBox48;
+private: System::Windows::Forms::Label^ label32;
+private: System::Windows::Forms::Label^ label31;
+private: System::Windows::Forms::TextBox^ textBox47;
+private: System::Windows::Forms::Label^ label30;
+private: System::Windows::Forms::Button^ button13;
+private: System::Windows::Forms::Button^ validcommandB;
+
+private: System::Windows::Forms::Button^ button12;
+	   String^ anniv;
 		/// <summary>
 		/// Variable n�cessaire au concepteur.
 		/// </summary>
@@ -315,6 +350,9 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->BoxCRcommande = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->validcommandB = (gcnew System::Windows::Forms::Button());
 			this->BoxDEpersonnel = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
@@ -353,10 +391,8 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->BoxREclient = (gcnew System::Windows::Forms::GroupBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->BoxUPstock = (gcnew System::Windows::Forms::GroupBox());
@@ -397,10 +433,29 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->BoxUPpersonnel = (gcnew System::Windows::Forms::GroupBox());
 			this->selectedonglet = (gcnew System::Windows::Forms::Label());
 			this->dataviewUPclient = (gcnew System::Windows::Forms::DataGridView());
+			this->dataviewREclient = (gcnew System::Windows::Forms::DataGridView());
+			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->Bupdatepersonnel = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox52 = (gcnew System::Windows::Forms::TextBox());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->textBox51 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox50 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox49 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox48 = (gcnew System::Windows::Forms::TextBox());
+			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->textBox47 = (gcnew System::Windows::Forms::TextBox());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->dataviewdepersonnel = (gcnew System::Windows::Forms::DataGridView());
+			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->dataviewnature = (gcnew System::Windows::Forms::DataGridView());
+			this->dataviewcouleur = (gcnew System::Windows::Forms::DataGridView());
 			this->menuStrip1->SuspendLayout();
 			this->boxCRclient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataview))->BeginInit();
 			this->boxCRpersonnel->SuspendLayout();
+			this->BoxCRcommande->SuspendLayout();
 			this->BoxDEpersonnel->SuspendLayout();
 			this->BoxCRstock->SuspendLayout();
 			this->BoxREpersonnel->SuspendLayout();
@@ -410,6 +465,11 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->BoxUPclient->SuspendLayout();
 			this->Rechercheclient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewUPclient))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewREclient))->BeginInit();
+			this->Bupdatepersonnel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewdepersonnel))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewnature))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewcouleur))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -717,9 +777,9 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->createclientadrlivL->Location = System::Drawing::Point(11, 214);
 			this->createclientadrlivL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->createclientadrlivL->Name = L"createclientadrlivL";
-			this->createclientadrlivL->Size = System::Drawing::Size(106, 13);
+			this->createclientadrlivL->Size = System::Drawing::Size(101, 13);
 			this->createclientadrlivL->TabIndex = 4;
-			this->createclientadrlivL->Text = L"Adresses de livraison";
+			this->createclientadrlivL->Text = L"Adresse de livraison";
 			// 
 			// createclientadrfacL
 			// 
@@ -727,9 +787,9 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->createclientadrfacL->Location = System::Drawing::Point(11, 174);
 			this->createclientadrfacL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->createclientadrfacL->Name = L"createclientadrfacL";
-			this->createclientadrfacL->Size = System::Drawing::Size(118, 13);
+			this->createclientadrfacL->Size = System::Drawing::Size(113, 13);
 			this->createclientadrfacL->TabIndex = 3;
-			this->createclientadrfacL->Text = L"Adresses de facturation";
+			this->createclientadrfacL->Text = L"Adresse de facturation";
 			// 
 			// createclientbirthL
 			// 
@@ -737,9 +797,9 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->createclientbirthL->Location = System::Drawing::Point(11, 105);
 			this->createclientbirthL->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->createclientbirthL->Name = L"createclientbirthL";
-			this->createclientbirthL->Size = System::Drawing::Size(171, 13);
+			this->createclientbirthL->Size = System::Drawing::Size(167, 13);
 			this->createclientbirthL->TabIndex = 2;
-			this->createclientbirthL->Text = L"Date de naissance (AAAA/MM/JJ)";
+			this->createclientbirthL->Text = L"Date de naissance (AAAA-MM-JJ)";
 			// 
 			// createclientnomL
 			// 
@@ -768,6 +828,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->dataview->Name = L"dataview";
 			this->dataview->Size = System::Drawing::Size(426, 369);
 			this->dataview->TabIndex = 6;
+			this->dataview->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataview_CellContentClick);
 			// 
 			// boxCRpersonnel
 			// 
@@ -826,9 +887,9 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(11, 145);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(166, 13);
+			this->label3->Size = System::Drawing::Size(162, 13);
 			this->label3->TabIndex = 6;
-			this->label3->Text = L"Date d\'embauche (AAAA/MM/JJ)";
+			this->label3->Text = L"Date d\'embauche (AAAA-MM-JJ)";
 			// 
 			// label2
 			// 
@@ -883,11 +944,39 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			// 
 			// BoxCRcommande
 			// 
+			this->BoxCRcommande->Controls->Add(this->textBox10);
+			this->BoxCRcommande->Controls->Add(this->label7);
+			this->BoxCRcommande->Controls->Add(this->validcommandB);
 			this->BoxCRcommande->Location = System::Drawing::Point(0, 29);
 			this->BoxCRcommande->Name = L"BoxCRcommande";
-			this->BoxCRcommande->Size = System::Drawing::Size(437, 401);
+			this->BoxCRcommande->Size = System::Drawing::Size(896, 401);
 			this->BoxCRcommande->TabIndex = 10;
 			this->BoxCRcommande->TabStop = false;
+			// 
+			// textBox10
+			// 
+			this->textBox10->Location = System::Drawing::Point(174, 52);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(100, 20);
+			this->textBox10->TabIndex = 2;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(77, 56);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(35, 13);
+			this->label7->TabIndex = 1;
+			this->label7->Text = L"label7";
+			// 
+			// validcommandB
+			// 
+			this->validcommandB->Location = System::Drawing::Point(388, 331);
+			this->validcommandB->Name = L"validcommandB";
+			this->validcommandB->Size = System::Drawing::Size(114, 23);
+			this->validcommandB->TabIndex = 0;
+			this->validcommandB->Text = L"Valider la commande";
+			this->validcommandB->UseVisualStyleBackColor = true;
 			// 
 			// BoxDEpersonnel
 			// 
@@ -936,12 +1025,13 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(176, 230);
+			this->button7->Location = System::Drawing::Point(176, 177);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(75, 23);
 			this->button7->TabIndex = 0;
 			this->button7->Text = L"Rechercher";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
 			// 
 			// BoxDEcommande
 			// 
@@ -1032,6 +1122,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->textBox17->Name = L"textBox17";
 			this->textBox17->Size = System::Drawing::Size(225, 20);
 			this->textBox17->TabIndex = 10;
+			this->textBox17->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox17_TextChanged);
 			// 
 			// label20
 			// 
@@ -1102,6 +1193,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->textBox16->Name = L"textBox16";
 			this->textBox16->Size = System::Drawing::Size(225, 20);
 			this->textBox16->TabIndex = 2;
+			this->textBox16->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox16_TextChanged);
 			// 
 			// label13
 			// 
@@ -1120,6 +1212,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->button6->TabIndex = 0;
 			this->button6->Text = L"Enregistrer";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
 			// 
 			// BoxREpersonnel
 			// 
@@ -1142,6 +1235,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->button3->TabIndex = 4;
 			this->button3->Text = L"Rechercher";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// label9
 			// 
@@ -1214,10 +1308,8 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			// BoxREclient
 			// 
 			this->BoxREclient->Controls->Add(this->button2);
-			this->BoxREclient->Controls->Add(this->label7);
 			this->BoxREclient->Controls->Add(this->label6);
 			this->BoxREclient->Controls->Add(this->label5);
-			this->BoxREclient->Controls->Add(this->textBox10);
 			this->BoxREclient->Controls->Add(this->textBox9);
 			this->BoxREclient->Controls->Add(this->textBox8);
 			this->BoxREclient->Location = System::Drawing::Point(0, 29);
@@ -1228,26 +1320,18 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(182, 239);
+			this->button2->Location = System::Drawing::Point(182, 181);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 6;
 			this->button2->Text = L"Rechercher";
 			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(47, 142);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(96, 13);
-			this->label7->TabIndex = 5;
-			this->label7->Text = L"Date de naissance";
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(47, 97);
+			this->label6->Location = System::Drawing::Point(47, 121);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(72, 13);
 			this->label6->TabIndex = 4;
@@ -1262,16 +1346,9 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"Prenom du client";
 			// 
-			// textBox10
-			// 
-			this->textBox10->Location = System::Drawing::Point(182, 139);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(100, 20);
-			this->textBox10->TabIndex = 2;
-			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(182, 94);
+			this->textBox9->Location = System::Drawing::Point(182, 118);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(100, 20);
 			this->textBox9->TabIndex = 1;
@@ -1385,18 +1462,18 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->label26->AutoSize = true;
 			this->label26->Location = System::Drawing::Point(27, 71);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(41, 13);
+			this->label26->Size = System::Drawing::Size(43, 13);
 			this->label26->TabIndex = 5;
-			this->label26->Text = L"label26";
+			this->label26->Text = L"Prenom";
 			// 
 			// label25
 			// 
 			this->label25->AutoSize = true;
 			this->label25->Location = System::Drawing::Point(27, 23);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(41, 13);
+			this->label25->Size = System::Drawing::Size(29, 13);
 			this->label25->TabIndex = 1;
-			this->label25->Text = L"label25";
+			this->label25->Text = L"Nom";
 			// 
 			// button9
 			// 
@@ -1404,7 +1481,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(75, 23);
 			this->button9->TabIndex = 0;
-			this->button9->Text = L"button9";
+			this->button9->Text = L"Rechercher";
 			this->button9->UseVisualStyleBackColor = true;
 			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
 			// 
@@ -1427,9 +1504,9 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->Rechercheclient->Controls->Add(this->textBox36);
 			this->Rechercheclient->Controls->Add(this->label29);
 			this->Rechercheclient->Controls->Add(this->label28);
-			this->Rechercheclient->Location = System::Drawing::Point(18, 12);
+			this->Rechercheclient->Location = System::Drawing::Point(9, 49);
 			this->Rechercheclient->Name = L"Rechercheclient";
-			this->Rechercheclient->Size = System::Drawing::Size(419, 354);
+			this->Rechercheclient->Size = System::Drawing::Size(434, 354);
 			this->Rechercheclient->TabIndex = 0;
 			this->Rechercheclient->TabStop = false;
 			// 
@@ -1443,20 +1520,20 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			// label27
 			// 
 			this->label27->AutoSize = true;
-			this->label27->Location = System::Drawing::Point(29, 137);
+			this->label27->Location = System::Drawing::Point(2, 137);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(41, 13);
+			this->label27->Size = System::Drawing::Size(98, 13);
 			this->label27->TabIndex = 6;
-			this->label27->Text = L"label27";
+			this->label27->Text = L"Date d\'anniversaire";
 			// 
 			// label24
 			// 
 			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(29, 55);
+			this->label24->Location = System::Drawing::Point(2, 55);
 			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(41, 13);
+			this->label24->Size = System::Drawing::Size(29, 13);
 			this->label24->TabIndex = 4;
-			this->label24->Text = L"label24";
+			this->label24->Text = L"Nom";
 			// 
 			// textBox29
 			// 
@@ -1475,11 +1552,11 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			// label23
 			// 
 			this->label23->AutoSize = true;
-			this->label23->Location = System::Drawing::Point(29, 99);
+			this->label23->Location = System::Drawing::Point(2, 99);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(41, 13);
+			this->label23->Size = System::Drawing::Size(43, 13);
 			this->label23->TabIndex = 1;
-			this->label23->Text = L"label23";
+			this->label23->Text = L"Prenom";
 			// 
 			// button8
 			// 
@@ -1487,27 +1564,29 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(75, 23);
 			this->button8->TabIndex = 0;
-			this->button8->Text = L"button8";
+			this->button8->Text = L"Enregistrer";
 			this->button8->UseVisualStyleBackColor = true;
 			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
 			// 
 			// button11
 			// 
-			this->button11->Location = System::Drawing::Point(159, 298);
+			this->button11->Location = System::Drawing::Point(132, 298);
 			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(75, 23);
+			this->button11->Size = System::Drawing::Size(132, 23);
 			this->button11->TabIndex = 17;
-			this->button11->Text = L"button11";
+			this->button11->Text = L"Ajouter une adresse";
 			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &MyForm::button11_Click);
 			// 
 			// button10
 			// 
-			this->button10->Location = System::Drawing::Point(159, 217);
+			this->button10->Location = System::Drawing::Point(132, 217);
 			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(75, 23);
+			this->button10->Size = System::Drawing::Size(132, 23);
 			this->button10->TabIndex = 16;
-			this->button10->Text = L"button10";
+			this->button10->Text = L"Ajouter une adresse";
 			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &MyForm::button10_Click);
 			// 
 			// textBox41
 			// 
@@ -1554,20 +1633,20 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			// label29
 			// 
 			this->label29->AutoSize = true;
-			this->label29->Location = System::Drawing::Point(27, 275);
+			this->label29->Location = System::Drawing::Point(2, 270);
 			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(41, 13);
+			this->label29->Size = System::Drawing::Size(116, 26);
 			this->label29->TabIndex = 9;
-			this->label29->Text = L"label29";
+			this->label29->Text = L"Adresse de facturation \n supplémentaire";
 			// 
 			// label28
 			// 
 			this->label28->AutoSize = true;
-			this->label28->Location = System::Drawing::Point(27, 194);
+			this->label28->Location = System::Drawing::Point(2, 189);
 			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(41, 13);
+			this->label28->Size = System::Drawing::Size(104, 26);
 			this->label28->TabIndex = 8;
-			this->label28->Text = L"label28";
+			this->label28->Text = L"Adresse de livraison \n supplémentaire";
 			// 
 			// textBox27
 			// 
@@ -1620,6 +1699,169 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->dataviewUPclient->TabIndex = 9;
 			this->dataviewUPclient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataviewUPclient_CellContentClick);
 			// 
+			// dataviewREclient
+			// 
+			this->dataviewREclient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataviewREclient->Location = System::Drawing::Point(454, 48);
+			this->dataviewREclient->Name = L"dataviewREclient";
+			this->dataviewREclient->Size = System::Drawing::Size(426, 369);
+			this->dataviewREclient->TabIndex = 10;
+			this->dataviewREclient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataviewREclient_CellContentClick);
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(155, 300);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(125, 23);
+			this->button12->TabIndex = 11;
+			this->button12->Text = L"Passer une commande";
+			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
+			// 
+			// Bupdatepersonnel
+			// 
+			this->Bupdatepersonnel->Controls->Add(this->textBox52);
+			this->Bupdatepersonnel->Controls->Add(this->label33);
+			this->Bupdatepersonnel->Controls->Add(this->textBox51);
+			this->Bupdatepersonnel->Controls->Add(this->textBox50);
+			this->Bupdatepersonnel->Controls->Add(this->textBox49);
+			this->Bupdatepersonnel->Controls->Add(this->textBox48);
+			this->Bupdatepersonnel->Controls->Add(this->label32);
+			this->Bupdatepersonnel->Controls->Add(this->label31);
+			this->Bupdatepersonnel->Controls->Add(this->textBox47);
+			this->Bupdatepersonnel->Controls->Add(this->label30);
+			this->Bupdatepersonnel->Controls->Add(this->button13);
+			this->Bupdatepersonnel->Location = System::Drawing::Point(0, 32);
+			this->Bupdatepersonnel->Name = L"Bupdatepersonnel";
+			this->Bupdatepersonnel->Size = System::Drawing::Size(442, 401);
+			this->Bupdatepersonnel->TabIndex = 9;
+			this->Bupdatepersonnel->TabStop = false;
+			// 
+			// textBox52
+			// 
+			this->textBox52->Location = System::Drawing::Point(146, 133);
+			this->textBox52->Name = L"textBox52";
+			this->textBox52->Size = System::Drawing::Size(100, 20);
+			this->textBox52->TabIndex = 10;
+			// 
+			// label33
+			// 
+			this->label33->AutoSize = true;
+			this->label33->Location = System::Drawing::Point(36, 136);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(79, 13);
+			this->label33->TabIndex = 9;
+			this->label33->Text = L"ID du supérieur";
+			// 
+			// textBox51
+			// 
+			this->textBox51->Location = System::Drawing::Point(358, 185);
+			this->textBox51->Name = L"textBox51";
+			this->textBox51->Size = System::Drawing::Size(78, 20);
+			this->textBox51->TabIndex = 8;
+			// 
+			// textBox50
+			// 
+			this->textBox50->Location = System::Drawing::Point(252, 185);
+			this->textBox50->Name = L"textBox50";
+			this->textBox50->Size = System::Drawing::Size(100, 20);
+			this->textBox50->TabIndex = 7;
+			// 
+			// textBox49
+			// 
+			this->textBox49->Location = System::Drawing::Point(146, 185);
+			this->textBox49->Name = L"textBox49";
+			this->textBox49->Size = System::Drawing::Size(100, 20);
+			this->textBox49->TabIndex = 6;
+			// 
+			// textBox48
+			// 
+			this->textBox48->Location = System::Drawing::Point(146, 99);
+			this->textBox48->Name = L"textBox48";
+			this->textBox48->Size = System::Drawing::Size(100, 20);
+			this->textBox48->TabIndex = 5;
+			// 
+			// label32
+			// 
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(36, 190);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(109, 13);
+			this->label32->TabIndex = 4;
+			this->label32->Text = L"Adresse du personnel";
+			// 
+			// label31
+			// 
+			this->label31->AutoSize = true;
+			this->label31->Location = System::Drawing::Point(36, 102);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(107, 13);
+			this->label31->TabIndex = 3;
+			this->label31->Text = L"Prenom du personnel";
+			// 
+			// textBox47
+			// 
+			this->textBox47->Location = System::Drawing::Point(146, 62);
+			this->textBox47->Name = L"textBox47";
+			this->textBox47->Size = System::Drawing::Size(100, 20);
+			this->textBox47->TabIndex = 2;
+			// 
+			// label30
+			// 
+			this->label30->AutoSize = true;
+			this->label30->Location = System::Drawing::Point(36, 65);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(93, 13);
+			this->label30->TabIndex = 1;
+			this->label30->Text = L"Nom du personnel";
+			// 
+			// button13
+			// 
+			this->button13->Location = System::Drawing::Point(160, 253);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(75, 23);
+			this->button13->TabIndex = 0;
+			this->button13->Text = L"Enregistrer";
+			this->button13->UseVisualStyleBackColor = true;
+			this->button13->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
+			// 
+			// dataviewdepersonnel
+			// 
+			this->dataviewdepersonnel->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataviewdepersonnel->Location = System::Drawing::Point(454, 48);
+			this->dataviewdepersonnel->Name = L"dataviewdepersonnel";
+			this->dataviewdepersonnel->Size = System::Drawing::Size(425, 369);
+			this->dataviewdepersonnel->TabIndex = 9;
+			this->dataviewdepersonnel->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataviewdepersonnel_CellContentClick);
+			// 
+			// button14
+			// 
+			this->button14->Location = System::Drawing::Point(146, 253);
+			this->button14->Name = L"button14";
+			this->button14->Size = System::Drawing::Size(141, 23);
+			this->button14->TabIndex = 10;
+			this->button14->Text = L"Supprimer le personnel";
+			this->button14->UseVisualStyleBackColor = true;
+			this->button14->Click += gcnew System::EventHandler(this, &MyForm::button14_Click);
+			// 
+			// dataviewnature
+			// 
+			this->dataviewnature->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataviewnature->Location = System::Drawing::Point(454, 48);
+			this->dataviewnature->Name = L"dataviewnature";
+			this->dataviewnature->Size = System::Drawing::Size(425, 369);
+			this->dataviewnature->TabIndex = 10;
+			this->dataviewnature->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataviewnature_CellContentClick);
+			// 
+			// dataviewcouleur
+			// 
+			this->dataviewcouleur->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataviewcouleur->Location = System::Drawing::Point(454, 48);
+			this->dataviewcouleur->Name = L"dataviewcouleur";
+			this->dataviewcouleur->Size = System::Drawing::Size(425, 369);
+			this->dataviewcouleur->TabIndex = 11;
+			this->dataviewcouleur->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataviewcouleur_CellContentClick);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1627,7 +1869,6 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->ClientSize = System::Drawing::Size(896, 431);
 			this->Controls->Add(this->selectedonglet);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->Rechercheclient);
 			this->Location = System::Drawing::Point(12, 42);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -1640,6 +1881,8 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataview))->EndInit();
 			this->boxCRpersonnel->ResumeLayout(false);
 			this->boxCRpersonnel->PerformLayout();
+			this->BoxCRcommande->ResumeLayout(false);
+			this->BoxCRcommande->PerformLayout();
 			this->BoxDEpersonnel->ResumeLayout(false);
 			this->BoxDEpersonnel->PerformLayout();
 			this->BoxCRstock->ResumeLayout(false);
@@ -1657,6 +1900,12 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			this->Rechercheclient->ResumeLayout(false);
 			this->Rechercheclient->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewUPclient))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewREclient))->EndInit();
+			this->Bupdatepersonnel->ResumeLayout(false);
+			this->Bupdatepersonnel->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewdepersonnel))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewnature))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataviewcouleur))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1720,10 +1969,123 @@ private: System::Windows::Forms::TextBox^ textBox45;
 			myAdapter->Update(DD);
 		}*/
 
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------
+							
+////////////////////////////////////////////////	Rangement des CellContentClick		/////////////////////////////////////////////////////
+													
+-------------------------------------------------------------------------------------------------------------------------------------------*/
+
+private: System::Void dataviewdepersonnel_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	id = Convert::ToInt32(dataviewdepersonnel->Rows[e->RowIndex]->Cells["IDPERSO"]->Value);
+	idsup = dataviewdepersonnel->Rows[e->RowIndex]->Cells["PER_IDPERSO"]->Value->ToString();
+	nom = dataviewdepersonnel->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
+	prenom = dataviewdepersonnel->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
+	idadresse = Convert::ToInt32(dataviewdepersonnel->Rows[e->RowIndex]->Cells["IDADR"]->Value);
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "SELECT * FROM projetpoo.ADRESSES WHERE IDADR=" + idadresse + " ;";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataReader^ myreader = command->ExecuteReader();
+	myreader->Read();
+	NUMRUE = myreader->GetString(1);
+	ville = myreader->GetString(2);
+	CP = myreader->GetString(3);
+	myreader->Close();
+	this->Controls->Clear();
+	this->Controls->Add(this->selectedonglet);
+	this->Controls->Add(this->menuStrip1);
+	this->Controls->Add(this->button14);
+	this->Controls->Add(this->BoxDEpersonnel);
+	this->Controls->Add(this->dataviewdepersonnel);
+}
+
+private: System::Void dataviewUPclient_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	this->Controls->Clear();
+	this->textBox31->Text = "";
+	this->textBox32->Text = "";
+	this->Controls->Add(this->Rechercheclient);
+	this->Controls->Add(this->selectedonglet);
+	this->Controls->Add(this->dataviewUPclient);
+	this->Controls->Add(this->menuStrip1);
+	this->Controls->Add(this->dataview);
+	id = Convert::ToInt32(dataviewUPclient->Rows[e->RowIndex]->Cells["NUMCLIENT"]->Value);
+	nom = dataviewUPclient->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
+	prenom = dataviewUPclient->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
+	anniv = dataviewUPclient->Rows[e->RowIndex]->Cells["BIRTHDATE"]->Value->ToString();
+	textBox28->Text = nom;
+	textBox29->Text = prenom;
+	textBox30->Text = anniv;
+}
+
+private: System::Void dataviewREclient_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	this->Controls->Clear();
+	nom = dataviewREclient->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
+	prenom = dataviewREclient->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
+	anniv = dataviewREclient->Rows[e->RowIndex]->Cells["BIRTHDATE"]->Value->ToString();
+	this->Controls->Add(this->selectedonglet);
+	this->Controls->Add(this->menuStrip1);
+	this->Controls->Add(this->button12);
+	this->Controls->Add(this->BoxREclient);
+	this->Controls->Add(this->dataviewREclient);
+}
+
+private: System::Void dataview_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	id = Convert::ToInt32(dataview->Rows[e->RowIndex]->Cells["IDPERSO"]->Value);
+	idsup = dataview->Rows[e->RowIndex]->Cells["PER_IDPERSO"]->Value->ToString();
+	nom = dataview->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
+	prenom = dataview->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
+	idadresse = Convert::ToInt32(dataview->Rows[e->RowIndex]->Cells["IDADR"]->Value);
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "SELECT * FROM projetpoo.ADRESSES WHERE IDADR=" + idadresse + " ;";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataReader^ myreader = command->ExecuteReader();
+	myreader->Read();
+	NUMRUE = myreader->GetString(1);
+	ville = myreader->GetString(2);
+	CP = myreader->GetString(3);
+	myreader->Close();
+	this->Controls->Clear();
+	this->Controls->Add(this->selectedonglet);
+	this->Controls->Add(this->menuStrip1);
+	this->Controls->Add(this->Bupdatepersonnel);
+	this->Controls->Add(this->dataview);
+	this->textBox47->Text = nom;
+	this->textBox48->Text = prenom;
+	this->textBox49->Text = NUMRUE;
+	this->textBox50->Text = ville;
+	this->textBox51->Text = CP;
+	this->textBox52->Text = idsup;
+}
+private: System::Void dataviewcouleur_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	idcouleur = Convert::ToInt32(dataviewcouleur->Rows[e->RowIndex]->Cells["IDCOULEUR"]->Value);
+	couleur = dataviewcouleur->Rows[e->RowIndex]->Cells["NOMCOULEUR"]->Value->ToString();
+	textBox17->Text = couleur;
+}
+private: System::Void dataviewnature_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	idnature = Convert::ToInt32(dataviewnature->Rows[e->RowIndex]->Cells["IDNATURE"]->Value);
+	nature = dataviewnature->Rows[e->RowIndex]->Cells["NOMNATURE"]->Value->ToString();
+	textBox16->Text = nature;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+////////////////////////////////////////////////	Rangement MenuItemClick		///////////////////////////////////////////////////////////////
+													
+													
+													
+---------------------------------------------------------------------------------------------------------------------------------------------*/
 private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
-	this->dataview->DataSource= nullptr;
+	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Accueil";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1732,6 +2094,8 @@ private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sen
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1744,14 +2108,12 @@ private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sen
 	this->textBox41->Hide();
 	this->Controls->Add(this->dataview);
 }
-private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
-	obj->create(textBox4->Text, textBox1->Text, textBox2->Text, textBox33->Text, textBox34->Text, textBox35->Text, textBox44->Text, textBox43->Text, textBox42->Text);
-}
-
 private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->dataviewUPclient);
@@ -1759,80 +2121,56 @@ private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ 
 	this->Controls->Add(this->BoxUPclient);
 	this->Controls->Add(this->dataview);
 }
-private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-   String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
-   MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-   conDataBase->Open();
-   String^ queryString = "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + textBox31->Text + "%' AND PRENOM LIKE '%" + textBox32->Text + "%' ;";
-   MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
-   MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
-   DataTable^ DT = gcnew DataTable();
-   myAdapter->Fill(DT);
-   BindingSource^ source1 = gcnew BindingSource();
-   source1->DataSource = DT;
-   dataviewUPclient->DataSource = source1;
-   myAdapter->Update(DT);
-}
-private: System::Void dataviewUPclient_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	this->Controls->Clear();
-	this->textBox31->Text="";
-	this->textBox32->Text="";
-	this->Controls->Add(this->selectedonglet);
-	this->Controls->Add(this->dataviewUPclient);
-	this->Controls->Add(this->menuStrip1);
-	this->Controls->Add(this->dataview);
-	this->Controls->Add(this->Rechercheclient);
-	id = Convert::ToInt32(dataviewUPclient->Rows[e->RowIndex]->Cells["NUMCLIENT"]->Value);
-	String^ nom = dataviewUPclient->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
-	String^ prenom = dataviewUPclient->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
-	String^ anniv = dataviewUPclient->Rows[e->RowIndex]->Cells["BIRTHDATE"]->Value->ToString();
-	textBox28->Text = nom;
-	textBox29->Text = prenom;
-	textBox30->Text = anniv;
-}
-
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	obj->update(textBox28->Text, textBox29->Text, textBox30->Text, id);
-}
 private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	this->Controls->Clear();
+	this->textBox8->Text = "";
+	this->textBox9->Text = "";
 	this->dataview->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	this->Controls->Add(this->BoxREclient);
-	this->Controls->Add(this->dataview);
+	this->Controls->Add(this->dataviewREclient);
 }
 private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	this->Controls->Add(this->boxCRpersonnel);
 	this->Controls->Add(this->dataview);
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	objp->create(textBox5->Text, textBox3->Text, textBox6->Text, textBox7->Text, textBox45->Text, textBox46->Text);
-}
 private: System::Void mettreaJourLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	textBox47->Text = "";
+	textBox48->Text = "";
+	textBox49->Text = "";
+	textBox50->Text = "";
+	textBox51->Text = "";
+	textBox52->Text = "";
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
-	this->Controls->Add(this->BoxUPpersonnel);
+	this->Controls->Add(this->BoxREpersonnel);
 	this->Controls->Add(this->dataview);
 }
 private: System::Void lireLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1843,26 +2181,34 @@ private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	this->Controls->Add(this->BoxDEpersonnel);
-	this->Controls->Add(this->dataview);
+	this->Controls->Add(this->dataviewdepersonnel);
 }
 private: System::Void passerUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
+	this->textBox8->Text = "";
+	this->textBox9->Text = "";
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Passer une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
-	this->Controls->Add(this->BoxCRcommande);
-	this->Controls->Add(this->dataview);
+	this->Controls->Add(this->BoxREclient);
+	this->Controls->Add(this->dataviewREclient);
 }
 private: System::Void mettreaJourUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1873,6 +2219,8 @@ private: System::Void visualiserUneCommandeToolStripMenuItem_Click(System::Objec
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1883,6 +2231,8 @@ private: System::Void supprimerUneCommandeToolStripMenuItem_Click(System::Object
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1893,6 +2243,8 @@ private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ se
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1903,6 +2255,8 @@ private: System::Void mettreaJourUnArticleToolStripMenuItem_Click(System::Object
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1913,6 +2267,8 @@ private: System::Void visualiserLesDonneesDunArticleToolStripMenuItem_Click(Syst
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1923,6 +2279,8 @@ private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ 
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1933,11 +2291,209 @@ private: System::Void statistiquesToolStripMenuItem_Click(System::Object^ sender
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
+	this->dataviewREclient->DataSource = nullptr;
+	this->dataviewdepersonnel->DataSource = nullptr;
 	this->selectedonglet->Text = "Visualisation des statistiques";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	//this->Controls->Add(this->);
 	this->Controls->Add(this->dataview);
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+////////////////////////////////////////////////	Rangement buttonClick		///////////////////////////////////////////////////////////////
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
+	obj->create(textBox4->Text, textBox1->Text, textBox2->Text, textBox33->Text, textBox34->Text, textBox35->Text, textBox44->Text, textBox43->Text, textBox42->Text);
+}
+
+private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+	//livr
+
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
+	conDataBase->Open();
+	String^ cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('" + textBox36->Text + "','" + textBox38->Text + "','" + textBox40->Text + "');";
+	MySqlCommand^ command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	MySqlDataAdapter^ myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
+	DataTable^ DS = gcnew DataTable();
+	myReader->Fill(DS);
+
+	String^ cmdid = "select IDADR from projetpoo.ADRESSES where NUM_ET_RUE= '" + textBox36->Text + "' and VILLE = '" + textBox38->Text + "' and CP='" + textBox40->Text + "';";
+	MySqlCommand^ commandid = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdid, conDataBase);
+	MySqlDataReader^ myreader = commandid->ExecuteReader();
+	myreader->Read();
+	idadresse = myreader->GetInt32(0);
+	myreader->Close();
+
+	cmdclient = "insert into projetpoo.EST_LIVRE_A(NUMCLIENT,IDADR) values (" + id + "," + idadresse + ");";
+	command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
+	myReader->Fill(DS);
+	conDataBase->Close();
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	//fact
+
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
+	conDataBase->Open();
+
+	String^ cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('" + textBox36->Text + "','" + textBox38->Text + "','" + textBox40->Text + "');";
+	MySqlCommand^ command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	MySqlDataAdapter^ myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
+	DataTable^ DS = gcnew DataTable();
+	myReader->Fill(DS);
+
+	String^ cmdid = "select IDADR from projetpoo.ADRESSES where NUM_ET_RUE= '" + textBox37->Text + "' and VILLE = '" + textBox39->Text + "' and CP='" + textBox41->Text + "';";
+	MySqlCommand^ commandid = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdid, conDataBase);
+	MySqlDataReader^ myreader = commandid->ExecuteReader();
+	myreader->Read();
+	idadresse = myreader->GetInt32(0);
+	myreader->Close();
+
+	cmdclient = "insert into projetpoo.A_PAYE_A(NUMCLIENT,IDADR) values (" + id + "," + idadresse + ");";
+	command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
+	myReader->Fill(DS);
+	conDataBase->Close();
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + textBox31->Text + "%' AND PRENOM LIKE '%" + textBox32->Text + "%' ;";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+	BindingSource^ source1 = gcnew BindingSource();
+	source1->DataSource = DT;
+	dataviewUPclient->DataSource = source1;
+	myAdapter->Update(DT);
+}
+
+
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	obj->update(textBox28->Text, textBox29->Text, textBox30->Text, id);
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + textBox9->Text + "%' AND PRENOM LIKE '%" + textBox8->Text + "%' ;";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+	BindingSource^ source1 = gcnew BindingSource();
+	source1->DataSource = DT;
+	dataviewREclient->DataSource = source1;
+	myAdapter->Update(DT);
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	objp->create(textBox5->Text, textBox3->Text, textBox6->Text, textBox7->Text, textBox45->Text, textBox46->Text);
+}
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+	objp->update(textBox47->Text, textBox48->Text, textBox49->Text, textBox50->Text, textBox51->Text, id, textBox52->Text);
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "SELECT * FROM projetpoo.PERSONNEL WHERE NOM LIKE '%" + textBox12->Text + "%' AND PRENOM LIKE '%" + textBox11->Text + "%' ;";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+	BindingSource^ source1 = gcnew BindingSource();
+	source1->DataSource = DT;
+	dataview->DataSource = source1;
+	myAdapter->Update(DT);
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "SELECT * FROM projetpoo.PERSONNEL WHERE NOM LIKE '%" + textBox12->Text + "%' AND PRENOM LIKE '%" + textBox11->Text + "%' ;";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+	BindingSource^ source1 = gcnew BindingSource();
+	source1->DataSource = DT;
+	dataviewdepersonnel->DataSource = source1;
+	myAdapter->Update(DT);
+}
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Controls->Clear();
+	this->selectedonglet->Text = "Passer une commande";
+	this->Controls->Add(this->selectedonglet);
+	this->Controls->Add(this->menuStrip1);
+	this->Controls->Add(this->BoxCRcommande);
+}
+private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "UPDATE projetpoo.PERSONNEL SET PER_IDPERSO = NULL WHERE PER_IDPERSO = " + id + "; DELETE FROM projetpoo.PERSONNEL WHERE IDPERSO = " + id + ";";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+}
+
+private: System::Void textBox16_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	this->dataviewnature->DataSource = nullptr;
+	nature = textBox16->Text;
+	this->Controls->Remove(dataviewcouleur);
+	this->Controls->Remove(dataview);
+	this->Controls->Add(dataviewnature);
+	this->Controls->Add(dataview);
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "select * from projetpoo.NATURE where NOMNATURE like '%"+nature+"%';";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+	BindingSource^ source1 = gcnew BindingSource();
+	source1->DataSource = DT;
+	dataviewnature->DataSource = source1;
+	myAdapter->Update(DT);
+}
+private: System::Void textBox17_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	this->dataviewcouleur->DataSource = nullptr;
+	this->Controls->Remove(dataviewnature);
+	this->Controls->Remove(dataview);
+	this->Controls->Add(dataviewcouleur);
+	this->Controls->Add(dataview);
+	couleur = textBox17->Text;
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "select * from projetpoo.COULEUR where NOMCOULEUR like '%" + couleur + "%';";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+	BindingSource^ source1 = gcnew BindingSource();
+	source1->DataSource = DT;
+	dataviewcouleur->DataSource = source1;
+	myAdapter->Update(DT);
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }

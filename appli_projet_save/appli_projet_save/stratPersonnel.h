@@ -6,7 +6,7 @@ ref class stratPersonnel
 public:
 	void create(String^, String^, String^, String^, String^, String^) override;
 	void read(String^, String^, String^) override;
-	void update() override;
+	void update(String^, String^, String^, String^, String^, int, String^) override;
 	void suppr() override;
 protected:
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";

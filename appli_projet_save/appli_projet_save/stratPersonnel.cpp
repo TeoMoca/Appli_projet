@@ -29,9 +29,34 @@ void stratPersonnel::read(String^ nom, String^ prenom, String^ embauche) {
 	conDataBase->Open();
 	cmdclient = "select * from projetpoo.PERSONNEL where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and DATEEMBAUCHE = '" + embauche + "';";
 	myReader->Fill(DS);
+	conDataBase->Close();
 };
-void stratPersonnel::update() {
-	int a;
+void stratPersonnel::update(String^ nom, String^ prenom, String^ rue, String^ ville, String^ CP, int id, String^ idsup) {
+	conDataBase->Open();
+
+	cmdclient = "insert into projetpoo.ADRESSES(NUM_ET_RUE,VILLE,CP) values ('" + rue + "','" + ville + "','" + CP + "');";
+	command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
+	myReader->Fill(DS);
+
+	cmdid = "select IDADR from projetpoo.ADRESSES where NUM_ET_RUE= '" + rue + "' and VILLE = '" + ville + "' and CP='" + CP + "';";
+	commandid = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdid, conDataBase);
+	MySqlDataReader^ myreader = commandid->ExecuteReader();
+	myreader->Read();
+	int^ idadresse = myreader->GetInt32(0);
+	myreader->Close();
+
+	if (idsup != "") {
+		cmdclient = "UPDATE projetpoo.PERSONNEL SET NOM = '" + nom + "', PRENOM ='" + prenom + "',IDADR= " + idadresse + ",PER_IDPERSO=" + idsup + " where IDPERSO=" + id + ";";
+	}
+	else
+	{
+		cmdclient = "UPDATE projetpoo.PERSONNEL SET NOM = '" + nom + "', PRENOM ='" + prenom + "',IDADR= " + idadresse + ",PER_IDPERSO= NULL where IDPERSO=" + id + ";";
+	}
+	command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
+	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
+	myReader->Fill(DS);
+	conDataBase->Close();
 };
 void stratPersonnel::suppr() {
 
