@@ -11,7 +11,7 @@ public:
 	virtual void update() = 0;
 	virtual void suppr() = 0;
 protected:
-	String^ constring= L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring= L"datasource=192.168.187.140;port=3306;username=r1;password=root";
 	String^ cmdclient;
 	String^ cmdid;
 	String^ cmdpersonnel;
