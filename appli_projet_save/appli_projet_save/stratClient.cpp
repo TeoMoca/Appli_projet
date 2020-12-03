@@ -6,12 +6,7 @@ using namespace appliprojet;
 
 
 void stratClient::create(String^ nom, String^ prenom, String^ birthdate, String^ adresse_fact, String^ ville_fact, String^ CP_fact, String^ adresse_livr, String^ ville_livr, String^ CP_livr) {
-	CLclient obj;
-	obj.setnom(nom);
-	obj.setprenom(prenom);
-	obj.setadresseFact(adresse_fact);
-	obj.setadresseLivr(adresse_livr);
-	obj.setbirthdate(birthdate);
+	
 	conDataBase->Open();
 	cmdclient = "insert into projetpoo.CLIENT(NOM,PRENOM,BIRTHDATE) values ('"+nom+"','"+prenom+"','"+birthdate+"');";
 	command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);

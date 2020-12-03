@@ -245,7 +245,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 	protected:
 
 	private:
-		stratClient^ obj = gcnew stratClient;
+		stratCRUD^ strategy = nullptr;
 		stratPersonnel^ objp = gcnew stratPersonnel;
 		int id;
 		String^ nom;
@@ -1912,7 +1912,7 @@ private: System::Windows::Forms::Button^ button12;
 		}
 #pragma endregion
 		/*private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-			String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+			String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 			MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 			conDataBase->Open();
 
@@ -1939,7 +1939,7 @@ private: System::Windows::Forms::Button^ button12;
 		}
 
 		private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-			String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+			String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 			MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 			conDataBase->Open();
 			String^ queryString = "select * from projetdb.articles;";
@@ -1955,7 +1955,7 @@ private: System::Windows::Forms::Button^ button12;
 		private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 			String^ selected = dataGridView1->Rows[e->RowIndex]->Cells["id"]->Value->ToString();
 			label4->Text = selected;
-			String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+			String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 			MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 			conDataBase->Open();
 			String^ queryString = "select * from projetdb.clients where id = " + selected + ";";
@@ -1982,7 +1982,7 @@ private: System::Void dataviewdepersonnel_CellContentClick(System::Object^ sende
 	nom = dataviewdepersonnel->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
 	prenom = dataviewdepersonnel->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
 	idadresse = Convert::ToInt32(dataviewdepersonnel->Rows[e->RowIndex]->Cells["IDADR"]->Value);
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "SELECT * FROM projetpoo.ADRESSES WHERE IDADR=" + idadresse + " ;";
@@ -2037,7 +2037,7 @@ private: System::Void dataview_CellContentClick(System::Object^ sender, System::
 	nom = dataview->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
 	prenom = dataview->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
 	idadresse = Convert::ToInt32(dataview->Rows[e->RowIndex]->Cells["IDADR"]->Value);
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "SELECT * FROM projetpoo.ADRESSES WHERE IDADR=" + idadresse + " ;";
@@ -2091,6 +2091,7 @@ private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, S
 	this->Controls->Add(this->menuStrip1);
 }
 private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratClient;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2109,6 +2110,7 @@ private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sen
 	this->Controls->Add(this->dataview);
 }
 private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratClient;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewREclient->DataSource = nullptr;
@@ -2122,6 +2124,7 @@ private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ 
 	this->Controls->Add(this->dataview);
 }
 private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratClient;
 	this->Controls->Clear();
 	this->textBox8->Text = "";
 	this->textBox9->Text = "";
@@ -2311,13 +2314,13 @@ private: System::Void statistiquesToolStripMenuItem_Click(System::Object^ sender
 
 
 private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
-	obj->create(textBox4->Text, textBox1->Text, textBox2->Text, textBox33->Text, textBox34->Text, textBox35->Text, textBox44->Text, textBox43->Text, textBox42->Text);
+	strategy->create(textBox4->Text, textBox1->Text, textBox2->Text, textBox33->Text, textBox34->Text, textBox35->Text, textBox44->Text, textBox43->Text, textBox42->Text);
 }
 
 private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
 	//livr
 
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
 	conDataBase->Open();
 	String^ cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('" + textBox36->Text + "','" + textBox38->Text + "','" + textBox40->Text + "');";
@@ -2342,7 +2345,7 @@ private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
 	//fact
 
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
 	conDataBase->Open();
 
@@ -2366,7 +2369,7 @@ private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ 
 	conDataBase->Close();
 }
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + textBox31->Text + "%' AND PRENOM LIKE '%" + textBox32->Text + "%' ;";
@@ -2383,10 +2386,10 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	obj->update(textBox28->Text, textBox29->Text, textBox30->Text, id);
+	strategy->update(textBox28->Text, textBox29->Text, textBox30->Text, id);
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + textBox9->Text + "%' AND PRENOM LIKE '%" + textBox8->Text + "%' ;";
@@ -2406,7 +2409,7 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	objp->update(textBox47->Text, textBox48->Text, textBox49->Text, textBox50->Text, textBox51->Text, id, textBox52->Text);
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "SELECT * FROM projetpoo.PERSONNEL WHERE NOM LIKE '%" + textBox12->Text + "%' AND PRENOM LIKE '%" + textBox11->Text + "%' ;";
@@ -2421,7 +2424,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "SELECT * FROM projetpoo.PERSONNEL WHERE NOM LIKE '%" + textBox12->Text + "%' AND PRENOM LIKE '%" + textBox11->Text + "%' ;";
@@ -2442,7 +2445,7 @@ private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ 
 	this->Controls->Add(this->BoxCRcommande);
 }
 private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "UPDATE projetpoo.PERSONNEL SET PER_IDPERSO = NULL WHERE PER_IDPERSO = " + id + "; DELETE FROM projetpoo.PERSONNEL WHERE IDPERSO = " + id + ";";
@@ -2459,7 +2462,7 @@ private: System::Void textBox16_TextChanged(System::Object^ sender, System::Even
 	this->Controls->Remove(dataview);
 	this->Controls->Add(dataviewnature);
 	this->Controls->Add(dataview);
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "select * from projetpoo.NATURE where NOMNATURE like '%"+nature+"%';";
@@ -2479,7 +2482,7 @@ private: System::Void textBox17_TextChanged(System::Object^ sender, System::Even
 	this->Controls->Add(dataviewcouleur);
 	this->Controls->Add(dataview);
 	couleur = textBox17->Text;
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.187.140;port=3306;username=r1;password=Akunamatata5!";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
 	String^ queryString = "select * from projetpoo.COULEUR where NOMCOULEUR like '%" + couleur + "%';";
