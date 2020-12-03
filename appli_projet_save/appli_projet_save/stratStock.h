@@ -1,11 +1,11 @@
 #pragma once
 #include "pch.h"
 
-ref class stratStock:public stratCRUD
+ref class stratStock
 {
-	void create(String^, int^, int^, float^, float^) override;
-	//void read() override;
-	//void update() override;
-	//void suppr() override;
+public:
+	void create(int, int, String^, String^, String^, String^, String^, int) override;
+	void update(String^, String^, String^, String^, String^, int, String^) override;
+	void suppr(){}
 };
 
