@@ -245,9 +245,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 	protected:
 
 	private:
-		stratClient^ obj = gcnew stratClient;
-		stratPersonnel^ objp = gcnew stratPersonnel;
-		stratStock^ objs = gcnew stratStock;
+		stratCRUD^ strategy = nullptr;
 		int id;
 		String^ nom;
 		String^ prenom;
@@ -2277,6 +2275,7 @@ private: System::Void dataviewUpstock_CellContentClick(System::Object^ sender, S
 													
 ---------------------------------------------------------------------------------------------------------------------------------------------*/
 private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratClient;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2287,6 +2286,7 @@ private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, S
 	this->Controls->Add(this->menuStrip1);
 }
 private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratClient;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2299,6 +2299,7 @@ private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sen
 	this->Controls->Add(this->dataview);
 }
 private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratClient;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewREclient->DataSource = nullptr;
@@ -2312,6 +2313,7 @@ private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ 
 	this->Controls->Add(this->dataview);
 }
 private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratClient;
 	this->Controls->Clear();
 	this->PrenomClient3->Text = "";
 	this->NomClient3->Text = "";
@@ -2326,6 +2328,7 @@ private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object
 	this->Controls->Add(this->dataviewREclient);
 }
 private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratPersonnel;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2338,6 +2341,7 @@ private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ 
 	this->Controls->Add(this->dataview);
 }
 private: System::Void mettreaJourLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratPersonnel;
 	this->Controls->Clear();
 	NomPersonnel->Text = "";
 	PrenomPersonnel->Text = "";
@@ -2356,6 +2360,7 @@ private: System::Void mettreaJourLesDonneesDunPersonnelToolStripMenuItem_Click(S
 	this->Controls->Add(this->dataview);
 }
 private: System::Void lireLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratPersonnel;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2368,6 +2373,7 @@ private: System::Void lireLesDonneesDunPersonnelToolStripMenuItem_Click(System::
 	this->Controls->Add(this->dataview);
 }
 private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratPersonnel;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2430,6 +2436,7 @@ private: System::Void supprimerUneCommandeToolStripMenuItem_Click(System::Object
 	this->Controls->Add(this->dataview);
 }
 private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratStock;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2442,6 +2449,7 @@ private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ se
 	this->Controls->Add(this->dataview);
 }
 private: System::Void mettreaJourUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratStock;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2454,6 +2462,7 @@ private: System::Void mettreaJourUnArticleToolStripMenuItem_Click(System::Object
 	this->Controls->Add(this->dataviewUpstock);
 }
 private: System::Void visualiserLesDonneesDunArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratStock;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2466,6 +2475,7 @@ private: System::Void visualiserLesDonneesDunArticleToolStripMenuItem_Click(Syst
 	this->Controls->Add(this->dataview);
 }
 private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	strategy = gcnew stratStock;
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
 	this->dataviewUPclient->DataSource = nullptr;
@@ -2501,11 +2511,11 @@ private: System::Void statistiquesToolStripMenuItem_Click(System::Object^ sender
 
 
 private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
-	obj->create(NomClient->Text, PrenomClient->Text, AnnivClient->Text, NUMRUE_fact_Client->Text, VILLE_fact_Client->Text, CP_fact_Client->Text, NUMRUE_livr_Client->Text, Ville_livr_Client->Text, CP_livr_Client->Text);
+	strategy->create(NomClient->Text, PrenomClient->Text, AnnivClient->Text, NUMRUE_fact_Client->Text, VILLE_fact_Client->Text, CP_fact_Client->Text, NUMRUE_livr_Client->Text, Ville_livr_Client->Text, CP_livr_Client->Text);
 }
 
 private: System::Void ajoutAdresseLivr_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
 	conDataBase->Open();
 	String^ cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('" + NUMRUEClient->Text + "','" + VILLEClient->Text + "','" + CPClient->Text + "');";
@@ -2569,7 +2579,7 @@ private: System::Void voirclientUpdate_Click(System::Object^ sender, System::Eve
 
 private: System::Void UpdateclientButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	obj->update(NomClient->Text, PrenomClient->Text, AnnivClient->Text, id);
+	strategy->update(NomClient->Text, PrenomClient->Text, AnnivClient->Text, id);
 }
 private: System::Void voirclientRead_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
@@ -2586,10 +2596,10 @@ private: System::Void voirclientRead_Click(System::Object^ sender, System::Event
 	myAdapter->Update(DT);
 }
 private: System::Void CreatePersonnelButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	objp->create(textBox5->Text, textBox3->Text, textBox6->Text, textBox7->Text, textBox45->Text, textBox46->Text);
+	strategy->create(textBox5->Text, textBox3->Text, textBox6->Text, textBox7->Text, textBox45->Text, textBox46->Text);
 }
 private: System::Void UpdatePersonnelButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	objp->update(NomPersonnel->Text, PrenomPersonnel->Text, NUMRUEPersonnel->Text, VillePersonnel->Text, CPPersonnel->Text, id, IDSUP_Personnel->Text);
+	strategy->update(NomPersonnel->Text, PrenomPersonnel->Text, NUMRUEPersonnel->Text, VillePersonnel->Text, CPPersonnel->Text, id, IDSUP_Personnel->Text);
 }
 private: System::Void ReadPersonnelButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
@@ -2627,7 +2637,7 @@ private: System::Void TransitionClientCommande_Click(System::Object^ sender, Sys
 	this->Controls->Add(this->BoxCRcommande);
 }
 private: System::Void UpdatePersonnelButton2_Click(System::Object^ sender, System::EventArgs^ e) {
-	objp->suppr(id);
+	strategy->suppr(id);
 }
 
 private: System::Void NatureArticleCR_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -2672,7 +2682,7 @@ private: System::Void CouleurArticleCR_TextChanged(System::Object^ sender, Syste
 	conDataBase->Close();
 }
 private: System::Void CRarticleButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	objs->create(idnature, idcouleur, textBox18->Text->ToString(), textBox19->Text->ToString(), textBox20->Text->ToString(), textBox21->Text->ToString(), textBox22->Text->ToString(), Convert::ToInt32(textBox23->Text));
+	strategy->create(idnature, idcouleur, textBox18->Text->ToString(), textBox19->Text->ToString(), textBox20->Text->ToString(), textBox21->Text->ToString(), textBox22->Text->ToString(), Convert::ToInt32(textBox23->Text));
 }
 private: System::Void RechercheArticleButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dataview->DataSource = nullptr;
@@ -2709,7 +2719,7 @@ private: System::Void RechercheArticleButton_4_Update_Click(System::Object^ send
 	conDataBase->Close();
 }
 private: System::Void ArticleButtonUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
-	objs->update(DesignationArticle->Text->ToString(), QuantiteArticle->Text->ToString(), SeuilArticle->Text->ToString(), PrixAchatArticle->Text->ToString(), PrixHTArticle->Text->ToString(), Convert::ToInt32(TVAArticle->Text), idarticle);
+	strategy->update(DesignationArticle->Text->ToString(), QuantiteArticle->Text->ToString(), SeuilArticle->Text->ToString(), PrixAchatArticle->Text->ToString(), PrixHTArticle->Text->ToString(), Convert::ToInt32(TVAArticle->Text), idarticle);
 }
 };
 }

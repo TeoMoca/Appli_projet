@@ -54,14 +54,7 @@ void stratClient::create(String^ nom, String^ prenom, String^ birthdate, String^
 	myReader->Fill(DS);
 	conDataBase->Close();
 };
-void stratClient::read(String^ nom, String^ prenom) {
-	conDataBase->Open();
-	cmdclient= "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + nom + "%' AND PRENOM LIKE '%" + prenom + "%' ;";
-	command = gcnew MySqlCommand(cmdclient, conDataBase);
-	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
-	myAdapter->Fill(DS);
-	
-};
+
 void stratClient::update(String^ nom, String^ prenom, String^ birthdate, int id) {
 	CLclient obj;
 	conDataBase->Open();
