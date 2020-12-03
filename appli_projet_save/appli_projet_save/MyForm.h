@@ -2493,7 +2493,7 @@ private: System::Void textBox17_TextChanged(System::Object^ sender, System::Even
 	myAdapter->Update(DT);
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	//creation article
 }
 };
 }
