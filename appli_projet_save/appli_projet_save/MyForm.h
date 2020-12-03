@@ -214,6 +214,8 @@ private: System::Windows::Forms::TextBox^ textBox37;
 private: System::Windows::Forms::TextBox^ textBox36;
 private: System::Windows::Forms::Label^ label29;
 private: System::Windows::Forms::Label^ label28;
+private: System::Windows::Forms::TextBox^ textBox46;
+private: System::Windows::Forms::TextBox^ textBox45;
 
 
 
@@ -244,6 +246,8 @@ private: System::Windows::Forms::Label^ label28;
 
 	private:
 		stratClient^ obj = gcnew stratClient;
+		stratPersonnel^ objp = gcnew stratPersonnel;
+		int id;
 		/// <summary>
 		/// Variable n�cessaire au concepteur.
 		/// </summary>
@@ -298,6 +302,8 @@ private: System::Windows::Forms::Label^ label28;
 			this->createclientprenomL = (gcnew System::Windows::Forms::Label());
 			this->dataview = (gcnew System::Windows::Forms::DataGridView());
 			this->boxCRpersonnel = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox46 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox45 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -765,6 +771,8 @@ private: System::Windows::Forms::Label^ label28;
 			// 
 			// boxCRpersonnel
 			// 
+			this->boxCRpersonnel->Controls->Add(this->textBox46);
+			this->boxCRpersonnel->Controls->Add(this->textBox45);
 			this->boxCRpersonnel->Controls->Add(this->button1);
 			this->boxCRpersonnel->Controls->Add(this->label4);
 			this->boxCRpersonnel->Controls->Add(this->label3);
@@ -779,6 +787,20 @@ private: System::Windows::Forms::Label^ label28;
 			this->boxCRpersonnel->Size = System::Drawing::Size(437, 401);
 			this->boxCRpersonnel->TabIndex = 6;
 			this->boxCRpersonnel->TabStop = false;
+			// 
+			// textBox46
+			// 
+			this->textBox46->Location = System::Drawing::Point(370, 182);
+			this->textBox46->Name = L"textBox46";
+			this->textBox46->Size = System::Drawing::Size(41, 20);
+			this->textBox46->TabIndex = 10;
+			// 
+			// textBox45
+			// 
+			this->textBox45->Location = System::Drawing::Point(267, 182);
+			this->textBox45->Name = L"textBox45";
+			this->textBox45->Size = System::Drawing::Size(97, 20);
+			this->textBox45->TabIndex = 9;
 			// 
 			// button1
 			// 
@@ -830,7 +852,7 @@ private: System::Windows::Forms::Label^ label28;
 			// 
 			this->textBox7->Location = System::Drawing::Point(187, 182);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(224, 20);
+			this->textBox7->Size = System::Drawing::Size(74, 20);
 			this->textBox7->TabIndex = 3;
 			// 
 			// textBox6
@@ -1467,6 +1489,7 @@ private: System::Windows::Forms::Label^ label28;
 			this->button8->TabIndex = 0;
 			this->button8->Text = L"button8";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
 			// 
 			// button11
 			// 
@@ -1604,7 +1627,7 @@ private: System::Windows::Forms::Label^ label28;
 			this->ClientSize = System::Drawing::Size(896, 431);
 			this->Controls->Add(this->selectedonglet);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->dataviewUPclient);
+			this->Controls->Add(this->Rechercheclient);
 			this->Location = System::Drawing::Point(12, 42);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -1700,6 +1723,7 @@ private: System::Windows::Forms::Label^ label28;
 private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource= nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Accueil";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1707,6 +1731,7 @@ private: System::Void accueilToolStripMenuItem_Click_1(System::Object^ sender, S
 private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1720,54 +1745,13 @@ private: System::Void AjouterunclientToolStripMenuItem_Click(System::Object^ sen
 	this->Controls->Add(this->dataview);
 }
 private: System::Void savecreateclientB_Click(System::Object^ sender, System::EventArgs^ e) {
-	obj->create(textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());
-	
-	/*array<String^>^ contenufact = this->richTextBox1->Lines;
-	int nFact = 0;
-	int iFACT = 0;
-	for each (String ^ LIGNE in contenufact) {
-		nFact++;
-	}
-	array<array<String^>^>^ tableauFact = gcnew array<array<String^>^>(nFact);
-	for each (String ^ LIGNE in contenufact) {
-		String^ separator = ",";
-		array<String^>^ TableauAdresse = LIGNE->Split(separator->ToCharArray());
-		tableauFact[iFACT] = TableauAdresse;
-		iFACT++;
-
-	};
-	array<String^>^ contenulivr = this->richTextBox2->Lines;
-	int nlivr = 0;
-	int ilivr = 0;
-	for each (String ^ LIGNE in contenulivr) {
-		nlivr++;
-	}
-	array<array<String^>^>^ tableaulivr = gcnew array<array<String^>^>(nlivr);
-	for each (String ^ LIGNE in contenulivr) {
-		String^ separator = ",";
-		array<String^>^ TableauAdresse = LIGNE->Split(separator->ToCharArray());
-		tableaulivr[ilivr] = TableauAdresse;
-		ilivr++;
-
-	};
-	obj->create(tableauFact, tableaulivr, textBox2->Text->ToString(), textBox1->Text->ToString(), textBox4->Text->ToString());*/
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
-	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-	conDataBase->Open();
-	String^ queryString = "select * from projetdb.articles;";
-	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
-	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
-	DataTable^ DT = gcnew DataTable();
-	myAdapter->Fill(DT);
-	BindingSource^ source1 = gcnew BindingSource();
-	source1->DataSource = DT;
-	dataview->DataSource = source1;
-	myAdapter->Update(DT);
+	obj->create(textBox4->Text, textBox1->Text, textBox2->Text, textBox33->Text, textBox34->Text, textBox35->Text, textBox44->Text, textBox43->Text, textBox42->Text);
 }
 
 private: System::Void actualiserUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->dataviewUPclient);
@@ -1790,13 +1774,15 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
    myAdapter->Update(DT);
 }
 private: System::Void dataviewUPclient_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	this->textBox32->Hide();
-	this->textBox31->Hide();
-	this->label26->Hide();
-	this->label25->Hide();
-	this->button9->Hide();
+	this->Controls->Clear();
+	this->textBox31->Text="";
+	this->textBox32->Text="";
+	this->Controls->Add(this->selectedonglet);
+	this->Controls->Add(this->dataviewUPclient);
+	this->Controls->Add(this->menuStrip1);
+	this->Controls->Add(this->dataview);
 	this->Controls->Add(this->Rechercheclient);
-	this->Controls->Add(this->BoxUPclient);
+	id = Convert::ToInt32(dataviewUPclient->Rows[e->RowIndex]->Cells["NUMCLIENT"]->Value);
 	String^ nom = dataviewUPclient->Rows[e->RowIndex]->Cells["NOM"]->Value->ToString();
 	String^ prenom = dataviewUPclient->Rows[e->RowIndex]->Cells["PRENOM"]->Value->ToString();
 	String^ anniv = dataviewUPclient->Rows[e->RowIndex]->Cells["BIRTHDATE"]->Value->ToString();
@@ -1805,10 +1791,15 @@ private: System::Void dataviewUPclient_CellContentClick(System::Object^ sender, 
 	textBox30->Text = anniv;
 }
 
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	obj->update(textBox28->Text, textBox29->Text, textBox30->Text, id);
+}
 private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un client";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1818,6 +1809,7 @@ private: System::Void lireLesDonneesClientToolStripMenuItem_Click(System::Object
 private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1825,11 +1817,12 @@ private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ 
 	this->Controls->Add(this->dataview);
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	//stratpersonnel::Create()
+	objp->create(textBox5->Text, textBox3->Text, textBox6->Text, textBox7->Text, textBox45->Text, textBox46->Text);
 }
 private: System::Void mettreaJourLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1839,6 +1832,7 @@ private: System::Void mettreaJourLesDonneesDunPersonnelToolStripMenuItem_Click(S
 private: System::Void lireLesDonneesDunPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1848,6 +1842,7 @@ private: System::Void lireLesDonneesDunPersonnelToolStripMenuItem_Click(System::
 private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer un personnel";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1857,6 +1852,7 @@ private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object
 private: System::Void passerUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Passer une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1866,6 +1862,7 @@ private: System::Void passerUneCommandeToolStripMenuItem_Click(System::Object^ s
 private: System::Void mettreaJourUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1875,6 +1872,7 @@ private: System::Void mettreaJourUneCommandeToolStripMenuItem_Click(System::Obje
 private: System::Void visualiserUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1884,6 +1882,7 @@ private: System::Void visualiserUneCommandeToolStripMenuItem_Click(System::Objec
 private: System::Void supprimerUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer une commande";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1893,6 +1892,7 @@ private: System::Void supprimerUneCommandeToolStripMenuItem_Click(System::Object
 private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Ajouter un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1902,6 +1902,7 @@ private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ se
 private: System::Void mettreaJourUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Mettre a jour un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1911,6 +1912,7 @@ private: System::Void mettreaJourUnArticleToolStripMenuItem_Click(System::Object
 private: System::Void visualiserLesDonneesDunArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Lire les donnees d'un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1920,6 +1922,7 @@ private: System::Void visualiserLesDonneesDunArticleToolStripMenuItem_Click(Syst
 private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Supprimer un article";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
@@ -1929,12 +1932,12 @@ private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ 
 private: System::Void statistiquesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Controls->Clear();
 	this->dataview->DataSource = nullptr;
+	this->dataviewUPclient->DataSource = nullptr;
 	this->selectedonglet->Text = "Visualisation des statistiques";
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
 	//this->Controls->Add(this->);
 	this->Controls->Add(this->dataview);
 }
-
 };
 }

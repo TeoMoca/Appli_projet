@@ -14,8 +14,8 @@ public:
 	void setprenom(String^);
 	String^ getdateEmbauche();
 	void setdateEmbauche(String^);
-	CLadresse^ getadresse();
-	void setadresse(CLadresse^);
+	String^ getadresse();
+	void setadresse(String^);
 	int getIDsup();
 	void setIDsup(int);
 
@@ -23,7 +23,7 @@ private:
 	String^ nom;
 	String^ prenom;
 	String^ dateEmbauche;
-	CLadresse^ adresse;
+	String^ adresse;
 	int IDsup;
 };
 
