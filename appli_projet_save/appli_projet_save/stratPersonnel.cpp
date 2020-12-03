@@ -25,12 +25,6 @@ void stratPersonnel::create(String^ nom, String^ prenom, String^ embauche, Strin
 	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
 	myReader->Fill(DS);
 };
-void stratPersonnel::read(String^ nom, String^ prenom, String^ embauche) {
-	conDataBase->Open();
-	cmdclient = "select * from projetpoo.PERSONNEL where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and DATEEMBAUCHE = '" + embauche + "';";
-	myReader->Fill(DS);
-	conDataBase->Close();
-};
 void stratPersonnel::update(String^ nom, String^ prenom, String^ rue, String^ ville, String^ CP, int id, String^ idsup) {
 	conDataBase->Open();
 
@@ -58,6 +52,13 @@ void stratPersonnel::update(String^ nom, String^ prenom, String^ rue, String^ vi
 	myReader->Fill(DS);
 	conDataBase->Close();
 };
-void stratPersonnel::suppr() {
-
-};
+void stratPersonnel::suppr(int id) {
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	conDataBase->Open();
+	String^ queryString = "UPDATE projetpoo.PERSONNEL SET PER_IDPERSO = NULL WHERE PER_IDPERSO = " + id + "; DELETE FROM projetpoo.PERSONNEL WHERE IDPERSO = " + id + ";";
+	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	DataTable^ DT = gcnew DataTable();
+	myAdapter->Fill(DT);
+}

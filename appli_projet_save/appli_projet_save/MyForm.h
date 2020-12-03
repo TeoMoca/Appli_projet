@@ -247,6 +247,7 @@ private: System::Windows::Forms::TextBox^ textBox45;
 	private:
 		stratClient^ obj = gcnew stratClient;
 		stratPersonnel^ objp = gcnew stratPersonnel;
+		stratStock^ objs = gcnew stratStock;
 		int id;
 		String^ nom;
 		String^ prenom;
@@ -295,7 +296,7 @@ private: System::Windows::Forms::DataGridView^ dataviewREclient;
 private: System::Windows::Forms::TextBox^ textBox10;
 private: System::Windows::Forms::DataGridView^ dataviewnature;
 private: System::Windows::Forms::DataGridView^ dataviewcouleur;
-private: System::Windows::Forms::Button^ UpdatePersonnelButton2;
+private: System::Windows::Forms::Button^ supprpersonnelButton;
 private: System::Windows::Forms::DataGridView^ dataviewdepersonnel;
 private: System::Windows::Forms::TextBox^ IDSUP_Personnel;
 private: System::Windows::Forms::Label^ label33;
@@ -480,7 +481,7 @@ private: System::Windows::Forms::Button^ TransitionClientCommande;
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->UpdatePersonnelButton = (gcnew System::Windows::Forms::Button());
 			this->dataviewdepersonnel = (gcnew System::Windows::Forms::DataGridView());
-			this->UpdatePersonnelButton2 = (gcnew System::Windows::Forms::Button());
+			this->supprpersonnelButton = (gcnew System::Windows::Forms::Button());
 			this->dataviewnature = (gcnew System::Windows::Forms::DataGridView());
 			this->dataviewcouleur = (gcnew System::Windows::Forms::DataGridView());
 			this->dataviewUpstock = (gcnew System::Windows::Forms::DataGridView());
@@ -1912,15 +1913,15 @@ private: System::Windows::Forms::Button^ TransitionClientCommande;
 			this->dataviewdepersonnel->TabIndex = 9;
 			this->dataviewdepersonnel->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataviewdepersonnel_CellContentClick);
 			// 
-			// UpdatePersonnelButton2
+			// supprpersonnelButton
 			// 
-			this->UpdatePersonnelButton2->Location = System::Drawing::Point(146, 253);
-			this->UpdatePersonnelButton2->Name = L"UpdatePersonnelButton2";
-			this->UpdatePersonnelButton2->Size = System::Drawing::Size(141, 23);
-			this->UpdatePersonnelButton2->TabIndex = 10;
-			this->UpdatePersonnelButton2->Text = L"Supprimer le personnel";
-			this->UpdatePersonnelButton2->UseVisualStyleBackColor = true;
-			this->UpdatePersonnelButton2->Click += gcnew System::EventHandler(this, &MyForm::UpdatePersonnelButton2_Click);
+			this->supprpersonnelButton->Location = System::Drawing::Point(146, 253);
+			this->supprpersonnelButton->Name = L"supprpersonnelButton";
+			this->supprpersonnelButton->Size = System::Drawing::Size(141, 23);
+			this->supprpersonnelButton->TabIndex = 10;
+			this->supprpersonnelButton->Text = L"Supprimer le personnel";
+			this->supprpersonnelButton->UseVisualStyleBackColor = true;
+			this->supprpersonnelButton->Click += gcnew System::EventHandler(this, &MyForm::UpdatePersonnelButton2_Click);
 			// 
 			// dataviewnature
 			// 
@@ -2162,7 +2163,7 @@ private: System::Void dataviewdepersonnel_CellContentClick(System::Object^ sende
 	this->Controls->Clear();
 	this->Controls->Add(this->selectedonglet);
 	this->Controls->Add(this->menuStrip1);
-	this->Controls->Add(this->UpdatePersonnelButton2);
+	this->Controls->Add(this->supprpersonnelButton);
 	this->Controls->Add(this->BoxDEpersonnel);
 	this->Controls->Add(this->dataviewdepersonnel);
 }
@@ -2504,9 +2505,7 @@ private: System::Void savecreateclientB_Click(System::Object^ sender, System::Ev
 }
 
 private: System::Void ajoutAdresseLivr_Click(System::Object^ sender, System::EventArgs^ e) {
-	//livr
-
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+		String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
 	conDataBase->Open();
 	String^ cmdclient = "INSERT INTO projetpoo.ADRESSES (NUM_ET_RUE, VILLE, CP) VALUES('" + NUMRUEClient->Text + "','" + VILLEClient->Text + "','" + CPClient->Text + "');";
@@ -2529,8 +2528,6 @@ private: System::Void ajoutAdresseLivr_Click(System::Object^ sender, System::Eve
 	conDataBase->Close();
 }
 private: System::Void ajoutAdresseFact_Click(System::Object^ sender, System::EventArgs^ e) {
-	//fact
-
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
 	conDataBase->Open();
@@ -2609,7 +2606,6 @@ private: System::Void ReadPersonnelButton_Click(System::Object^ sender, System::
 	myAdapter->Update(DT);
 }
 private: System::Void DeletePersonnelButton_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();
@@ -2631,14 +2627,7 @@ private: System::Void TransitionClientCommande_Click(System::Object^ sender, Sys
 	this->Controls->Add(this->BoxCRcommande);
 }
 private: System::Void UpdatePersonnelButton2_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
-	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-	conDataBase->Open();
-	String^ queryString = "UPDATE projetpoo.PERSONNEL SET PER_IDPERSO = NULL WHERE PER_IDPERSO = " + id + "; DELETE FROM projetpoo.PERSONNEL WHERE IDPERSO = " + id + ";";
-	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
-	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
-	DataTable^ DT = gcnew DataTable();
-	myAdapter->Fill(DT);
+	objp->suppr(id);
 }
 
 private: System::Void NatureArticleCR_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -2683,20 +2672,7 @@ private: System::Void CouleurArticleCR_TextChanged(System::Object^ sender, Syste
 	conDataBase->Close();
 }
 private: System::Void CRarticleButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	desi = textBox18->Text->ToString();
-	quant = textBox19->Text->ToString();
-	seuil = textBox20->Text->ToString();
-	prixach = textBox21->Text->ToString();
-	ht = textBox22->Text->ToString();
-	tva = Convert::ToDouble(textBox23->Text);
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
-	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-	conDataBase->Open();
-	String^ queryString = "	INSERT INTO projetpoo.ARTICLE(IDNATURE, IDCOULEUR, DESIGNATION, QUANTDISPO, SEUILAPPRO, PRIXACHAT, PRIXHT, TVA) VALUES("+idnature+", "+idcouleur+",'" +desi+"'," +quant+","+ seuil+", "+prixach+", "+ht+"," +tva+");";
-	MySqlCommand^ command = gcnew MySqlCommand(queryString, conDataBase);
-	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
-	DataTable^ DT = gcnew DataTable();
-	myAdapter->Fill(DT);
+	objs->create(idnature, idcouleur, textBox18->Text->ToString(), textBox19->Text->ToString(), textBox20->Text->ToString(), textBox21->Text->ToString(), textBox22->Text->ToString(), Convert::ToInt32(textBox23->Text));
 }
 private: System::Void RechercheArticleButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dataview->DataSource = nullptr;
@@ -2733,20 +2709,7 @@ private: System::Void RechercheArticleButton_4_Update_Click(System::Object^ send
 	conDataBase->Close();
 }
 private: System::Void ArticleButtonUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
-	desi = DesignationArticle->Text->ToString();
-	quant = QuantiteArticle->Text->ToString();
-	seuil = SeuilArticle->Text->ToString();
-	prixach = PrixAchatArticle->Text->ToString();
-	ht = PrixHTArticle->Text->ToString();
-	tva = Convert::ToInt32(TVAArticle->Text);
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
-	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
-	conDataBase->Open();
-	String^ cmdclient = "	UPDATE projetpoo.ARTICLE SET DESIGNATION = '" + desi + "', QUANTDISPO = " + quant + ", SEUILAPPRO = " + seuil + ", PRIXACHAT = " + prixach + ", PRIXHT = " + ht + ", TVA = " + tva + " WHERE ARTREF=" + idarticle + ";";
-	MySqlCommand^ command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
-	MySqlDataAdapter^ myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
-	DataTable^ DS = gcnew DataTable();
-	myReader->Fill(DS);
+	objs->update(DesignationArticle->Text->ToString(), QuantiteArticle->Text->ToString(), SeuilArticle->Text->ToString(), PrixAchatArticle->Text->ToString(), PrixHTArticle->Text->ToString(), Convert::ToInt32(TVAArticle->Text), idarticle);
 }
 };
 }

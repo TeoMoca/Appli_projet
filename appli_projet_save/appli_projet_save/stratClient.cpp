@@ -59,10 +59,13 @@ void stratClient::create(String^ nom, String^ prenom, String^ birthdate, String^
 	myReader->Fill(DS);
 	conDataBase->Close();
 };
-void stratClient::read(String^ nom, String^ prenom, String^ birthdate) {
+void stratClient::read(String^ nom, String^ prenom) {
 	conDataBase->Open();
-	cmdclient = "select * from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
-	myReader->Fill(DS);
+	cmdclient= "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + nom + "%' AND PRENOM LIKE '%" + prenom + "%' ;";
+	command = gcnew MySqlCommand(cmdclient, conDataBase);
+	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
+	myAdapter->Fill(DS);
+	
 };
 void stratClient::update(String^ nom, String^ prenom, String^ birthdate, int id) {
 	CLclient obj;
@@ -72,14 +75,4 @@ void stratClient::update(String^ nom, String^ prenom, String^ birthdate, int id)
 	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
 	myReader->Fill(DS);
 	conDataBase->Close();
-};
-void stratClient::suppr(String^ nom, String^ prenom, String^ birthdate) {
-	CLclient suppr;
-	cmdid = "select id from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
-	MySqlDataReader^ myreader = command->ExecuteReader();
-	myreader->Read();
-	int^ idclient = myreader->GetInt32(0);
-	array<int^>^ adrs;
-	cmdclient = "delete from projetpoo.CLIENT where NOM = '" + nom + "' and PRENOM = '" + prenom + "' and BIRTHDATE = '" + birthdate + "';";
-
 };
