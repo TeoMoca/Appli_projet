@@ -6,12 +6,7 @@ using namespace appliprojet;
 
 
 void stratClient::create(String^ nom, String^ prenom, String^ birthdate, String^ adresse_fact, String^ ville_fact, String^ CP_fact, String^ adresse_livr, String^ ville_livr, String^ CP_livr) {
-	CLclient obj;
-	obj.setnom(nom);
-	obj.setprenom(prenom);
-	obj.setadresseFact(adresse_fact);
-	obj.setadresseLivr(adresse_livr);
-	obj.setbirthdate(birthdate);
+	
 	conDataBase->Open();
 	cmdclient = "insert into projetpoo.CLIENT(NOM,PRENOM,BIRTHDATE) values ('"+nom+"','"+prenom+"','"+birthdate+"');";
 	command = gcnew MySql::Data::MySqlClient::MySqlCommand(cmdclient, conDataBase);
@@ -59,14 +54,7 @@ void stratClient::create(String^ nom, String^ prenom, String^ birthdate, String^
 	myReader->Fill(DS);
 	conDataBase->Close();
 };
-void stratClient::read(String^ nom, String^ prenom) {
-	conDataBase->Open();
-	cmdclient= "SELECT * FROM projetpoo.CLIENT WHERE NOM LIKE '%" + nom + "%' AND PRENOM LIKE '%" + prenom + "%' ;";
-	command = gcnew MySqlCommand(cmdclient, conDataBase);
-	MySqlDataAdapter^ myAdapter = gcnew MySqlDataAdapter(command);
-	myAdapter->Fill(DS);
-	
-};
+
 void stratClient::update(String^ nom, String^ prenom, String^ birthdate, int id) {
 	CLclient obj;
 	conDataBase->Open();
