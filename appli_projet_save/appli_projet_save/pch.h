@@ -2,13 +2,6 @@
 #define PCH_H
 #include <iostream>
 #include <vector>
-#include "CLadresse.h"
-#include "CLcatalog.h"
-#include "CLpersonnel.h"
-#include "CLclient.h"
-#include "CLquantite.h"
-#include "CLpaiement.h"
-#include "CLcommande.h"
 #include "stratCRUD.h"
 #include "stratClient.h"
 #include "stratCommande.h"
