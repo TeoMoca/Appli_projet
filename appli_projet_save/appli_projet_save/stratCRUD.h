@@ -28,8 +28,7 @@ public:
 	virtual void suppr(String^) = 0;
 	
 protected:
-	//datasource = 192.168.233.132; port = 3306; username = TeoMoca; password = Iammoca * 76
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76;Allow User Variables=True";
+	String^ constring = L"datasource=;port=;username=;password=;Allow User Variables=True";
 	String^ cmdclient;
 	String^ cmdid;
 	String^ cmdpersonnel;

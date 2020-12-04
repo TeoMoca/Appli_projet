@@ -1,6 +1,15 @@
 ﻿#pragma once
 #include "pch.h"
-ref class stratClient;
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//////////////////////////	Mettre son dataSource, ID et MDP ligne 284 sur MYFORM.H et ligne 31 dans STRATCRUD.H		///////////////////////
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 namespace appliprojet {
@@ -2869,6 +2878,7 @@ private: System::Windows::Forms::Button^ TransitionClientCommande;
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm";
 			this->Text = L"TARDY.gouv";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->boxCRclient->ResumeLayout(false);
@@ -3869,6 +3879,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	myreader->Close();
 	prixtotalclient = "";
 	conDataBase->Close();
+}
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
