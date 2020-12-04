@@ -25,7 +25,7 @@ void stratPersonnel::create(String^ nom, String^ prenom, String^ embauche, Strin
 	myReader = gcnew MySql::Data::MySqlClient::MySqlDataAdapter(command);
 	myReader->Fill(DS);
 };
-void stratPersonnel::update(String^ nom, String^ prenom, String^ rue, String^ ville, String^ CP, int id, String^ idsup) {
+void stratPersonnel::update(String^ nom, String^ prenom, String^ rue, String^ ville, String^ CP, String^ id, String^ idsup) {
 	conDataBase->Open();
 
 	cmdclient = "insert into projetpoo.ADRESSES(NUM_ET_RUE,VILLE,CP) values ('" + rue + "','" + ville + "','" + CP + "');";
@@ -52,7 +52,7 @@ void stratPersonnel::update(String^ nom, String^ prenom, String^ rue, String^ vi
 	myReader->Fill(DS);
 	conDataBase->Close();
 };
-void stratPersonnel::suppr(int id) {
+void stratPersonnel::suppr(String^ id) {
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
 	conDataBase->Open();

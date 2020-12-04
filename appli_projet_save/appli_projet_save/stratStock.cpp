@@ -12,7 +12,7 @@ void stratStock::create(int idnature, int idcouleur, String^ desi, String^ quant
 	conDataBase->Close();
 };
 
-void stratStock::update(String^ designation, String^ quantite, String^ seuil, String^ prix_achat, String^prix_HT, int TVA, String^ Article_Ref) {
+void stratStock::update(String^ designation, String^ quantite, String^ seuil, String^ prix_achat, String^prix_HT, String^ TVA, String^ Article_Ref) {
 	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
 	MySqlConnection^ conDataBase = gcnew MySql::Data::MySqlClient::MySqlConnection(constring);
 	conDataBase->Open();

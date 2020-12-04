@@ -55,7 +55,7 @@ void stratClient::create(String^ nom, String^ prenom, String^ birthdate, String^
 	conDataBase->Close();
 };
 
-void stratClient::update(String^ nom, String^ prenom, String^ birthdate, int id) {
+void stratClient::update(String^ nom, String^ prenom, String^ birthdate, String^ id) {
 	CLclient obj;
 	conDataBase->Open();
 	cmdclient = "UPDATE projetpoo.CLIENT SET NOM = '"+nom+"', PRENOM ='"+prenom+"', BIRTHDATE = '"+birthdate+"' WHERE NUMCLIENT = '"+id+"';";

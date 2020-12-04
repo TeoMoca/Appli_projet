@@ -13,22 +13,23 @@ public:
 	virtual void create(String^, String^, String^, String^, String^, String^) =0;
 	//stock
 	virtual void create(int, int, String^, String^, String^, String^, String^, int) =0;
-
+	//commande
+	virtual void create(String^, String^, String^, String^, String^, String^, String^, String^) =0;
 
 	virtual void update() = 0;
 	//client
-	virtual void update(String^, String^, String^, int id) =0;
+	virtual void update(String^, String^, String^, String^ ) =0;
 	//perso AND stock
-	virtual void update(String^, String^, String^, String^, String^, int, String^) = 0;
+	virtual void update(String^, String^, String^, String^, String^, String^, String^) = 0;
 
 
 	virtual void suppr() = 0;
 	//perso
-	virtual void suppr(int) = 0;
+	virtual void suppr(String^) = 0;
 	
 protected:
 	//datasource = 192.168.233.132; port = 3306; username = TeoMoca; password = Iammoca * 76
-	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76";
+	String^ constring = L"datasource=192.168.233.132;port=3306;username=TeoMoca;password=Iammoca*76;Allow User Variables=True";
 	String^ cmdclient;
 	String^ cmdid;
 	String^ cmdpersonnel;
